@@ -5,6 +5,10 @@ import Select from "./elements/Select";
 const Sort = ({ onChange }) => {
   const options = [
     {
+      text: "",
+      value: "NO_SORTING"
+    },
+    {
       text: "Name Ascending",
       value: "NAME_ASC"
     },
@@ -14,9 +18,7 @@ const Sort = ({ onChange }) => {
     }
   ];
 
-  return (
-    <Select options={options} onChange={onChange} />
-  )
+  return <Select options={options} onChange={onChange} />;
 };
 
 Sort.propTypes = {
