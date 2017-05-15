@@ -39,8 +39,6 @@ function accountState(state = initialAccountState, action) {
   let newAccounts;
 
   switch (action.type) {
-
-
     case SET_SELECTED_ACCOUNT:
       //Filter for account or make employee enter full account object?
       // newSelectedAccount = state.accounts.filter(accout => {
@@ -50,8 +48,6 @@ function accountState(state = initialAccountState, action) {
         ...state,
         selectedAccount: action.data
       };
-
-
 
     case DEPOSIT:
       newTransaction = {
@@ -77,8 +73,6 @@ function accountState(state = initialAccountState, action) {
         selectedAccount: updatedAccount,
         transactions: [...state.transactions, newTransaction]
       };
-
-
 
     case WITHDRAW:
       if (state.selectedAccount.balance < action.data.amount) {
@@ -109,8 +103,6 @@ function accountState(state = initialAccountState, action) {
         selectedAccount: updatedAccount,
         transactions: [...state.transactions, newTransaction]
       };
-
-
 
     case TRANSFER:
       let origin = state.accounts.find(account => {
