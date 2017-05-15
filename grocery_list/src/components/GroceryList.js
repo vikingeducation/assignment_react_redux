@@ -5,8 +5,8 @@ import PurchasedFilters from "./PurchasedFilters";
 import GroceryCard from "./GroceryCard";
 import FilterSelectContainer from "../containers/FilterSelectContainer";
 
-const GroceryList = ({ items, purchaseItem }) => {
-  const groceryList = items.map(item => (
+const groceryList = (items, purchaseItem) =>
+  items.map(item => (
     <GroceryCard
       item={item}
       key={item.id}
@@ -14,15 +14,15 @@ const GroceryList = ({ items, purchaseItem }) => {
     />
   ));
 
-  const noGroceries = <p className="text-muted">No items found</p>;
-
+const noGroceries = <p className="text-muted">No items found</p>;
+const GroceryList = ({ items, purchaseItem }) => {
   return (
     <div className="container">
       <h2>Your Groceries</h2>
       <PurchasedFilters />
       <FilterSelectContainer />
       <div className="card-deck">
-        {items.length ? groceryList : noGroceries}
+        {items.length ? groceryList(items, purchaseItem) : noGroceries}
       </div>
     </div>
   );
