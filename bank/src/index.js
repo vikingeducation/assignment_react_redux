@@ -17,7 +17,7 @@ const initialAccounts = {
     { id: 2, balance: 100 },
     { id: 3, balance: 1000 }
   ],
-  selectedAccount: {},
+  selectedAccount: null,
   transactions: []
 };
 

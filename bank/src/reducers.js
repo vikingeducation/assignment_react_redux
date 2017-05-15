@@ -7,21 +7,6 @@ import {
   SET_DATE_FILTER
 } from "./actions";
 
-const initialAccountState = {
-  accounts: [
-    {
-      id: 1,
-      balance: 0
-    },
-    {
-      id: 2,
-      balance: 0
-    }
-  ],
-  selectedAccount: {},
-  transactions: []
-};
-
 //Filter reducer
 function dateFilter(state = { startDate: 0, endDate: Date.now() }, action) {
   switch (action.type) {
@@ -40,13 +25,11 @@ function accountState(state = {}, action) {
 
   switch (action.type) {
     case SET_SELECTED_ACCOUNT:
-      //Filter for account or make employee enter full account object?
-      // newSelectedAccount = state.accounts.filter(accout => {
-      //   return account.id == data.id;
-      // })
+      const selectedAccount = state.accounts.find(account => account.id === action.data);
+
       return {
         ...state,
-        selectedAccount: action.data
+        selectedAccount
       };
 
     case DEPOSIT:
