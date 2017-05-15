@@ -33,7 +33,7 @@ function dateFilter(state = { startDate: 0, endDate: Date.now() }, action) {
 }
 
 //Account reducer
-function accountState(state = initialAccountState, action) {
+function accountState(state = {}, action) {
   let updatedAccount;
   let newTransaction;
   let newAccounts;

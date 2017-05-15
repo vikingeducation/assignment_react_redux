@@ -21,7 +21,7 @@ const initialAccounts = {
   transactions: []
 };
 
-let store = createStore(bankApp, { accounts: initialAccounts });
+let store = createStore(bankApp, { accountState: initialAccounts });
 ReactDOM.render(
   <Provider store={store}>
     <App />
