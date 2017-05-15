@@ -25,17 +25,22 @@ function accountState(state = {}, action) {
 
   switch (action.type) {
     case SET_SELECTED_ACCOUNT:
-      const selectedAccount = state.accounts.find(account => account.id === action.data);
-
+      console.log("Reducer");
+      console.log(state);
+      const selectedAccount = state.accounts.find(
+        account => account.id === Number(action.data)
+      );
+      console.log(selectedAccount);
       return {
         ...state,
         selectedAccount
       };
 
     case DEPOSIT:
+      let amount = Number(action.data.amount);
       newTransaction = {
         type: "deposit",
-        amount: action.data.amount,
+        amount,
         origin: null,
         destination: state.selectedAccount.id,
         date: action.data.date
@@ -44,7 +49,7 @@ function accountState(state = {}, action) {
         if (account.id === state.selectedAccount.id) {
           updatedAccount = {
             ...account,
-            balance: account.balance + action.data.amount
+            balance: account.balance + amount
           };
           return updatedAccount;
         }
