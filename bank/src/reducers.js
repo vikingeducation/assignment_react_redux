@@ -33,7 +33,7 @@ function dateFilter(state = { startDate: 0, endDate: Date.now() }, action) {
 }
 
 //Account reducer
-function accounts(state = initialAccountState, action) {
+function accountState(state = initialAccountState, action) {
   let updatedAccount;
   let newTransaction;
   let newAccounts;
@@ -156,6 +156,6 @@ function accounts(state = initialAccountState, action) {
 }
 
 export const bankApp = combineReducers({
-  accounts,
+  accountState,
   dateFilter
 });
