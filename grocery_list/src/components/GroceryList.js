@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import PurchasedFilters from './PurchasedFilters';
 import GroceryCard from "./GroceryCard";
 
 const GroceryList = ({ items, purchaseItem }) => {
@@ -17,6 +18,7 @@ const GroceryList = ({ items, purchaseItem }) => {
   return (
     <div className="container">
       <h2>Your Groceries</h2>
+      <PurchasedFilters />
       <div className="card-deck">
         {items.length ? groceryList : noGroceries}
       </div>
