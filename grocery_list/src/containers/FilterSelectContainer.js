@@ -3,7 +3,7 @@ import FilterSelect from "../components/FilterSelect";
 
 import { setCategoryFilter } from "../actions";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   let categories = ["SHOW_ALL"];
   state.items.forEach(item => {
     if (!categories.includes(item.category)) {
@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onChange: event => {
       dispatch(setCategoryFilter(event.target.value));

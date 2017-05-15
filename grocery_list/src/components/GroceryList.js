@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import PurchasedFilters from "./PurchasedFilters";
 import GroceryCard from "./GroceryCard";
 import FilterSelectContainer from "../containers/FilterSelectContainer";
+import SortContainer from '../containers/SortContainer';
 
 const groceryList = (items, purchaseItem) =>
   items.map(item => (
@@ -21,6 +22,7 @@ const GroceryList = ({ items, purchaseItem }) => {
       <h2>Your Groceries</h2>
       <PurchasedFilters />
       <FilterSelectContainer />
+      <SortContainer />
       <div className="card-deck">
         {items.length ? groceryList(items, purchaseItem) : noGroceries}
       </div>

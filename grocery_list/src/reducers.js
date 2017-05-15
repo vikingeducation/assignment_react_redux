@@ -47,7 +47,7 @@ function categoryFilter(state = "SHOW_ALL", action) {
   }
 }
 
-function sort(state = "NAME", action) {
+function sort(state = "NOT_SORTED", action) {
   switch (action.type) {
     case SET_SORT:
       return action.data;

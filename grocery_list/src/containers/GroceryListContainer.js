@@ -24,9 +24,21 @@ const filterItemsByCategory = (items, filter) => {
   }
 };
 
+const sortItems = (items, sort) => {
+  switch (sort) {
+    case 'NAME_ASC':
+      return items.sort((a, b) => a.name > b.name);
+    case 'NAME_DESC':
+      return items.sort((a, b) => a.name < b.name);
+    default:
+      return items;
+  }
+};
+
 const mapStateToProps = state => {
   let items = filterItemsByPurchased(state.items, state.purchasedFilter);
   items = filterItemsByCategory(items, state.categoryFilter);
+  items = sortItems(items, state.sort);
   return { items };
 };
 
