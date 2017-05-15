@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import PurchasedFilters from './PurchasedFilters';
+import PurchasedFilters from "./PurchasedFilters";
 import GroceryCard from "./GroceryCard";
+import FilterSelectContainer from "../containers/FilterSelectContainer";
 
 const GroceryList = ({ items, purchaseItem }) => {
   const groceryList = items.map(item => (
@@ -19,6 +20,7 @@ const GroceryList = ({ items, purchaseItem }) => {
     <div className="container">
       <h2>Your Groceries</h2>
       <PurchasedFilters />
+      <FilterSelectContainer />
       <div className="card-deck">
         {items.length ? groceryList : noGroceries}
       </div>
