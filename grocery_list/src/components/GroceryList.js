@@ -1,20 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import GroceryCard from './GroceryCard';
+import GroceryCard from "./GroceryCard";
 
-const GroceryList = ({items}) => {
-
+const GroceryList = ({ items, purchaseItem }) => {
   const groceryList = items.map(item => (
     <GroceryCard
       item={item}
       key={item.id}
+      onPurchaseClick={() => purchaseItem(item.id)}
     />
   ));
 
-  const noGroceries = (
-    <p className="text-muted">No items found</p>
-  );
+  const noGroceries = <p className="text-muted">No items found</p>;
 
   return (
     <div className="container">
@@ -27,7 +25,8 @@ const GroceryList = ({items}) => {
 };
 
 GroceryList.propTypes = {
-  items: PropTypes.array.isRequired
-}
+  items: PropTypes.array.isRequired,
+  purchaseItem: PropTypes.func.isRequired
+};
 
 export default GroceryList;
