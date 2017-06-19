@@ -11,64 +11,37 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 let items = [{
-    name: 'Grapes',
-    description: 'Green?',
-    quantity: 3,
-    category: 'Fruit',
-    purchased: "FALSE",
-    id: 1
-  }, {
-    name: 'Biscuits',
-    description: 'Only if on sale',
-    quantity: 3,
-    category: 'Snacks',
-    purchased: "FALSE",
-    id: 2
-  }, {
-    name: 'Tea',
-    description: 'Only if on sale',
-    quantity: 1,
-    category: 'Drinks',
-    purchased: 'TRUE',
-    id: 3
-  }
-
-]
+  name: 'Grapes',
+  description: 'Green?',
+  quantity: 3,
+  category: 'Fruit',
+  purchased: "FALSE",
+  id: 1
+}, {
+  name: 'Biscuits',
+  description: 'Only if on sale',
+  quantity: 3,
+  category: 'Snacks',
+  purchased: "FALSE",
+  id: 2
+}, {
+  name: 'Tea',
+  description: 'Only if on sale',
+  quantity: 1,
+  category: 'Drinks',
+  purchased: 'TRUE',
+  id: 3
+}]
 
 
 let store = createStore(
-    groceryApp, {
-      groceries: items,
-      // categories: ['All'],
-      categories: [{ ALL: 'All Categories' }, { Fruit: 'Fruit' }],
-      purchasedFilters: [{ ALL: 'All' }, { TRUE: 'Purchased' }, { FALSE: 'Unpurchased' }]
-        // purchasedFilters: ['All', 'Purchased', 'Unpurchased']
-    })
-  // let unsubscribe = store.subscribe(() => {
-  //   console.log(store.getState())
-  // })
-
-// store.dispatch(addItem({
-//   name: 'Grapes',
-//   description: 'Green?',
-//   amount: 3,
-//   category: 'Fruit'
-// }))
-
-// store.dispatch(addItem({
-//   name: 'Milk',
-//   description: 'Regular',
-//   amount: 1,
-//   category: 'Dairy'
-// }))
-
-// store.dispatch(purchaseItem('Grapes'))
-
-// store.dispatch(setPurchasedFilter('Purchased'))
-
-// store.dispatch(setCategoryFilter('NAME'))
-
-// unsubscribe()
+  groceryApp, {
+    groceries: items,
+    categories: [{ ALL: 'All Categories' }, { Fruit: 'Fruit' }],
+    purchasedFilters: [{ ALL: 'All' }, { TRUE: 'Purchased' }, { FALSE: 'Unpurchased' }],
+    orderBy: 'name',
+    order: 'ASC'
+  })
 
 
 ReactDOM.render(
@@ -78,4 +51,3 @@ ReactDOM.render(
   document.getElementById('root')
 
 );
-// registerServiceWorker();

@@ -24,9 +24,28 @@ const filterGroceries = (collection, category, purchased) => {
   ))
 }
 
+const sortGroceries = (collection, orderBy, order) => {
+  let sign = order === 'ASC' ? -1 : 1
+  return [...collection].sort(function(a, b) {
+    if (a[orderBy] > b[orderBy]) {
+      return -1 * sign
+    }
+    if (a[orderBy] < b[orderBy]) {
+      return 1 * sign
+    }
+    return 0
+  })
+}
+
+const sortAndFilter = (state) => {
+  let items = filterGroceries(state.groceries, state.categoryFilter, state.purchasedFilter)
+  return sortGroceries(items, state.orderBy, state.order)
+
+}
+
 const mapStateToProps = (state) => {
   return {
-    items: filterGroceries(state.groceries, state.categoryFilter, state.purchasedFilter)
+    items: sortAndFilter(state)
   }
 }
 

@@ -1,4 +1,4 @@
-import { ADD_ITEM, PURCHASE_ITEM, SET_CATEGORY_FILTER, SET_PURCHASED_FILTER, SET_ORDER, UPDATE_CATEGORIES, REMOVE_ITEM } from './actions'
+import { ADD_ITEM, PURCHASE_ITEM, SET_CATEGORY_FILTER, SET_PURCHASED_FILTER, SET_ORDERBY, UPDATE_CATEGORIES, REMOVE_ITEM, SET_ORDER } from './actions'
 import { combineReducers } from 'redux'
 
 
@@ -61,7 +61,7 @@ function categoryFilter(state = 'ALL', action) {
 
 function orderBy(state = 'name', action) {
   switch (action.type) {
-    case SET_ORDER:
+    case SET_ORDERBY:
       return action.data
     default:
       return state
@@ -73,11 +73,21 @@ function purchasedFilters(state = [], action) {
   return state
 }
 
+function order(state = 'ASC', action) {
+  switch (action.type) {
+    case SET_ORDER:
+      return (state === 'DESC' ? 'ASC' : 'DESC')
+    default:
+      return state
+  }
+}
+
 export const groceryApp = combineReducers({
   groceries,
   purchasedFilter,
   categoryFilter,
   orderBy,
   categories: updateCategories,
-  purchasedFilters: purchasedFilters
+  purchasedFilters: purchasedFilters,
+  order
 })

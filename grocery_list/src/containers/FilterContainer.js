@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
-import AddItem from '../components/AddItem'
-import { addItem, setCategoryFilter, setPurchasedFilter } from '../actions'
+import { setCategoryFilter, setPurchasedFilter } from '../actions'
 import serialize from 'form-serialize'
 import Filter from '../components/Filter'
 

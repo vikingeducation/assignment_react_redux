@@ -5,4 +5,3 @@ const FormGroup = ({ children }) => {
   {children}
     </div>
 }
-}

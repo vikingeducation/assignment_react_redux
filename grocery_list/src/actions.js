@@ -2,9 +2,11 @@ export const ADD_ITEM = 'ADD_ITEM'
 export const PURCHASE_ITEM = 'PURCHASE_ITEM'
 export const SET_PURCHASED_FILTER = 'SET_PURCHASED_FILTER'
 export const SET_CATEGORY_FILTER = 'SET_CATEGORY_FILTER'
-export const SET_ORDER = 'SET_ORDER'
+export const SET_ORDERBY = 'SET_ORDERBY'
 export const UPDATE_CATEGORIES = 'UPDATE_CATEGORIES'
 export const REMOVE_ITEM = 'REMOVE_ITEM'
+export const SET_ORDER = 'SET_ORDER'
+
 
 
 let id = 4;
@@ -54,6 +56,13 @@ export function updateCategories(category) {
 }
 
 export function setSortOrder(order) {
+  return {
+    type: SET_ORDERBY,
+    data: order
+  }
+}
+
+export function setOrder(order) {
   return {
     type: SET_ORDER,
     data: order
