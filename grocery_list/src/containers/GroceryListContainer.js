@@ -45,7 +45,7 @@ const sortAndFilter = (state) => {
 
 const mapStateToProps = (state) => {
   return {
-    items: sortAndFilter(state)
+    items: sortAndFilter(state),
   }
 }
 
@@ -55,8 +55,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(purchaseItem(parseInt(e.target.getAttribute('data-id'), 10)))
     },
     removeItem: (e) => {
-      const id = e.target.getAttribute('data-id')
-      dispatch(removeItem(parseInt(id), 10))
+      const id = parseInt(e.target.getAttribute('data-id'), 10)
+      dispatch(removeItem(id))
     }
   }
 }

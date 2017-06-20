@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+
 
 const TableHeader = ({ headers }) => {
   const cols = headers.map((header) => {

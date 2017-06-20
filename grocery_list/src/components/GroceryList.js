@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Table from './Table'
-import TableRow from './elements/TableRow'
 import TableBody from './elements/TableBody'
 import TableHeader from './elements/TableHeader'
 

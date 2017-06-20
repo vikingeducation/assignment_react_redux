@@ -6,6 +6,7 @@ export const SET_ORDERBY = 'SET_ORDERBY'
 export const UPDATE_CATEGORIES = 'UPDATE_CATEGORIES'
 export const REMOVE_ITEM = 'REMOVE_ITEM'
 export const SET_ORDER = 'SET_ORDER'
+export const REMOVE_CATEGORY = 'REMOVE_CATEGORY'
 
 
 
@@ -52,6 +53,13 @@ export function updateCategories(category) {
   return {
     type: UPDATE_CATEGORIES,
     data: category
+  }
+}
+
+export function removeCategory(id) {
+  return {
+    type: REMOVE_CATEGORY,
+    data: id
   }
 }
 

@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react'
-import TableRow from './TableRow'
+import React from 'react'
+import PropTypes from 'prop-types'
 import GroceryItem from './GroceryItem'
 
 const TableBody = ({ content, keys, purchaseItem, removeItem }) => {

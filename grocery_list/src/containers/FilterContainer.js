@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import { setCategoryFilter, setPurchasedFilter } from '../actions'
-import serialize from 'form-serialize'
 import Filter from '../components/Filter'
 
 const mapStateToProps = (state) => {
@@ -8,7 +7,8 @@ const mapStateToProps = (state) => {
     categoryFilter: state.categoryFilter,
     purchasedFilter: state.purchasedFilter,
     categories: state.categories,
-    purchasedFilters: state.purchasedFilters
+    purchasedFilters: state.purchasedFilters,
+    items: state.groceries
   }
 }
 

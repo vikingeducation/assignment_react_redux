@@ -18,7 +18,7 @@ class App extends Component {
       </div>
 
       </div>
-        <GroceryListContainer />
+        <GroceryListContainer/>
         <AddItemContainer />
       </div>
     );

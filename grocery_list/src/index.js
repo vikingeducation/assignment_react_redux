@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { groceryApp } from './reducers';
-// import { addItem, purchaseItem, setCategoryFilter, setPurchasedFilter } from './actions';
 import App from './components/App';
-// import registerServiceWorker from './registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -37,7 +35,7 @@ let items = [{
 let store = createStore(
   groceryApp, {
     groceries: items,
-    categories: [{ ALL: 'All Categories' }, { Fruit: 'Fruit' }],
+    // categories: [{ ALL: 'All Categories' }, { Fruit: 'Fruit' }],
     purchasedFilters: [{ ALL: 'All' }, { TRUE: 'Purchased' }, { FALSE: 'Unpurchased' }],
     orderBy: 'name',
     order: 'ASC'

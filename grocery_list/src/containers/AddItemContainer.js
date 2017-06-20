@@ -3,6 +3,8 @@ import AddItem from '../components/AddItem'
 import { addItem, updateCategories } from '../actions'
 import serialize from 'form-serialize'
 
+
+
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (e) => {

@@ -1,10 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 import Form from './Form'
 import Label from './elements/Label'
 import Input from './elements/Input'
 import FormGroup from './elements/FormGroup'
 
 const AddItem = ({ onSubmit }) => {
+
 
   return (
     <section id="add-item">
@@ -20,7 +22,7 @@ const AddItem = ({ onSubmit }) => {
     </FormGroup>
      <FormGroup>
       <Label text="Category" />
-      <Input name="category"/>
+      <Input type="text" name="categories" />
     </FormGroup>
     <FormGroup>
       <Label text="Description" />
@@ -35,4 +37,9 @@ const AddItem = ({ onSubmit }) => {
     </section>
   )
 }
+
+AddItem.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+}
+
 export default AddItem

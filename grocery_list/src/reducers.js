@@ -1,8 +1,9 @@
-import { ADD_ITEM, PURCHASE_ITEM, SET_CATEGORY_FILTER, SET_PURCHASED_FILTER, SET_ORDERBY, UPDATE_CATEGORIES, REMOVE_ITEM, SET_ORDER } from './actions'
+import { ADD_ITEM, PURCHASE_ITEM, SET_CATEGORY_FILTER, SET_PURCHASED_FILTER, SET_ORDERBY, REMOVE_ITEM, SET_ORDER } from './actions'
 import { combineReducers } from 'redux'
 
 
 function groceries(state = [], action) {
+  console.log(action.data)
   switch (action.type) {
     case ADD_ITEM:
       return [
@@ -28,18 +29,25 @@ function groceries(state = [], action) {
   }
 }
 
-function updateCategories(state = ['ALL'], action) {
-  switch (action.type) {
-    case UPDATE_CATEGORIES:
-      let newState = [...state]
-      if (state.indexOf(action.data) < 0 && action.data) {
-        newState.push(action.data)
-      }
-      return newState
-    default:
-      return state
-  }
-}
+// Until we figure out how to access different states from a single store,
+// it is pointless to try to store available categories
+// in a state, and programmatically update them as users add and remove categories.
+// So instead, we use a for loop in our Filter.js for now 
+// function categories(state = [], action) {
+//   let newState = [...state]
+//   switch (action.type) {
+//     case UPDATE_CATEGORIES:
+//       if (newState.indexOf(action.data) < 0 && action.data) {
+//         newState.push(action.data)
+//       }
+//       return newState
+//     case REMOVE_CATEGORY:
+//       console.log('figure out how to access different state in store')
+//       return newState
+//     default:
+//       return state
+//   }
+// }
 
 function purchasedFilter(state = 'ALL', action) {
   switch (action.type) {
@@ -69,7 +77,7 @@ function orderBy(state = 'name', action) {
 }
 
 function purchasedFilters(state = [], action) {
-  // this should not do anything
+  // this doesn't do anything
   return state
 }
 
@@ -87,7 +95,6 @@ export const groceryApp = combineReducers({
   purchasedFilter,
   categoryFilter,
   orderBy,
-  categories: updateCategories,
   purchasedFilters: purchasedFilters,
   order
 })
