@@ -3,6 +3,7 @@ export const DEPOSIT = 'DEPOSIT'
 export const WITHDRAWAL = 'WITHDRAWAL'
 export const TRANSFER = 'TRANSFER'
 export const FILTER = 'FILTER'
+export const CLEAR_FILTERED = 'CLEAR_FILTERED'
 
 
 export function setAccount(id) {
@@ -43,5 +44,11 @@ export function filter(start, end) {
       start,
       end
     }
+  }
+}
+
+export function clearFiltered() {
+  return {
+    type: CLEAR_FILTERED
   }
 }

@@ -1,4 +1,4 @@
-import { SET_ACCOUNT, DEPOSIT, WITHDRAWAL, TRANSFER, FILTER } from './actions'
+import { SET_ACCOUNT, DEPOSIT, WITHDRAWAL, TRANSFER, FILTER, CLEAR_FILTERED } from './actions'
 
 let transactionId = 1
 
@@ -40,14 +40,18 @@ export function bank(state = {}, action) {
       }
 
     case FILTER:
-      let transactions = account.transactions
-      let filtered = transactions.filter((transaction) => {
-        return transaction.date >= action.data.start && transaction.date <= action.data.end
-      })
+    
       return {
         ...state,
-        filtered: filtered
+        filterDates: {start: action.data.start, end: action.data.end}
       }
+
+      case CLEAR_FILTERED:
+      return {
+        ...state,
+        filterDates: {start: null, end: null}
+      }
+
     default:
       return state
   }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { setAccount } from '../actions'
+import { setAccount, clearFiltered } from '../actions'
 import SetActiveAccount from '../components/SetActiveAccount'
 
 const mapStateToProps = (state) => {
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
     setAccount: (e) => {
       let id = parseInt(e.target.value, 10)
       dispatch(setAccount(id))
+      dispatch(clearFiltered())
     }
   }
 }
