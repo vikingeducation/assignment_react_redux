@@ -1,20 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilterContainer from "../containers/FilterContainer";
-/*
-  FOR TOMORROW
-  
-  Add html input datetime for start time and end time
-  So, convert the html stuff to UTC if not already
-  set it as UTC on state (and change defaults as necessary)
-  then whenever transaction list is being processed, simply do
-  "getVisibleTransactions(transactions, starttime, end time)"
-  quick easy number comparison >= <=
-  and baddabing baddaboom you iz done with this project
-
-  should take like half an hour I think
-*/
-
 
 const TransactionHistory = ({transactions}) => {
   const transactionList = transactions.map(transaction => {
