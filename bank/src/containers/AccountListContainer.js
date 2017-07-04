@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import AccountList from "../components/AccountList";
+import { calculateBalances } from "../helpers";
 
 const mapStateToProps = state => {
   return {
-    accountList: state.accounts
+    accountList: calculateBalances(state.accounts, state.transactions)
   }
 };
 

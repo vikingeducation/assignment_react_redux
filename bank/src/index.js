@@ -39,20 +39,15 @@ ReactDOM.render(
 );
 
 /*
-  To do:
-  first, initialize an array of accounts. we don't need to actually do anything to do them EXCEPT update account, so let's have an
-  action/reducer that does that
-
-  then we have a table with accounts, and a component at the top of screen that has current account (defaults to 1)
-  then just simply some buttons that deposit/withrdraw an input[type=number]
-  or transfer to other account (select list of account usernames except for current user)
-
-  that's straightforward
-
-  then date parser to filter, same as last project
-
-  ok this is super similar to current project actually
-  just need to "update" accounts properly!
-
-
+  TO DO:
+  - Add forms to account details:
+    - Input + Deposit Button
+    - Input + Withdraw Button
+    - Input + Select + Transfer Button
+    
+    -At first make these only "create" transactions
+    -THEN, we want to make a dispatch in that onClick function
+      -> have it update the account related to the currenct transaction
+  
+  -Add date filtering
 */

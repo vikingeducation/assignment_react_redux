@@ -38,4 +38,8 @@ const AccountList = ({accountList}) => {
   );
 };
 
+AccountList.propTypes = {
+  accountList: PropTypes.array.isRequired
+};
+
 export default AccountList;
