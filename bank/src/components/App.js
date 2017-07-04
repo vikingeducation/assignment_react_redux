@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "./elements/Header";
 import AccountListContainer from "../containers/AccountListContainer";
 import AccountDetailsContainer from "../containers/AccountDetailsContainer";
+import TransactionHistoryContainer from "../containers/TransactionHistoryContainer";
 
 class App extends Component {
   render() {
@@ -13,6 +14,9 @@ class App extends Component {
           <div className="row">
           <AccountListContainer />
           <AccountDetailsContainer />
+          </div>
+          <div className="row">
+            <TransactionHistoryContainer />
           </div>
         </div>
       </div>

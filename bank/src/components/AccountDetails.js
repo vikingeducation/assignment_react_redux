@@ -18,7 +18,7 @@ const AccountDetails = ({selectedAccount, accounts, onDepositSubmit, onWithdrawS
         <div className="col-md-4">
           <form onSubmit={onDepositSubmit}>
             <InputGroup name="amount" labelText="Deposit Amount">
-              <Input name="amount" />
+              <Input name="amount" type="number" min="0.01" step="0.01"/>
             </InputGroup>
             <input type="hidden" value={selectedAccount.id} name="owner" />
             <Button type="submit" color="success">Deposit</Button>
@@ -26,8 +26,8 @@ const AccountDetails = ({selectedAccount, accounts, onDepositSubmit, onWithdrawS
         </div>
         <div className="col-md-4">
           <form onSubmit={onWithdrawSubmit}>
-            <InputGroup name="amount" labelText="Withdraw Amount">
-              <Input name="amount" />
+            <InputGroup name="amount" labelText="Withdrawal Amount">
+              <Input name="amount" type="number" min="0.01" step="0.01"/>
             </InputGroup>
             <input type="hidden" value={selectedAccount.id} name="owner" />
             <Button type="submit" color="warning">Withdraw</Button>
@@ -36,7 +36,7 @@ const AccountDetails = ({selectedAccount, accounts, onDepositSubmit, onWithdrawS
         <div className="col-md-4">
           <form onSubmit={onTransferSubmit}>
             <InputGroup name="amount" labelText="Transfer Amount">
-              <Input name="amount" />
+              <Input name="amount" type="number" min="0.01" step="0.01"/>
             </InputGroup>
             <InputGroup name="receiver" labelText="Transfer Recipient">
               <Select name="receiver" options={[...accounts]} />
