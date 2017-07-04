@@ -26,3 +26,7 @@ body {
 .add-product {
   margin-bottom: 5em;
 }
+
+table td {
+  text-transform: capitalize
+}
