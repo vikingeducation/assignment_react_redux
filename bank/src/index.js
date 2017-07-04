@@ -37,17 +37,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-/*
-  TO DO:
-  - Add forms to account details:
-    - Input + Deposit Button
-    - Input + Withdraw Button
-    - Input + Select + Transfer Button
-    
-    -At first make these only "create" transactions
-    -THEN, we want to make a dispatch in that onClick function
-      -> have it update the account related to the currenct transaction
-  
-  -Add date filtering
-*/

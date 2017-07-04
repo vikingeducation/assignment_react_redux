@@ -1,9 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import InputGroup from "./elements/InputGroup";
-import Input from "./elements/Input";
-import Button from "./elements/Button";
-import Select from "./elements/Select";
+import FilterContainer from "../containers/FilterContainer";
+/*
+  FOR TOMORROW
+  
+  Add html input datetime for start time and end time
+  So, convert the html stuff to UTC if not already
+  set it as UTC on state (and change defaults as necessary)
+  then whenever transaction list is being processed, simply do
+  "getVisibleTransactions(transactions, starttime, end time)"
+  quick easy number comparison >= <=
+  and baddabing baddaboom you iz done with this project
+
+  should take like half an hour I think
+*/
+
 
 const TransactionHistory = ({transactions}) => {
   const transactionList = transactions.map(transaction => {
@@ -20,6 +31,8 @@ const TransactionHistory = ({transactions}) => {
   });
   return (
     <div className="col-md-12">
+      <h3>Transaction History</h3>
+      <FilterContainer />
       <table className="table table-striped">
         <thead>
           <tr>

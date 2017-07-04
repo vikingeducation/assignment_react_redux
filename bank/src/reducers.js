@@ -31,8 +31,8 @@ function transactions(state = [], action) {
 };
 
 let defaultTransactionsFilter = {
-  START: "JAN-01-1900",
-  END: "JUL-1-2017"
+  start: 1420074000000,
+  end: 1514768400000
 };
 
 function transactionsFilter(state = defaultTransactionsFilter, action) {

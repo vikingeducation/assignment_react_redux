@@ -4,6 +4,8 @@ import { purchaseProduct } from "../actions";
 
 const sortProducts = (products, sortFilter) => {
   // spread used in order to get react to re-render
+  // otherwise, reference does not change and sorting w/o filters does not
+  // trigger re-render
   let results = [...products];
   switch (sortFilter) {
     case "SORT_BY_NAME_ASC":

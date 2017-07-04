@@ -1,9 +1,19 @@
 import { connect } from "react-redux";
 import TransactionHistory from "../components/TransactionHistory";
 
+const getVisibleTransactions = (transactions, filter) => {
+  let results = [];
+  transactions.forEach(transaction => {
+    if (transaction.timestamp >= filter.start && transaction.timestamp <= filter.end) {
+      results.push(transaction);
+    }
+  });
+  return results;
+};
+
 const mapStateToProps = state => {
   return {
-    transactions: state.transactions
+    transactions: getVisibleTransactions(state.transactions, state.transactionsFilter)
   }
 };
 
