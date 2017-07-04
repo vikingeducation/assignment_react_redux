@@ -5,6 +5,7 @@ import {
   WITHDRAW_MONEY, 
   TRANSFER_MONEY,
   SET_TRANSACTION_FILTER,
+  UPDATE_BALANCE
 } from './actions';
 
 function transactions(state = [], action) {
@@ -52,8 +53,25 @@ function selectedAccount(state = 1, action) {
   }
 };
 
+
+
+function accounts(state = [], action) {
+  switch(action.type) {
+    case UPDATE_BALANCE:
+      return state.map(account => {
+        if (account.id === action.data.id) {
+          return action.data;
+        }
+        return account;
+      });
+    default:
+      return state;
+  }
+}
+
 export const bankApp = combineReducers({
   transactions,
   transactionsFilter,
-  selectedAccount
+  selectedAccount,
+  accounts
 });

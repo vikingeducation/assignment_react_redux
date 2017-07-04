@@ -43,7 +43,6 @@ let store = createStore(
   },
   reduxDebugger
 );
-console.log(process.env.NODE_ENV);
 
 ReactDOM.render(
   <Provider store={store}>
