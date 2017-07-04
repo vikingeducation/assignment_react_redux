@@ -14,7 +14,7 @@ class App extends Component {
           <h1>Grocery List App</h1>
           <Filters categories={categories} />
           <GroceryListContainer />
-          <AddProductContainer categories={categories}/>
+          <AddProductContainer categories={categories} />
         </div>
       </div>
     );

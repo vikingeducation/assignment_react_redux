@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Input from "./elements/Input";
 import InputGroup from "./elements/InputGroup";
 import Button from "./elements/Button";
@@ -30,6 +31,10 @@ const AddProduct = ({ categories, onSubmit }) => {
       </form>
     </div>
   );
+};
+
+AddProduct.propTypes = {
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default AddProduct;

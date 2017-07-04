@@ -19,9 +19,11 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state, ownProps) => {
   return {
     categories: ownProps.categories
-  }
+  };
 };
 
-const AddProductContainer = connect(mapStateToProps, mapDispatchToProps)(AddProduct);
+const AddProductContainer = connect(mapStateToProps, mapDispatchToProps)(
+  AddProduct
+);
 
 export default AddProductContainer;

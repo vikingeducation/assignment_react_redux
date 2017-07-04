@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import FilterLink from "../components/FilterLink";
-import { 
+import {
   setPurchasedFilter,
   setCategoryFilter,
-  setSortFilter 
+  setSortFilter
 } from "../actions";
 
 const mapStateToProps = (state, ownProps) => {

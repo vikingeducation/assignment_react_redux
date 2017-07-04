@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Select = props => {
   const { options, ...restOfProps } = props;
@@ -13,6 +14,10 @@ const Select = props => {
       {optionElements}
     </select>
   );
+};
+
+Select.propTypes = {
+  options: PropTypes.array
 };
 
 export default Select;

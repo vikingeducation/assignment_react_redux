@@ -2,12 +2,11 @@ import { connect } from "react-redux";
 import GroceryList from "../components/GroceryList";
 import { purchaseProduct } from "../actions";
 
-
 const sortProducts = (products, sortFilter) => {
   // spread used in order to get react to re-render
   let results = [...products];
-  switch(sortFilter) {
-    case "SORT_BY_NAME_ASC": 
+  switch (sortFilter) {
+    case "SORT_BY_NAME_ASC":
       results.sort((a, b) => {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;
@@ -17,7 +16,7 @@ const sortProducts = (products, sortFilter) => {
         return 0;
       });
       return results;
-    case "SORT_BY_NAME_DESC": 
+    case "SORT_BY_NAME_DESC":
       results.sort((a, b) => {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;
@@ -27,7 +26,7 @@ const sortProducts = (products, sortFilter) => {
         return 0;
       });
       return results.reverse();
-    case "SORT_BY_DESCRIPTION_ASC": 
+    case "SORT_BY_DESCRIPTION_ASC":
       results.sort((a, b) => {
         if (a.description.toLowerCase() < b.description.toLowerCase()) {
           return -1;
@@ -37,7 +36,7 @@ const sortProducts = (products, sortFilter) => {
         return 0;
       });
       return results;
-    case "SORT_BY_DESCRIPTION_DESC": 
+    case "SORT_BY_DESCRIPTION_DESC":
       results.sort((a, b) => {
         if (a.description.toLowerCase() < b.description.toLowerCase()) {
           return -1;
@@ -47,7 +46,7 @@ const sortProducts = (products, sortFilter) => {
         return 0;
       });
       return results.reverse();
-    default: 
+    default:
       return results;
   }
 };
@@ -61,7 +60,7 @@ const filterByCategory = (products, category) => {
 };
 
 const filterByPurchased = (products, filter) => {
-  switch(filter) {
+  switch (filter) {
     case "SHOW_ALL":
       return products;
     case "SHOW_PURCHASED":

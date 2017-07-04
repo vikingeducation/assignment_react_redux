@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ProductDetail from "./elements/ProductDetail";
 import PurchaseButton from "./PurchaseButton";
 
@@ -7,7 +8,7 @@ const GroceryCard = ({ groceryItem, onPurchaseClick }) => {
   return (
     <div className="col-md-4">
       <div className="col-md-12 grocery-card well">
-        <img src={image} className="img-responsive" alt="Image of product" />
+        <img src={image} className="img-responsive" alt="Product" />
         <ProductDetail type="Name" data={name} />
         {category ? <ProductDetail type="Category" data={category} /> : null}
         <ProductDetail type="Description" data={description} />
@@ -19,6 +20,10 @@ const GroceryCard = ({ groceryItem, onPurchaseClick }) => {
       </div>
     </div>
   );
+};
+
+GroceryCard.propTypes = {
+  groceryItem: PropTypes.object
 };
 
 export default GroceryCard;

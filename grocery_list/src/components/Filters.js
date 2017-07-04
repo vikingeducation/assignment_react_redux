@@ -42,11 +42,17 @@ const Filters = ({ categories }) => {
         Sort by name (descending)
       </FilterLinkContainer>
       {", "}
-      <FilterLinkContainer filterType="sortFilter" filter="SORT_BY_DESCRIPTION_ASC">
+      <FilterLinkContainer
+        filterType="sortFilter"
+        filter="SORT_BY_DESCRIPTION_ASC"
+      >
         Sort by description (ascending)
       </FilterLinkContainer>
       {", "}
-      <FilterLinkContainer filterType="sortFilter" filter="SORT_BY_DESCRIPTION_DESC">
+      <FilterLinkContainer
+        filterType="sortFilter"
+        filter="SORT_BY_DESCRIPTION_DESC"
+      >
         Sort by description (descending)
       </FilterLinkContainer>
       {", "}

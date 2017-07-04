@@ -1,8 +1,8 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import GroceryCard from "./GroceryCard";
 
 const GroceryList = ({ groceryList, purchaseProduct }) => {
-  console.log('FIRED');
   const groceryCards = groceryList.map(groceryItem =>
     <GroceryCard
       groceryItem={groceryItem}
