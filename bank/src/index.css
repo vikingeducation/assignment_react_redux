@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.grocery-card {
+  margin-bottom: 2em;
+  min-height: 550px;
+}
+
+.grocery-card img {
+  margin: .5em 0;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.add-product {
+  margin-bottom: 5em;
+}
+
+table td {
+  text-transform: capitalize
+}
