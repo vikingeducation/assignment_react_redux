@@ -12,8 +12,8 @@ const AccountDetails = ({selectedAccount, accounts, onDepositSubmit, onWithdrawS
       <div className="row well">
         <div className="col-md-12">
           <h3>Account: #{id}</h3>
-          <h5>Username: {username}</h5>
-          <h5>Balance: ${balance}</h5>
+          <h4>Username: {username}</h4>
+          <h4>Balance: ${balance}</h4>
         </div>
         <div className="col-md-4">
           <form onSubmit={onDepositSubmit}>
