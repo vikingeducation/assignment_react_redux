@@ -12,7 +12,7 @@ const CATEGORY_NAMES = [
   "wine"
 ];
 
-const GroceryForm = ({ onSubmit }) =>
+const GroceryForm = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>
     <FormItem
       name="Name"
@@ -28,7 +28,8 @@ const GroceryForm = ({ onSubmit }) =>
         required: "true",
         type: "number",
         name: "amount",
-        defaultValue: "1"
+        defaultValue: "1",
+        min: "0"
       }}
     />
     <FormItem
@@ -39,16 +40,17 @@ const GroceryForm = ({ onSubmit }) =>
         name: "category"
       }}
     >
-      {CATEGORY_NAMES.map(category =>
+      {CATEGORY_NAMES.map(category => (
         <option key={category} value={category}>
           {category}
         </option>
-      )}
+      ))}
     </FormItem>
 
     <Button type="submit" bsStyle="primary">
       Submit
     </Button>
-  </form>;
+  </form>
+);
 
 export default GroceryForm;
