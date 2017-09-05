@@ -22,22 +22,28 @@ const filterPurchased = state => {
 
 const filterCategory = state => {
   if (state.categoryFilter.length < 1) return state;
-  return state.items.filter(item => /state.categoryFilter/.test(item.category));
+  let filteredItems;
+  let reggie = new RegExp(`${state.categoryFilter}`)
+  filteredItems = state.items.filter(item => reggie.test(item.category));
+  return {
+    ...state,
+    items: filteredItems,
+  }
 };
 
-const revealPurchase = state => {
-  const items = state.items.map(item => {
-    return {
-      ...item,
-      purchased: item.purchased ? "purchased" : "not purchased"
-    };
-  });
-  return { ...state, items };
-};
+// const revealPurchase = state => {
+//   const items = state.items.map(item => {
+//     return {
+//       ...item,
+//       purchased: item.purchased ? "purchased" : "not purchased"
+//     };
+//   });
+//   return { ...state, items };
+// };
 
 const mapStateToProps = state => {
   return {
-    groceryItems: revealPurchase(filterCategory(filterPurchased(state))).items
+    groceryItems: filterCategory(filterPurchased(state)).items
   };
 };
 

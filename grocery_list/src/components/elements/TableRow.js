@@ -6,7 +6,7 @@ const TableRow = ({ props }) => {
   const data = Object.keys(props).map(key => {
     return (
       <td>
-        {props[key]}
+        {props[key].toString()}
       </td>
     );
   });

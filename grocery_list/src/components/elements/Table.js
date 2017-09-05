@@ -3,6 +3,7 @@ import TableRow from "./TableRow";
 import TableHead from "./TableHead";
 
 const Table = ({ dataArray }) => {
+  if (dataArray.length<1) return null;
   const tableRows = dataArray.map(dataObject =>
     <TableRow props={dataObject} />
   );
