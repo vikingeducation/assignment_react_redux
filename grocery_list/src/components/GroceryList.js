@@ -1,14 +1,14 @@
 import React from "react";
-import GroceryForm from "./GroceryForm";
+import AddGroceryContainer from "../containers/AddGroceryContainer";
 import Grocery from "./Grocery";
 
-export default props => {
+const GroceryList = props => {
   console.log(props, "show props");
   return (
     <div>
       <div className="grocery-list col-sm-6">
         <h3>Add a grocery</h3>
-        <GroceryForm {...props} />
+        <AddGroceryContainer />
       </div>
 
       <div className="col-sm-6">
@@ -22,3 +22,5 @@ export default props => {
     </div>
   );
 };
+
+export default GroceryList;

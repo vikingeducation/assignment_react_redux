@@ -1,7 +1,7 @@
 import React from "react";
 import GroceryList from "./GroceryList";
 
-export default props => {
+const App = props => {
   console.log(props, "passed down?");
   return (
     <div className="container">
@@ -10,3 +10,5 @@ export default props => {
     </div>
   );
 };
+
+export default App;
