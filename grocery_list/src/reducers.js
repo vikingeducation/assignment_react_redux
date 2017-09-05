@@ -1,15 +1,17 @@
+import { combineReducers } from 'redux';
+
 const initialState = {
-	categoryFilter: "all",
-	purchasedFilter: "ALL",
-	sortType: "name",
+	categoryFilter: 'all',
+	purchasedFilter: 'ALL',
+	sortType: 'name',
 	items: []
 };
 
-const ADD_ITEM = "ADD_ITEM";
-const PURCHASE_ITEM = "PURCHASE_ITEM";
-const SET_PURCHASED_FILTER = "SET_PURCHASED_FILTER";
-const SET_CATEGORY_FILTER = "SET_CATEGORY_FILTER";
-const SET_SORT_TYPE = "SET_SORT_TYPE";
+const ADD_ITEM = 'ADD_ITEM';
+const PURCHASE_ITEM = 'PURCHASE_ITEM';
+const SET_PURCHASED_FILTER = 'SET_PURCHASED_FILTER';
+const SET_CATEGORY_FILTER = 'SET_CATEGORY_FILTER';
+const SET_SORT_TYPE = 'SET_SORT_TYPE';
 
 function groceryApp(state = initialState, action) {
 	switch (action.type) {
@@ -52,4 +54,7 @@ function groceryApp(state = initialState, action) {
 	}
 }
 
-export default groceryApp;
+export const grocery = combineReducers({
+	groceryApp
+});
+
