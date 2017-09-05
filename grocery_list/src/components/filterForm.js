@@ -14,6 +14,13 @@ export default props => {
 				name="categoryFilter"
 				options={['All', 'Dairy', 'Bakery']}
 				prettyName="Filter Categories"
+				onFilter={props.onFilterCategory}
+			/>
+			<GroceryFilter
+				name="sort"
+				options={['Name', 'Description']}
+				prettyName="Sort By"
+				onFilter={props.onSort}
 			/>
 		</form>
 	);

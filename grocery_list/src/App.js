@@ -49,6 +49,7 @@ class App extends Component {
     };
 
     this.props.actions.addItem(grocery);
+    this.props.actions.filterPurchases();
   };
 
   onPurchase = e => {
@@ -63,13 +64,27 @@ class App extends Component {
     this.props.actions.filterPurchases();
   };
 
+  onFilterCategory = e => {
+    this.props.actions.setCategoryFilter(e.target.value);
+    this.props.actions.filterPurchases();
+  };
+
+  onSort = e => {
+    this.props.actions.setSortType(e.target.value);
+    this.props.actions.filterPurchases();
+  };
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <h2>Welcome to Your Shopping Cart!</h2>
         </div>
-        <FilterForm onFilterPurchase={this.onFilterPurchase} />
+        <FilterForm
+          onFilterPurchase={this.onFilterPurchase}
+          onFilterCategory={this.onFilterCategory}
+          onSort={this.onSort}
+        />
         <GroceryList
           groceries={this.props.filteredItems}
           onSubmit={this.onPurchase}
