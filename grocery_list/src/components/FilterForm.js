@@ -2,10 +2,21 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import FormItem from "./FormItem";
 
-const GroceryForm = ({ onNewGrocery, categories, categoryFilter }) => (
-  <form onSubmit={onNewGrocery}>
+const purchaseOpts = {
+  All: "null",
+  Purchased: "true",
+  "Not Purchased": "false"
+};
+
+const FilterForm = ({
+  onFilterGrocery,
+  categories,
+  categoryFilter,
+  purchaseFilter
+}) => (
+  <form onSubmit={onFilterGrocery}>
     <FormItem
-      name="category"
+      name="Category"
       attrs={{
         required: "true",
         componentClass: "select",
@@ -20,10 +31,26 @@ const GroceryForm = ({ onNewGrocery, categories, categoryFilter }) => (
       ))}
     </FormItem>
 
+    <FormItem
+      name="Purchased"
+      attrs={{
+        required: "true",
+        componentClass: "select",
+        name: "purchased",
+        defaultValue: purchaseFilter
+      }}
+    >
+      {Object.entries(purchaseOpts).map(([opt, val]) => (
+        <option key={opt} value={val}>
+          {opt}
+        </option>
+      ))}
+    </FormItem>
+
     <Button type="submit" bsStyle="primary">
       Filter
     </Button>
   </form>
 );
 
-export default GroceryForm;
+export default FilterForm;

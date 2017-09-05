@@ -57,7 +57,7 @@ function groceries(state = [], action) {
   }
 }
 
-function purchaseFilter(state = "ALL", action) {
+function purchaseFilter(state = "All", action) {
   switch (action.type) {
     case SET_PURCHASE_FILTER:
       return action.data;
