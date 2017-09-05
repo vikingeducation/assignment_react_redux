@@ -13,9 +13,9 @@ const ItemList = ({ groceries }) => {
   });
   console.log("item list sees ", groceries);
   return (
-    <div className="row">
+    <div className="">
       <h1>Groceries: </h1>
-      <div className="card-deck col-12">
+      <div className="card-deck">
         {items}
       </div>
       <p>

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-// import serialize from "form-serialize";
+import serialize from "form-serialize";
 
 import { addItem } from "../actions";
 import NewItem from "../components/NewItem";
