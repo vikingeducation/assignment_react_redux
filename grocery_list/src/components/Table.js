@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PropTypes } from "react";
 import TableRow from "./elements/TableRow";
 import TableHead from "./elements/TableHead";
 
@@ -8,13 +8,16 @@ const Table = ({ groceryItems }) => {
 
   return (
     <table class="table">
-      <thead />
-
+      {tableHead}
       <tbody>
         {tableRows}
       </tbody>
     </table>
   );
 };
+
+Table.propTypes = {
+
+}
 
 export default Table;

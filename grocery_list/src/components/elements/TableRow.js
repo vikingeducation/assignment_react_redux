@@ -1,4 +1,4 @@
-import react from "React";
+import React from "react";
 
 const TableRow = ({ props }) => {
   // const { name, description, amount, category, purchased } = props;

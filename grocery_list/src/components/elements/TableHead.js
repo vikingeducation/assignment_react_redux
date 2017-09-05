@@ -1,4 +1,4 @@
-import react from "React";
+import React from "react";
 
 const TableHead = ({ props }) => {
   const data = Object.keys(props).map(key =>
