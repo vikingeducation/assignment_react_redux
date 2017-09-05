@@ -1,12 +1,8 @@
 import React from "react";
 import { Panel } from "react-bootstrap";
-//
-export default ({ id, name, description, amount, category, purchased }) => {
-  description = !description.length
-    ? ""
-    : <p>
-        {description}
-      </p>;
+
+const Grocery = ({ id, name, description, amount, category, purchased }) => {
+  description = !description.length ? "" : <p>{description}</p>;
   return (
     <Panel bsStyle="primary" header={name}>
       {description}
@@ -19,3 +15,5 @@ export default ({ id, name, description, amount, category, purchased }) => {
     </Panel>
   );
 };
+
+export default Grocery;

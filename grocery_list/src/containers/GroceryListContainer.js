@@ -1,7 +1,7 @@
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import * as actions from "../actions";
+import { setCategoryFilter } from "../actions";
 import GroceryList from "../components/GroceryList";
+import serialize from "form-serialize";
 
 const mapStateToProps = state => {
   return {
@@ -14,7 +14,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    onSubmit: e => {
+      e.preventDefault();
+      const data = serialize(e.target, { hash: true });
+      console.log(data);
+      dispatch(setCategoryFilter(data.category));
+    }
   };
 };
 
