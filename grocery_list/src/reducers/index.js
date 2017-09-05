@@ -1,13 +1,13 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
 import {
-	ACTION_ADD_ITEM,
-	ACTION_ADD_CATEGORY,
-	ACTION_PURCHASE_ITEM,
-	SET_PURCHASED_FILTER,
-	SET_CATEGORY_FILTER,
-	SET_SORT_BY
-} from '../actions';
+  ACTION_ADD_ITEM,
+  ACTION_ADD_CATEGORY,
+  ACTION_PURCHASE_ITEM,
+  SET_PURCHASED_FILTER,
+  SET_CATEGORY_FILTER,
+  SET_SORT_BY
+} from "../actions";
 
 /*
  * items
@@ -15,58 +15,52 @@ import {
  */
 
 const initialState = {
-	items: [],
-	categories: []
+  items: [],
+  categories: []
 };
 
-const groceries = (state = initialState, action) => {
-	switch (action.type) {
-		case ACTION_ADD_ITEM:
-			return {
-				...state,
-				items: [...state.items, action.data]
-			};
+const groceries = (groceries = [], action) => {
+  switch (action.type) {
+    case ACTION_ADD_ITEM:
+      return [...groceries, action.data];
 
-		case ACTION_PURCHASE_ITEM:
-			const items = state.items.map(item => {
-				if (item.id === action.data) {
-					item.purchased = true;
-				}
-				return item;
-			});
+    case ACTION_PURCHASE_ITEM:
+      const items = groceries.map(item => {
+        if (item.id === action.data) {
+          item.purchased = true;
+        }
+        return item;
+      });
 
-			return {
-				...state,
-				items
-			};
+      return items;
 
-		default:
-			return state;
-	}
+    default:
+      return groceries;
+  }
 };
 
 export const categories = (categories = [], action) => {
-	switch (action.type) {
-		case ACTION_ADD_CATEGORY:
-			return [...categories, action.data];
-		default:
-			return categories;
-	}
+  switch (action.type) {
+    case ACTION_ADD_CATEGORY:
+      return [...categories, action.data];
+    default:
+      return categories;
+  }
 };
 
-export const purchasedFilter = (state = 'SHOW_ALL', action) =>
-	action.type === SET_PURCHASED_FILTER ? action.data : state;
-export const categoryFilter = (state = 'SHOW_ALL', action) =>
-	action.type === SET_CATEGORY_FILTER ? action.data : state;
-export const sortBy = (state = 'Id', action) =>
-	action.type === SET_SORT_BY ? action.data : state;
+export const purchasedFilter = (state = "SHOW_ALL", action) =>
+  action.type === SET_PURCHASED_FILTER ? action.data : state;
+export const categoryFilter = (state = "SHOW_ALL", action) =>
+  action.type === SET_CATEGORY_FILTER ? action.data : state;
+export const sortBy = (state = "Id", action) =>
+  action.type === SET_SORT_BY ? action.data : state;
 
 const groceriesApp = combineReducers({
-	groceries,
-	categories,
-	purchasedFilter,
-	categoryFilter,
-	sortBy
+  groceries,
+  categories,
+  purchasedFilter,
+  categoryFilter,
+  sortBy
 });
 
 export default groceriesApp;
