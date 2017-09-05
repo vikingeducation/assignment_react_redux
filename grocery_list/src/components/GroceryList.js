@@ -4,7 +4,6 @@ import Grocery from "./Grocery";
 import FilterForm from "./FilterForm";
 
 const GroceryList = props => {
-  console.log(props, "show props");
   return (
     <div>
       <div className="grocery-list col-sm-6">
@@ -14,10 +13,8 @@ const GroceryList = props => {
 
       <div className="col-sm-6">
         <h3>Grocery List</h3>
-        <FilterForm categories={props.categories} onSubmit={props.onSubmit} />
-        {!props.groceries.length && <p>Your grocery list is empty!</p>}
+        <FilterForm {...props} />
         {props.groceries.map(grocery => {
-          console.log(grocery);
           return <Grocery key={`${grocery.name}${grocery.id}`} {...grocery} />;
         })}
       </div>

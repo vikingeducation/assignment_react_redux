@@ -57,7 +57,7 @@ function groceries(state = [], action) {
   }
 }
 
-function purchaseFilter(state = "SHOW_ALL", action) {
+function purchaseFilter(state = "ALL", action) {
   switch (action.type) {
     case SET_PURCHASE_FILTER:
       return action.data;
@@ -67,7 +67,7 @@ function purchaseFilter(state = "SHOW_ALL", action) {
   }
 }
 
-function categoryFilter(state = "SHOW_ALL", action) {
+function categoryFilter(state = "All", action) {
   switch (action.type) {
     case SET_CATEGORY_FILTER:
       return action.data;
@@ -78,7 +78,7 @@ function categoryFilter(state = "SHOW_ALL", action) {
 }
 
 function categories() {
-  return ["produce", "dairy", "deli", "bulk", "cheese", "beer", "wine"];
+  return ["Produce", "Dairy", "Deli", "Bulk", "Cheese", "Beer", "Wine"];
 }
 
 export const groceriesApp = combineReducers({
