@@ -3,6 +3,7 @@ import TableRow from "./elements/TableRow";
 import TableHead from "./elements/TableHead";
 
 const Table = ({ groceryItems }) => {
+  console.log(groceryItems);
   const tableRows = groceryItems.map(item => <TableRow props={item} />);
   const tableHead = <TableHead props={groceryItems[0]} />;
 
@@ -16,8 +17,6 @@ const Table = ({ groceryItems }) => {
   );
 };
 
-Table.propTypes = {
-
-}
+Table.propTypes = {};
 
 export default Table;
