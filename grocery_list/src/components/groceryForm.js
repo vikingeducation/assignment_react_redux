@@ -1,18 +1,24 @@
-import React from "react";
+import React from 'react';
 
-GroceryForm = ({onSubmit}) => {
-	<form onSubmit={onSubmit}>
-		<label htmlFor="name">Item Name</label>
-		<input type="text" name="name" />
+export default ({ onSubmit }) => {
+	return (
+		<form onSubmit={onSubmit}>
+			<label htmlFor="name">Item Name</label>
+			<input type="text" name="name" />
 
-		<label htmlFor="description">Description</label>
-		<input type="text" name="description" />
+			<label htmlFor="description">Description</label>
+			<input type="text" name="description" />
 
-		<select>
-		</select>
+			<label htmlFor="category">Category</label>
+			<select name="category">
+				<option value="dairy">Dairy</option>
+				<option value="bakery">Bakery</option>
+			</select>
 
-		<label htmlFor="amount">Amount</label>
-		<input type="text" name="amount" />
+			<label htmlFor="amount">Amount</label>
+			<input type="number" name="amount" />
 
-	</form>
-}import React from "react";
+			<button type="submit">Submit</button>
+		</form>
+	);
+};

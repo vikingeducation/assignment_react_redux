@@ -3,7 +3,8 @@ import * as actions from './actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './App.css';
-import GroceryList from "./components/groceryList";
+import GroceryList from './components/groceryList';
+import GroceryForm from './components/groceryForm';
 
 class App extends Component {
   componentDidMount() {
@@ -33,6 +34,24 @@ class App extends Component {
     });
   }
 
+  onGrocerySubmit = e => {
+    e.preventDefault();
+
+    let grocery = {
+      name: e.target.name.value,
+      description: e.target.description.value,
+      amount: e.target.amount.value,
+      category: e.target.category.value,
+      purchased: false
+    };
+
+    this.props.actions.addItem(grocery);
+  };
+
+  onPurchase = id => {
+    this.props.actions.purchaseItem(id);
+  };
+
   render() {
     console.log(this.props);
     return (
@@ -40,7 +59,11 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to Your Shopping Cart!</h2>
         </div>
-        <GroceryList groceries={this.props.groceries} />
+        <GroceryList
+          groceries={this.props.groceries}
+          onPurchase={this.onPurchase}
+        />
+        <GroceryForm onSubmit={this.onGrocerySubmit} />
       </div>
     );
   }

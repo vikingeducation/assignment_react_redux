@@ -1,18 +1,12 @@
-import React from "react";
+import React from 'react';
+import Grocery from './grocery';
 
-export default ({groceries}) => {
-  return (
+export default ({ groceries }) => {
+	return (
 		<div>
-	  	{groceries.map(grocery => {
-	  		return (
-	  			<div key={grocery.id} className="groceryItem">
-	  				<h3>{grocery.name}</h3>
-  					<div><strong>Quantity</strong>: {grocery.amount}</div>
-  					<div><strong>Description</strong>: {grocery.description}</div>
-  					<div><strong>Category</strong>: {grocery.category}</div>
-	  			</div>
-	  		)
-	  	})}
-	  </div>
-  )
-}
+			{groceries.map(grocery => {
+				return <Grocery key={grocery.id} {...grocery} />;
+			})}
+		</div>
+	);
+};
