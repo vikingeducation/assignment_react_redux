@@ -8,9 +8,7 @@ import GroceryList from "../components/GroceryList";
 import serialize from "form-serialize";
 
 const getVisibleGroceries = (groceries, category, purchased) => {
-  console.log(purchased);
   return groceries.filter(grocery => {
-    console.log(grocery.purchased);
     return (
       (category === "All" || grocery.category === category) &&
       (purchased === null || purchased === grocery.purchased)
