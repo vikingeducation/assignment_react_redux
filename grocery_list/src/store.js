@@ -7,28 +7,32 @@ const groceries = [
     category: "Produce",
     description: "Yuck",
     amount: 30000,
-    purchased: false
+    purchased: false,
+    id: 1
   },
   {
     name: "Cheddar",
     category: "Dairy",
     description: "cheesy",
     amount: 3,
-    purchased: true
+    purchased: true,
+    id: 2
   },
   {
     name: "Rice",
     category: "Bulk",
     description: "bland",
     amount: 44,
-    purchased: false
+    purchased: false,
+    id: 3
   },
   {
     name: "Almonds",
     category: "Bulk",
     description: "the nuttiest",
     amount: 5555,
-    purchased: true
+    purchased: true,
+    id: 4
   }
 ];
 

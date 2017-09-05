@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import {
   setCategoryFilter,
   setPurchaseFilter,
+  setOrderBy,
   purchaseGrocery
 } from "../actions";
 import GroceryList from "../components/GroceryList";
@@ -16,15 +17,29 @@ const getVisibleGroceries = (groceries, category, purchased) => {
   });
 };
 
+const sortGroceries = (groceries, order) => {
+  order = order.toLowerCase();
+  return groceries.sort((a, b) => {
+    [a, b] = [a[order].toLowerCase(), b[order].toLowerCase()];
+    if (a < b) return -1;
+    else if (a > b) return 1;
+    else return 0;
+  });
+};
+
 const mapStateToProps = state => {
   return {
-    groceries: getVisibleGroceries(
-      state.groceries,
-      state.categoryFilter,
-      state.purchaseFilter
+    groceries: sortGroceries(
+      getVisibleGroceries(
+        state.groceries,
+        state.categoryFilter,
+        state.purchaseFilter
+      ),
+      state.orderBy
     ),
     purchaseFilter: state.purchaseFilter,
     categoryFilter: state.categoryFilter,
+    orderBy: state.orderBy,
     categories: ["All"].concat(state.categories)
   };
 };
@@ -40,6 +55,7 @@ const mapDispatchToProps = dispatch => {
           data.purchased === "null" ? null : JSON.parse(data.purchased)
         )
       );
+      dispatch(setOrderBy(data.order));
     },
     onPurchaseGrocery: id => e => {
       e.preventDefault();

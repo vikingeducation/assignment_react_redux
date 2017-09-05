@@ -6,9 +6,10 @@ export const UPDATE_GROCERY = "UPDATE_GROCERY";
 export const DELETE_GROCERY = "DELETE_GROCERY";
 export const SET_PURCHASE_FILTER = "SET_PURCHASE_FILTER";
 export const SET_CATEGORY_FILTER = "SET_CATEGORY_FILTER";
+export const SET_ORDER_BY = "SET_ORDER_BY";
 
 // Action Factories
-let nextGroceryId = 1;
+let nextGroceryId = 5;
 export function addGrocery(data) {
   return {
     type: ADD_GROCERY,
@@ -64,6 +65,13 @@ export function setCategoryFilter(data) {
 export function setPurchaseFilter(data) {
   return {
     type: SET_PURCHASE_FILTER,
+    data
+  };
+}
+
+export function setOrderBy(data) {
+  return {
+    type: SET_ORDER_BY,
     data
   };
 }

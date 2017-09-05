@@ -7,7 +7,8 @@ import {
   DELETE_GROCERY,
   UPDATE_GROCERY,
   SET_PURCHASE_FILTER,
-  SET_CATEGORY_FILTER
+  SET_CATEGORY_FILTER,
+  SET_ORDER_BY
 } from "./actions";
 
 // // schemas
@@ -77,6 +78,16 @@ function categoryFilter(state = "All", action) {
   }
 }
 
+function orderBy(state = "Name", action) {
+  switch (action.type) {
+    case SET_ORDER_BY:
+      return action.data;
+
+    default:
+      return state;
+  }
+}
+
 function categories() {
   return ["Produce", "Dairy", "Deli", "Bulk", "Cheese", "Beer", "Wine"];
 }
@@ -85,5 +96,6 @@ export const groceriesApp = combineReducers({
   groceries,
   purchaseFilter,
   categoryFilter,
+  orderBy,
   categories
 });

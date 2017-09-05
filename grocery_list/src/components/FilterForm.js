@@ -12,7 +12,8 @@ const FilterForm = ({
   onFilterGrocery,
   categories,
   categoryFilter,
-  purchaseFilter
+  purchaseFilter,
+  orderBy
 }) => (
   <form onSubmit={onFilterGrocery}>
     <FormItem
@@ -43,6 +44,22 @@ const FilterForm = ({
       {Object.entries(purchaseOpts).map(([opt, val]) => (
         <option key={opt} value={val}>
           {opt}
+        </option>
+      ))}
+    </FormItem>
+
+    <FormItem
+      name="Order"
+      attrs={{
+        required: "true",
+        componentClass: "select",
+        name: "order",
+        defaultValue: orderBy
+      }}
+    >
+      {["Name", "Description"].map(order => (
+        <option key={order} value={order}>
+          {order}
         </option>
       ))}
     </FormItem>
