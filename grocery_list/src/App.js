@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import GroceryList from './components/groceryList';
 import GroceryForm from './components/groceryForm';
-import FilterForm from "./components/filterForm";
+import FilterForm from './components/filterForm';
 
 class App extends Component {
   componentDidMount() {
@@ -50,19 +50,22 @@ class App extends Component {
   };
 
   onPurchase = e => {
-    console.log(e.target.id.value);
     e.preventDefault();
+    console.log(e.target.id.value);
     this.props.actions.purchaseItem(Number(e.target.id.value));
   };
 
+  onFilterPurchase = e => {
+    this.props.actions.setPurchasedFilter(e.target.value);
+  };
+
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <div className="App-header">
           <h2>Welcome to Your Shopping Cart!</h2>
         </div>
-        <FilterForm />
+        <FilterForm onFilterPurchase={this.onFilterPurchase} />
         <GroceryList
           groceries={this.props.groceries}
           onSubmit={this.onPurchase}
@@ -75,7 +78,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    groceries: state.groceryApp.items
+    groceries: state.groceryApp.items,
+    categoryFilter: state.groceryApp.categoryFilter,
+    purchasedFilter: state.groceryApp.purchasedFilter
   };
 };
 const mapDispatchToProps = dispatch => {

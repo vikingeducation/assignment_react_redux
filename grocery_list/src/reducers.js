@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
-	categoryFilter: 'all',
-	purchasedFilter: 'ALL',
-	sortType: 'name',
-	items: []
+	categoryFilter: 'All',
+	purchasedFilter: 'All',
+	sortType: 'Name',
+	items: [],
+	filteredItems: []
 };
 
 const ADD_ITEM = 'ADD_ITEM';
@@ -30,7 +31,6 @@ function groceryApp(state = initialState, action) {
 							purchased: true
 						};
 					}
-					console.log(item);
 					return item;
 				})
 			};

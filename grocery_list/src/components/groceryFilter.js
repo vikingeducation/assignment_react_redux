@@ -1,11 +1,18 @@
 import React from 'react';
 
-export default ({name, options}) => {
+export default ({ name, options, prettyName, onFilter }) => {
 	return (
-		<select name={name}>
-			{options.map(option =>
-				<option key={option} value={option}>{option}</option>
-			)}
-		</select>
-	)
-}
+		<div>
+			<label htmlFor={name}>
+				{prettyName}
+			</label>
+			<select name={name} onChange={onFilter}>
+				{options.map(option =>
+					<option key={option} value={option}>
+						{option}
+					</option>
+				)}
+			</select>
+		</div>
+	);
+};
