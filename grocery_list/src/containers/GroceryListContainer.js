@@ -1,13 +1,8 @@
-import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import App from "../components/App";
-class AppContainer extends Component {
-  render() {
-    return <App {...this.props} />;
-  }
-}
+import GroceryList from "../components/GroceryList";
+
 const mapStateToProps = state => {
   return {
     groceries: state.groceries,
@@ -15,10 +10,15 @@ const mapStateToProps = state => {
     categoryFilter: state.categoryFilter
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+const GroceryListContainer = connect(mapStateToProps, mapDispatchToProps)(
+  GroceryList
+);
+
+export default GroceryListContainer;

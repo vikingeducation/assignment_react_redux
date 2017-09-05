@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import AppContainer from "./containers/AppContainer";
+import App from "./components/App";
 import registerServiceWorker from "./registerServiceWorker";
 import store from "./store";
 import { Provider } from "react-redux";
 const app = (
   <Provider store={store}>
-    <AppContainer />
+    <App />
   </Provider>
 );
 ReactDOM.render(app, document.getElementById("root"));
