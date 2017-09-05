@@ -9,7 +9,7 @@ import FilterForm from './components/filterForm';
 
 class App extends Component {
   componentDidMount() {
-    const { addItem } = this.props.actions;
+    const { addItem, filterPurchases } = this.props.actions;
     addItem({
       name: 'milk',
       description: 'it is made of milk',
@@ -33,6 +33,8 @@ class App extends Component {
       category: 'dairy',
       purchased: false
     });
+
+    filterPurchases();
   }
 
   onGrocerySubmit = e => {
@@ -53,10 +55,12 @@ class App extends Component {
     e.preventDefault();
     console.log(e.target.id.value);
     this.props.actions.purchaseItem(Number(e.target.id.value));
+    this.props.actions.filterPurchases();
   };
 
   onFilterPurchase = e => {
     this.props.actions.setPurchasedFilter(e.target.value);
+    this.props.actions.filterPurchases();
   };
 
   render() {
@@ -67,7 +71,7 @@ class App extends Component {
         </div>
         <FilterForm onFilterPurchase={this.onFilterPurchase} />
         <GroceryList
-          groceries={this.props.groceries}
+          groceries={this.props.filteredItems}
           onSubmit={this.onPurchase}
         />
         <GroceryForm onSubmit={this.onGrocerySubmit} />
@@ -80,7 +84,8 @@ const mapStateToProps = state => {
   return {
     groceries: state.groceryApp.items,
     categoryFilter: state.groceryApp.categoryFilter,
-    purchasedFilter: state.groceryApp.purchasedFilter
+    purchasedFilter: state.groceryApp.purchasedFilter,
+    filteredItems: state.groceryApp.filteredItems
   };
 };
 const mapDispatchToProps = dispatch => {

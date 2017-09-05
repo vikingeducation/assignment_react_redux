@@ -13,6 +13,7 @@ const PURCHASE_ITEM = 'PURCHASE_ITEM';
 const SET_PURCHASED_FILTER = 'SET_PURCHASED_FILTER';
 const SET_CATEGORY_FILTER = 'SET_CATEGORY_FILTER';
 const SET_SORT_TYPE = 'SET_SORT_TYPE';
+const FILTER_PURCHASES = "FILTER_PURCHASES"
 
 function groceryApp(state = initialState, action) {
 	switch (action.type) {
@@ -37,7 +38,7 @@ function groceryApp(state = initialState, action) {
 		case SET_PURCHASED_FILTER:
 			return {
 				...state,
-				purchasedFilter: action.data
+				purchasedFilter: action.data,
 			};
 		case SET_CATEGORY_FILTER:
 			return {
@@ -49,7 +50,23 @@ function groceryApp(state = initialState, action) {
 				...state,
 				sortType: action.data
 			};
-
+		case FILTER_PURCHASES:
+			if (state.purchasedFilter === "All") {
+				return {
+					...state,
+					filteredItems: state.items
+				}
+			} else if (state.purchasedFilter === "Purchased") {
+				return {
+					...state,
+					filteredItems: state.items.filter(item => item.purchased === true)
+				}
+			} else {
+				return {
+					...state,
+					filteredItems: state.items.filter(item => item.purchased !== true)
+				}
+			}
 		default:
 			return state;
 	}

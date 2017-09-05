@@ -3,6 +3,7 @@ const PURCHASE_ITEM = "PURCHASE_ITEM";
 const SET_PURCHASED_FILTER = "SET_PURCHASED_FILTER";
 const SET_CATEGORY_FILTER = "SET_CATEGORY_FILTER";
 const SET_SORT_TYPE = "SET_SORT_TYPE";
+const FILTER_PURCHASES = "FILTER_PURCHASES"
 
 let nextItemId = 1;
 
@@ -42,4 +43,8 @@ export function setSortType(data) {
 		type: SET_SORT_TYPE,
 		data
 	};
+}
+
+export function filterPurchases() {
+	return {type: FILTER_PURCHASES}
 }
