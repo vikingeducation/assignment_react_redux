@@ -30,6 +30,7 @@ function groceryApp(state = initialState, action) {
 							purchased: true
 						};
 					}
+					console.log(item);
 					return item;
 				})
 			};

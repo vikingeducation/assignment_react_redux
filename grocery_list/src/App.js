@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import GroceryList from './components/groceryList';
 import GroceryForm from './components/groceryForm';
+import FilterForm from "./components/filterForm";
 
 class App extends Component {
   componentDidMount() {
@@ -48,8 +49,10 @@ class App extends Component {
     this.props.actions.addItem(grocery);
   };
 
-  onPurchase = id => {
-    this.props.actions.purchaseItem(id);
+  onPurchase = e => {
+    console.log(e.target.id.value);
+    e.preventDefault();
+    this.props.actions.purchaseItem(Number(e.target.id.value));
   };
 
   render() {
@@ -59,9 +62,10 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to Your Shopping Cart!</h2>
         </div>
+        <FilterForm />
         <GroceryList
           groceries={this.props.groceries}
-          onPurchase={this.onPurchase}
+          onSubmit={this.onPurchase}
         />
         <GroceryForm onSubmit={this.onGrocerySubmit} />
       </div>

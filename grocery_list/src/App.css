@@ -14,3 +14,11 @@ div {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
+.purchased {
+	background-color: #ccc;
+}
+
+.unPurchased {
+	background-color: #fcc;
+}
