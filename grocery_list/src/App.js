@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import * as actions from './actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
 import './App.css';
+import GroceryList from "./components/groceryList";
 
 class App extends Component {
   componentDidMount() {
@@ -38,12 +38,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Welcome to Your Shopping Cart!</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <GroceryList groceries={this.props.groceries} />
       </div>
     );
   }
