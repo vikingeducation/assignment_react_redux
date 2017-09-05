@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Button } from "react-bootstrap";
+import serialize from "form-serialize";
 
 const CATEGORY_NAMES = [
   "produce",
@@ -12,64 +13,30 @@ const CATEGORY_NAMES = [
 ];
 
 export default class GroceryForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-      description: "",
-      amount: 1,
-      category: "produce",
-      purchased: false
-    };
-  }
-
-  onChangeInput = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
   onNewGrocery = e => {
     e.preventDefault();
-
-    this.props.actions.addGrocery(this.state);
+    const form = e.target;
+    const data = serialize(form, { hash: true });
+    this.props.actions.addGrocery(data);
+    form.reset();
   };
 
   render() {
-    const { name, description, amount, category } = this.state;
     return (
       <form onSubmit={this.onNewGrocery}>
         <FormGroup>
           <ControlLabel>Name</ControlLabel>
-          <FormControl
-            required="true"
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.onChangeInput}
-          />
+          <FormControl required="true" type="text" name="name" />
         </FormGroup>
 
         <FormGroup>
           <ControlLabel>Description</ControlLabel>
-          <FormControl
-            type="text"
-            name="description"
-            value={description}
-            onChange={this.onChangeInput}
-          />
+          <FormControl type="text" name="description" />
         </FormGroup>
 
         <FormGroup>
           <ControlLabel>Amount</ControlLabel>
-          <FormControl
-            required="true"
-            type="number"
-            name="amount"
-            value={amount}
-            onChange={this.onChangeInput}
-          />
+          <FormControl required="true" type="number" name="amount" />
         </FormGroup>
 
         <FormGroup>
