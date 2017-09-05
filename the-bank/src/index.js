@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
 import registerServiceWorker from "./registerServiceWorker";
+
+/////
 import { combineReducers, createStore } from "redux";
 import { accounts, currentAccount, transactionsDateFilter } from "./reducers";
 import {
@@ -86,9 +90,9 @@ let initStore = {
 };
 
 const store = createStore(bankApp, initStore);
-const unsubscribe = store.subscribe(() => {
-  console.log(store.getState());
-});
+// const unsubscribe = store.subscribe(() => {
+//   console.log(store.getState());
+// });
 
 //SEND THE EVENT LIKE THINGS
 
@@ -124,6 +128,10 @@ store.dispatch(
   })
 );
 
-// unsubscribe();
-ReactDOM.render(<App {...store.getState()} />, document.getElementById("root"));
-registerServiceWorker();
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
+// ReactDOM.render(<App {...store.getState()} />, document.getElementById("root"));
