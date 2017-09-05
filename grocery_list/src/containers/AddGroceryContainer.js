@@ -3,6 +3,12 @@ import { addGrocery } from "../actions";
 import GroceryForm from "../components/GroceryForm";
 import serialize from "form-serialize";
 
+const mapStateToProps = state => {
+  return {
+    categories: state.categories
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     onSubmit: e => {
@@ -16,4 +22,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(GroceryForm);
+export default connect(mapStateToProps, mapDispatchToProps)(GroceryForm);

@@ -2,17 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import FormItem from "./FormItem";
 
-const CATEGORY_NAMES = [
-  "produce",
-  "dairy",
-  "deli",
-  "bulk",
-  "cheese",
-  "beer",
-  "wine"
-];
-
-const GroceryForm = ({ onSubmit }) => (
+const GroceryForm = ({ onSubmit, categories }) => (
   <form onSubmit={onSubmit}>
     <FormItem
       name="Name"
@@ -40,7 +30,7 @@ const GroceryForm = ({ onSubmit }) => (
         name: "category"
       }}
     >
-      {CATEGORY_NAMES.map(category => (
+      {categories.map(category => (
         <option key={category} value={category}>
           {category}
         </option>

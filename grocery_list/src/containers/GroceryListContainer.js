@@ -7,7 +7,8 @@ const mapStateToProps = state => {
   return {
     groceries: state.groceries,
     purchaseFilter: state.purchaseFilter,
-    categoryFilter: state.categoryFilter
+    categoryFilter: state.categoryFilter,
+    categories: state.categories
   };
 };
 

@@ -77,8 +77,13 @@ function categoryFilter(state = "SHOW_ALL", action) {
   }
 }
 
+function categories() {
+  return ["produce", "dairy", "deli", "bulk", "cheese", "beer", "wine"];
+}
+
 export const groceriesApp = combineReducers({
   groceries,
   purchaseFilter,
-  categoryFilter
+  categoryFilter,
+  categories
 });
