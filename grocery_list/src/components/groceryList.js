@@ -11,11 +11,9 @@ const groceryList = ({ items }) => {
 	);
 };
 
-const mapStateToProps = state => {
-	return {
-		items: state.groceries.items
-	};
-};
+const mapStateToProps = state => ({
+	items: state.groceries.items
+});
 
 const GroceryListContainer = connect(mapStateToProps, null)(groceryList);
 

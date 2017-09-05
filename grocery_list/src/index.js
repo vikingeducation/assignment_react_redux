@@ -7,7 +7,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { addItem, purchaseItem } from './actions';
+import { addItem, purchaseItem, addCategory } from './actions';
 
 import groceriesApp from './reducers';
 
@@ -22,11 +22,23 @@ let unsubscribe = store.subscribe(() => {
 console.log('initial state: ', store.getState());
 
 for (let i = 0; i < 10; i++) {
+	const categories = store.getState().categories;
+	const newCategory = faker.commerce.department();
+	categories.some(category => {
+		return category.name === newCategory;
+	});
+	if (!categories.some(category => category.name === newCategory)) {
+		store.dispatch(
+			addCategory({
+				name: newCategory
+			})
+		);
+	}
 	store.dispatch(
 		addItem({
 			name: faker.commerce.productName(),
 			desc: faker.random.words(25),
-			category: faker.commerce.department(),
+			category: newCategory,
 			amount: Math.floor(1 + Math.random() * 10),
 			imgSrc: 'http://via.placeholder.com/241x200',
 			purchased: false
