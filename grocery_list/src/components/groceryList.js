@@ -1,7 +1,22 @@
-import React from "react";
-import groceryItem from "./groceryItem";
+import React from 'react';
+import GroceryItem from './groceryItem';
+import { connect } from 'react-redux';
 
-export default ({ items }) => {
-  if (!items) return null;
-  return items.map(grocery => <groceryItem key={grocery.id} {...grocery} />);
+const groceryList = ({ items }) => {
+	if (!items) return null;
+	return (
+		<div className="row">
+			{items.map(grocery => <GroceryItem key={grocery.id} {...grocery} />)}
+		</div>
+	);
 };
+
+const mapStateToProps = state => {
+	return {
+		items: state.groceries.items
+	};
+};
+
+const GroceryListContainer = connect(mapStateToProps, null)(groceryList);
+
+export default GroceryListContainer;

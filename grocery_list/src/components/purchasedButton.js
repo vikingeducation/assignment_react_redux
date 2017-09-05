@@ -1,11 +1,32 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
+import { addItem, purchaseItem } from '../actions/';
 
-const button = (
-  <a href="#" class="btn btn-primary" role="button">
-    Purchase!
-  </a>
+const purchasedButton = ({ id, isPurchased, onPurchaseItemClick }) => {
+	const button = (
+		<button
+			className={isPurchased ? 'btn btn-success' : 'btn btn-primary'}
+			role="button"
+			onClick={onPurchaseItemClick(id)}
+		>
+			{isPurchased ? 'Already purchased.' : 'Purchase!'}
+		</button>
+	);
+	return !isPurchased
+		? button
+		: React.cloneElement(button, {
+				className: 'btn btn-success',
+				disabled: true
+			});
+};
+
+const mapDispatchToProps = dispatch => ({
+	onPurchaseItemClick: id => e => {
+		dispatch(purchaseItem(id));
+	}
+});
+
+const PurchasedButtonContainer = connect(null, mapDispatchToProps)(
+	purchasedButton
 );
-
-const purchased = <p>Purchased!</p>;
-
-export default ({ isPurchased }) => (isPurchased ? purchased : button);
+export default PurchasedButtonContainer;
