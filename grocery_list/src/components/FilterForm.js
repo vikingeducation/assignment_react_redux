@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import FormItem from "./FormItem";
 
-const GroceryForm = ({ onSubmit, categories, categoryFilter }) =>
-  <form onSubmit={onSubmit}>
+const GroceryForm = ({ onNewGrocery, categories, categoryFilter }) => (
+  <form onSubmit={onNewGrocery}>
     <FormItem
       name="category"
       attrs={{
@@ -13,16 +13,17 @@ const GroceryForm = ({ onSubmit, categories, categoryFilter }) =>
         defaultValue: categoryFilter
       }}
     >
-      {categories.map(category =>
+      {categories.map(category => (
         <option key={category} value={category}>
           {category}
         </option>
-      )}
+      ))}
     </FormItem>
 
     <Button type="submit" bsStyle="primary">
       Filter
     </Button>
-  </form>;
+  </form>
+);
 
 export default GroceryForm;

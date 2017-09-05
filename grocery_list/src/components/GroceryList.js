@@ -14,8 +14,15 @@ const GroceryList = props => {
       <div className="col-sm-6">
         <h3>Grocery List</h3>
         <FilterForm {...props} />
+        <br />
         {props.groceries.map(grocery => {
-          return <Grocery key={`${grocery.name}${grocery.id}`} {...grocery} />;
+          return (
+            <Grocery
+              key={`${grocery.name}${grocery.id}`}
+              {...grocery}
+              onClick={props.onPurchaseGrocery(grocery.id)}
+            />
+          );
         })}
       </div>
     </div>

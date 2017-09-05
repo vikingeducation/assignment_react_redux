@@ -1,7 +1,15 @@
 import React from "react";
-import { Panel } from "react-bootstrap";
+import { Panel, Button } from "react-bootstrap";
 
-const Grocery = ({ id, name, description, amount, category, purchased }) => {
+const Grocery = ({
+  id,
+  name,
+  description,
+  amount,
+  category,
+  purchased,
+  onClick
+}) => {
   description = !description.length ? "" : <p>{description}</p>;
   return (
     <Panel bsStyle="primary" header={name}>
@@ -12,6 +20,11 @@ const Grocery = ({ id, name, description, amount, category, purchased }) => {
       <br />
       Purchased: {String(purchased)}
       <br />
+      {!purchased && (
+        <Button onClick={onClick} bsStyle="success">
+          Purchase
+        </Button>
+      )}
     </Panel>
   );
 };

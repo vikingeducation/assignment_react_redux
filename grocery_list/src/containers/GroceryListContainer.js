@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setCategoryFilter } from "../actions";
+import { setCategoryFilter, purchaseGrocery } from "../actions";
 import GroceryList from "../components/GroceryList";
 import serialize from "form-serialize";
 
@@ -19,11 +19,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSubmit: e => {
+    onNewGrocery: e => {
       e.preventDefault();
       const data = serialize(e.target, { hash: true });
       console.log(data);
       dispatch(setCategoryFilter(data.category));
+    },
+    onPurchaseGrocery: id => e => {
+      e.preventDefault();
+      dispatch(purchaseGrocery(id));
     }
   };
 };
