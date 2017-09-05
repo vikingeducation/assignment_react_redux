@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import groceryList from "../../components/groceryList";
+import { connect } from "react-redux";
 
-class GroceryListContainer extends Component {
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		return <p>foo</p>;
-	}
-}
-
-const MapStateToProps = state => {
-	return {
-		items: state.items
-	};
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
 };
+
+const mapDispatchToProps = state => {};
+
+const GroceryListContainer = connect(mapStateToProps, null)(groceryList);
+
+export default GroceryListContainer;

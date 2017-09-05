@@ -1,10 +1,12 @@
+import { combineReducers } from "redux";
+
 import {
-	ACTION_ADD_ITEM,
-	ACTION_PURCHASE_ITEM,
-	SET_PURCHASED_FILTER,
-	SET_CATEGORY_FILTER,
-	SET_SORT_BY
-} from '../actions';
+  ACTION_ADD_ITEM,
+  ACTION_PURCHASE_ITEM,
+  SET_PURCHASED_FILTER,
+  SET_CATEGORY_FILTER,
+  SET_SORT_BY
+} from "../actions";
 
 /*
  * items
@@ -12,40 +14,47 @@ import {
  */
 
 const initialState = {
-	items: []
+  items: []
 };
 
-const groceryListApp = (state = initialState, action) => {
-	switch (action.type) {
-		case ACTION_ADD_ITEM:
-			return {
-				...state,
-				items: [...state.items, action.data]
-			};
+const groceries = (state = initialState, action) => {
+  switch (action.type) {
+    case ACTION_ADD_ITEM:
+      return {
+        ...state,
+        items: [...state.items, action.data]
+      };
 
-		case ACTION_PURCHASE_ITEM:
-			const items = state.items.map(item => {
-				if (item.id === action.data) {
-					item.purchased = true;
-				}
-				return item;
-			});
+    case ACTION_PURCHASE_ITEM:
+      const items = state.items.map(item => {
+        if (item.id === action.data) {
+          item.purchased = true;
+        }
+        return item;
+      });
 
-			return {
-				...state,
-				items
-			};
+      return {
+        ...state,
+        items
+      };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };
 
-export const purchasedFilter = (state = 'SHOW_ALL', action) =>
-	action.type === SET_PURCHASED_FILTER ? action.data : state;
-export const categoryFilter = (state = 'SHOW_ALL', action) =>
-	action.type === SET_CATEGORY_FILTER ? action.data : state;
-export const sortBy = (state = 'Id', action) =>
-	action.type === SET_SORT_BY ? action.data : state;
+export const purchasedFilter = (state = "SHOW_ALL", action) =>
+  action.type === SET_PURCHASED_FILTER ? action.data : state;
+export const categoryFilter = (state = "SHOW_ALL", action) =>
+  action.type === SET_CATEGORY_FILTER ? action.data : state;
+export const sortBy = (state = "Id", action) =>
+  action.type === SET_SORT_BY ? action.data : state;
 
-export default groceryListApp;
+const groceriesApp = combineReducers({
+  groceries,
+  purchasedFilter,
+  categoryFilter,
+  sortBy
+});
+
+export default groceriesApp;
