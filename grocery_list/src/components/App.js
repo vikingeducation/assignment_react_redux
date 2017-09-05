@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GroceryListContainer from "../containers/GroceryListContainer";
 import AddGroceryItemContainer from "../containers/AddGroceryItemContainer";
 import PurchasedFilterContainer from "../containers/PurchasedFilterContainer";
+import CategoryFilterContainer from "../containers/CategoryFilterContainer";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
           <h2>Welcome to the Grocery Store</h2>
         </div>
         <PurchasedFilterContainer />
+        <CategoryFilterContainer />
         <GroceryListContainer />
         <AddGroceryItemContainer />
       </div>

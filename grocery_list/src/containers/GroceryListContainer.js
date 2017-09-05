@@ -1,36 +1,44 @@
 import { connect } from "react-redux";
 import GroceryList from "../components/GroceryList";
 
-const showPurchased = state => {
+const filterPurchased = state => {
   let filteredItems;
-  filteredItems = state.items.filter(item=>{
+  filteredItems = state.items.filter(item => {
     switch (state.purchasedFilter) {
       case "PURCHASED":
         return item.purchased;
       case "NOT_PURCHASED":
         return !item.purchased;
       default:
-        return true
+        return true;
     }
   });
-  console.log("GLC line 16", filteredItems)
+  console.log("GLC line 16", filteredItems);
   return {
     ...state,
-    items: filteredItems,
-  }
-}
+    items: filteredItems
+  };
+};
 
-// const showCategory = state => {
-//   return state.items.filter(item=>{item.category === state
-    
-//     }
-//   })
-// }
+const filterCategory = state => {
+  if (state.categoryFilter.length < 1) return state;
+  return state.items.filter(item => /state.categoryFilter/.test(item.category));
+};
 
+const revealPurchase = state => {
+  const items = state.items.map(item => {
+    return {
+      ...item,
+      purchased: item.purchased ? "purchased" : "not purchased"
+    };
+  });
+  return { ...state, items };
+};
 
 const mapStateToProps = state => {
-  console.log("GLContainer line 22", state)
-  return { groceryItems: showPurchased(state).items };
+  return {
+    groceryItems: revealPurchase(filterCategory(filterPurchased(state))).items
+  };
 };
 
 const GroceryListContainer = connect(mapStateToProps, null)(GroceryList);

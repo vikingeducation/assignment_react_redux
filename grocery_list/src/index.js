@@ -54,11 +54,9 @@ store.dispatch(
 
 store.dispatch(purchaseItem(2));
 
-store.dispatch(setPurchasedFilter("PURCHASED"));
-
-store.dispatch(setCategoryFilter("dairy"));
-
-store.dispatch(setSortType("description"));
+// store.dispatch(setPurchasedFilter("PURCHASED"));
+// store.dispatch(setCategoryFilter("dairy"));
+// store.dispatch(setSortType("description"));
 
 unsubscribe();
 
