@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import TableContainer from "../containers/TableContainer";
+import GroceryListContainer from "../containers/GroceryListContainer";
 
 class App extends Component {
   render() {
     return (
       <div className="App container">
         <div className="App-header">
-          <h2>Welcome to React</h2>
+          <h2>Welcome to the Grocery Store</h2>
         </div>
-        <TableContainer />
+        <GroceryListContainer />
       </div>
     );
   }
