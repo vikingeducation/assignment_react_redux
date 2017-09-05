@@ -27,10 +27,29 @@ const initGroceries = [
     amount: 7,
     category: "shoes",
     purchased: false
+  },
+  {
+    id: 2,
+    name: "Lightsaber",
+    description: "a green sword of energy",
+    amount: 2,
+    category: "deadly weapons",
+    purchased: false
+  },
+  {
+    id: 3,
+    name: "Potatoes",
+    description: "any will do",
+    amount: 12,
+    category: "food",
+    purchased: false
   }
 ];
-
-const store = createStore(groceryApp, { groceries: initGroceries });
+const initStore = {
+  groceries: initGroceries
+  // filters: { purchased: "all", categories: "all" }
+};
+const store = createStore(groceryApp, initStore);
 
 ReactDOM.render(
   <Provider store={store}>

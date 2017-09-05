@@ -25,13 +25,13 @@ const Item = ({ item, onClick, id, onPurchase }) => {
         </p>
         <form onSubmit={onPurchase}>
           <Input name="id" type="hidden" value={id} />
-          <Button type="submit" color="danger">
+          <Button type="submit" size="sm" color="success">
             Purchase
           </Button>
         </form>
         <form onSubmit={onClick}>
           <Input name="id" type="hidden" value={id} />
-          <Button type="submit" color="danger">
+          <Button type="submit" size="sm" color="danger">
             Remove From List
           </Button>
         </form>

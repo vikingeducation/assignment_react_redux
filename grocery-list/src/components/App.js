@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import ItemListContainer from "../containers/itemListContainer";
 import AddItemContainer from "../containers/addItemContainer";
-// import SortContainer from '../containers/SortContainer';
-// import FilterContainer from '../containers/FilterContainer';
+import Filter from "./Filter";
 
-// import "../App.css";
-
-//TODO: Indicate an item has been purchased.
+//TODO: // Set sort by name/description.
 
 class App extends Component {
   render() {
@@ -21,9 +18,9 @@ class App extends Component {
             <SortContainer />
           </div> */}
           {/* filter */}
-          {/* <div className="row">
-            <FilterContainer />
-          </div> */}
+          <div className="row">
+            <Filter />
+          </div>
           {/* list */}
           <div className="row">
             <ItemListContainer />
