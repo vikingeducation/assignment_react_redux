@@ -14,6 +14,7 @@ export function addGrocery(data) {
     type: ADD_GROCERY,
     data: {
       ...data,
+      purchased: false,
       id: nextGroceryId++
     }
   };
@@ -25,6 +26,7 @@ export function addGroceries(data) {
     data: data.map(grocery => {
       return {
         ...grocery,
+        purchased: false,
         id: nextGroceryId++
       };
     })

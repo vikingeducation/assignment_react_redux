@@ -36,23 +36,22 @@ export default class GroceryForm extends Component {
 
         <FormGroup>
           <ControlLabel>Amount</ControlLabel>
-          <FormControl required="true" type="number" name="amount" />
+          <FormControl
+            required="true"
+            type="number"
+            name="amount"
+            defaultValue="1"
+          />
         </FormGroup>
 
         <FormGroup>
           <ControlLabel>Category</ControlLabel>
-          <FormControl
-            required="true"
-            componentClass="select"
-            name="category"
-            value={category}
-            onChange={this.onChangeInput}
-          >
-            {CATEGORY_NAMES.map(category =>
+          <FormControl required="true" componentClass="select" name="category">
+            {CATEGORY_NAMES.map(category => (
               <option key={category} value={category}>
                 {category}
               </option>
-            )}
+            ))}
           </FormControl>
         </FormGroup>
 
