@@ -22,9 +22,9 @@ import {
 //   }
 // ];
 
-// const purchasedFilterSchema = "SHOW_ALL"; // SHOW_{PUCHASED, NOT_PURCHASED, ALL}
+// const purchasedFilterSchema = "ALL"; // {PUCHASED, NOT_PURCHASED, ALL}
 
-// const categoryFilterSchema = "SHOW_ALL"; // SHOW_{CATEGORY_[name], ALL}
+// const categoryFilterSchema = "ALL"; // {[category name], ALL}
 
 // reducers
 function groceries(state = [], action) {
