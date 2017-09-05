@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import ItemListContainer from "../containers/itemListContainer";
 import AddItemContainer from "../containers/addItemContainer";
+// import SortContainer from '../containers/SortContainer';
+// import FilterContainer from '../containers/FilterContainer';
+
 // import "../App.css";
-//
-// As a user, I want to...
-//
-// See my grocery list items (remember you can always initialize your reducer or add a preloaded state to the store to see if this works).
-// Add a new item to my grocery list. The item should have a name/description and optional fields for amount and category.
-// Indicate an item has been purchased.
-// Set filters for purchased/not purchased/all, categories/all.
-// Set sort by name/description.
+
+//TODO: Indicate an item has been purchased.
 
 class App extends Component {
   render() {
@@ -20,9 +17,13 @@ class App extends Component {
         </div>
         <div className="container">
           {/* sort */}
-
+          {/* <div className="row">
+            <SortContainer />
+          </div> */}
           {/* filter */}
-
+          {/* <div className="row">
+            <FilterContainer />
+          </div> */}
           {/* list */}
           <div className="row">
             <ItemListContainer />
@@ -39,3 +40,12 @@ class App extends Component {
 }
 
 export default App;
+
+//
+// As a user, I want to...
+//
+// See my grocery list items (remember you can always initialize your reducer or add a preloaded state to the store to see if this works).
+// Add a new item to my grocery list. The item should have a name/description and optional fields for amount and category.
+// Indicate an item has been purchased.
+// Set filters for purchased/not purchased/all, categories/all.
+// Set sort by name/description.

@@ -8,16 +8,15 @@ const SET_PURCHASED_FILTER = `SET_PURCHASED_FILTER`;
 const SET_CATEGORY_FILTER = `SET_CATEGORY_FILTER`;
 const SET_SORT_BY = `SET_SORT_BY`;
 
-//reducers? state = {[]} ???? what is R store?
 function groceries(state = [], action) {
   switch (action.type) {
     case ADD_ITEM:
       return [...state, action.data];
     case REMOVE_ITEM:
-      return state.filter(item => action.data !== item.id);
+      return state.filter(item => Number(action.data) !== Number(item.id));
     case PURCHASE_ITEM:
       return state.map(item => {
-        if (item.id === action.data) {
+        if (Number(item.id) === Number(action.data)) {
           return {
             ...item,
             purchased: true

@@ -6,7 +6,6 @@ const SET_PURCHASED_FILTER = `SET_PURCHASED_FILTER`;
 const SET_CATEGORY_FILTER = `SET_CATEGORY_FILTER`;
 const SET_SORT_BY = `SET_SORT_BY`;
 
-//ACTIONS, move these later
 //actions as functions
 const purchaseItem = id => {
   return {
@@ -14,6 +13,8 @@ const purchaseItem = id => {
     data: id
   };
 };
+
+//is this different from purchase?
 const removeItem = id => {
   return {
     type: REMOVE_ITEM,

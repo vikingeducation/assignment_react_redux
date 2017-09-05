@@ -1,6 +1,8 @@
 import React, { PropTypes } from "react";
+import Button from "./elements/Button";
+import Input from "./elements/Input";
 
-const Item = ({ item }) => {
+const Item = ({ item, onClick, id, onPurchase }) => {
   const { name, description, amount, category, purchased } = item;
   return (
     <div className="card">
@@ -18,8 +20,21 @@ const Item = ({ item }) => {
           Look in : {category}
         </p>
         <p className="card-text">
-          Bought? {purchased}
+          {purchased}
+          {purchased ? "Purchased" : "Not bought yet"}
         </p>
+        <form onSubmit={onPurchase}>
+          <Input name="id" type="hidden" value={id} />
+          <Button type="submit" color="danger">
+            Purchase
+          </Button>
+        </form>
+        <form onSubmit={onClick}>
+          <Input name="id" type="hidden" value={id} />
+          <Button type="submit" color="danger">
+            Remove From List
+          </Button>
+        </form>
       </div>
     </div>
   );
