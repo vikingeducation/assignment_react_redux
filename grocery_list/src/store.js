@@ -1,5 +1,6 @@
 import { createStore } from "redux";
 import { groceriesApp } from "./reducers";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const groceries = [
   {
@@ -36,7 +37,7 @@ const groceries = [
   }
 ];
 
-const store = createStore(groceriesApp, { groceries });
+const store = createStore(groceriesApp, { groceries }, composeWithDevTools());
 
 store.subscribe(() => {
   console.log(store.getState());
