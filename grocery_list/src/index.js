@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import { createStore } from "redux";
 import { groceriesApp } from "./reducers";
-import { addItem, purchased, filter, sortByName } from "./actions";
+import { addItem, purchased, filter, sort } from "./actions";
 
 /****************************
 See my grocery list items (remember you can always initialize your reducer or add a preloaded state to the store to see if this works).
@@ -63,7 +63,7 @@ console.log("before Purchase:", store.getState());
 store.dispatch(purchased(3));
 //  sort by name
 console.log("BEFORE SOORTTT");
-store.dispatch(sortByName());
+store.dispatch(sort("name"));
 //  filter purchased/ not purchased, all, categories
 console.log("BEFORE set filter");
 store.dispatch(filter("purchased"));
@@ -71,3 +71,24 @@ store.dispatch(filter("purchased"));
 console.log("After Dispatches", store.getState());
 unsubscribe();
 ReactDOM.render(<App />, document.getElementById("root"));
+
+/****************************
+When you sort the list, you're modifying the existing state object, not returning a new one: https://github.com/rollsthomas/assignment_redux_basics/blob/master/grocery_list/src/reducers.js#L13 (edited)
+
+The best way would be to create a new array and then sort that. Either of these ways would work:
+```var newState = Array.from(state);
+```
+or
+```var newState = [... state];
+```
+(edited)
+
+
+Also, I don't think you need to check if the state is empty. The sort function just won't do anything if it gets an empty array.
+
+
+But actually, I don't think you need to sort at all. Technically the assignment just says to keep track of the sorting choice, and I think you would be fine if you just had a field like "sort": "NAME"
+
+
+You could make a third reducer to keep track of the sort type, or you could bundle them all together into one big reducer for the whole app, since it's so small (edited)
+*****************************/

@@ -52,10 +52,14 @@ store.dispatch(
 
 store.dispatch(selectAccount(100));
 // deposit into an account
+console.log("before deposit $700 into 100 checking");
 store.dispatch(transaction("deposit", 100, "checkings", 700, date));
 // withdrawal from account
+console.log("before withdrawing 1000 from 100 checkings");
 store.dispatch(transaction("withdrawal", 100, "checkings", 1000, date));
+console.log("before deposit 500 into 101 savings");
 store.dispatch(transaction("deposit", 101, "savings", 500, date));
+console.log("before withdrawal 500 from 101 checking");
 store.dispatch(transaction("withdrawal", 101, "checkings", 500, date));
 
 // transfer money from / to accounts
@@ -68,7 +72,7 @@ store.dispatch(transaction("withdrawal", 101, "checkings", 500, date));
 	*/
 console.log("Transfer alex checking to ben savings 500");
 store.dispatch(transfer(100, "checkings", 101, "savings", date, 500));
-console.log("transfer ben check to alex save: 1000");
+console.log("transfer ben savings to alex checkings: 1000");
 store.dispatch(transfer(101, "savings", 100, "checkings", date, 1000));
 // Filter by transaction date
 let dateFrom = new Date("01/12/2017").getTime();

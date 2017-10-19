@@ -12,17 +12,9 @@ function accounts(state = [], actions) {
 	switch (actions.type) {
 		case ADD_ACCOUNT:
 			return [...state, actions.data];
-			break;
-		case SELECT_ACCOUNT:
-			console.log(
-				"SELECT_ACCOUNT",
-				state.filter(account => account.accountNumber === actions.data)[0]
-			);
-			return state;
-			break;
 		case TRANSACTION:
 			//sets amount to alter the account as positive or negative depending on type of transaction
-			actions.data.transactionAmount =
+			let transactionAmount =
 				actions.data.type === "deposit"
 					? actions.data.transactionAmount
 					: actions.data.type === "withdrawal"
@@ -31,32 +23,26 @@ function accounts(state = [], actions) {
 			//gets account to deposit into
 			return state.map(item => {
 				if (item.accountNumber === actions.data.accountNumber) {
-					if (
-						actions.data.transactionAccount === "checkings" ||
-						actions.data.transactionAccount === "savings"
-					) {
-						let account = actions.data.transactionAccount;
-						return {
-							...item,
-							[account]: item[account] + actions.data.transactionAmount,
-							transactions: [
-								...item.transactions,
-								{
-									transactionNumber: actions.data.transactionNumber,
-									type: actions.data.type,
-									date: actions.data.date,
-									timeStamp: actions.data.timeStamp,
-									account: actions.data.transactionAccount,
-									amount: actions.data.transactionAmount
-								}
-							]
-						};
-					}
+					let account = actions.data.transactionAccount;
+					return {
+						...item,
+						[account]: item[account] + transactionAmount,
+						transactions: [
+							...item.transactions,
+							{
+								transactionNumber: actions.data.transactionNumber,
+								type: actions.data.type,
+								date: actions.data.date,
+								timeStamp: actions.data.timeStamp,
+								account,
+								transactionAmount
+							}
+						]
+					};
 				}
 				return item;
 			});
 
-			break;
 		/*
 				accountFrom: 100,
 				accountFromType: "checking",
@@ -107,12 +93,19 @@ function accounts(state = [], actions) {
 				return account;
 			});
 
-			break;
 		default:
 			return state;
 	}
 }
+function selectAccount(state = null, action) {
+	switch (action.type) {
+		case SELECT_ACCOUNT:
+			return action.data;
 
+		default:
+			return state;
+	}
+}
 function filters(state = {}, action) {
 	switch (action.type) {
 		case FILTER_TRANSACTIONS:
@@ -139,5 +132,6 @@ function filters(state = {}, action) {
 
 export const bankApp = combineReducers({
 	accounts,
+	selectAccount,
 	filters
 });

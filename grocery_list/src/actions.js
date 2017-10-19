@@ -2,7 +2,7 @@
 export const ADD_ITEM = "ADD_ITEM";
 export const PURCHASED = "PURCHASED";
 export const FILTER = "SET_FILTER";
-export const SORT_BY_NAME = "SORT_BY_NAME";
+export const SORT = "SORT";
 
 //to set id numbers for items on list
 let itemId = 1;
@@ -10,9 +10,10 @@ let itemId = 1;
 //create action creator functions
 
 //  sort by name
-export function sortByName() {
+export function sort(condition) {
 	return {
-		type: SORT_BY_NAME
+		type: SORT,
+		data: condition
 	};
 }
 //add new item to list with
