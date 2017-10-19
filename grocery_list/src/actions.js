@@ -9,6 +9,12 @@ let itemId = 1;
 
 //create action creator functions
 
+//  sort by name
+export function sortByName() {
+	return {
+		type: SORT_BY_NAME
+	};
+}
 //add new item to list with
 //  name, description, optionas(amount, category)
 //
@@ -28,12 +34,7 @@ export function purchased(id) {
 		data: id
 	};
 }
-//  sort by name
-export function sortByName() {
-	return {
-		type: SORT_BY_NAME
-	};
-}
+
 //  filter purchased/ not purchased, all, categories
 export function filter(filter) {
 	return {

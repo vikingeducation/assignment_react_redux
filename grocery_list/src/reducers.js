@@ -11,15 +11,13 @@ function groceryListReducer(state = [], action) {
 	switch (action.type) {
 		// adds item to list
 		case SORT_BY_NAME:
-			if (state.length < 1) {
-				return state;
-			} else {
-				state.sort((a, b) => {
-					a = a.name;
-					b = b.name;
-					return a < b ? -1 : a > b ? 1 : 0;
-				});
-			}
+			let newState = state.sort((a, b) => {
+				a = a.name;
+				b = b.name;
+				return a < b ? -1 : a > b ? 1 : 0;
+			});
+			return [newState];
+			break;
 		case ADD_ITEM:
 			return [...state, action.data];
 		//set purchased to true for matched item
@@ -34,6 +32,7 @@ function groceryListReducer(state = [], action) {
 					return item;
 				}
 			});
+			break;
 		default:
 			return state;
 	}
@@ -45,6 +44,7 @@ function filter(state = { filter: "all" }, action) {
 			return {
 				filter: action.filter
 			};
+			break;
 		default:
 			return state;
 	}
