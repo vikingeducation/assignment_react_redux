@@ -19,7 +19,10 @@ Set filters for purchased/not purchased/all, categories/all.
 
 Set sort by name/description.
 *****************************/
-let store = createStore(groceriesApp);
+let store = createStore(
+	groceriesApp,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 //logs state after each store.dispatch
 let unsubscribe = store.subscribe(() => {
@@ -34,8 +37,9 @@ store.dispatch(
 		name: "ice-cream",
 		description: "vanilla",
 		category: "snacks",
+		status: false,
 		amount: 3,
-		status: false
+		price: 1
 	})
 );
 //  name, description, optionas(amount, category)
@@ -44,8 +48,9 @@ store.dispatch(
 		name: "cereal",
 		description: "breakfast",
 		category: "zgrains",
+		status: false,
 		amount: 2,
-		status: false
+		price: 2
 	})
 );
 
@@ -54,22 +59,24 @@ store.dispatch(
 		name: "apples",
 		description: "diet",
 		category: "fruit",
+		status: false,
 		amount: 5,
-		status: false
+		price: 3
 	})
 );
-//  indicate that a item has been purchased
-console.log("BEFORE PURCHASE");
-console.log("before Purchase:", store.getState());
-store.dispatch(purchased(3));
-//  sort by name
-console.log("BEFORE SOORTTT");
-store.dispatch(sort("name"));
-//  filter purchased/ not purchased, all, categories
-console.log("BEFORE set filter");
-store.dispatch(filter("purchased"));
-
-console.log("After Dispatches", store.getState());
+//
+// //  indicate that a item has been purchased
+// console.log("BEFORE PURCHASE");
+// console.log("before Purchase:", store.getState());
+// store.dispatch(purchased(3));
+// //  sort by name
+// console.log("BEFORE SOORTTT");
+// store.dispatch(sort("name"));
+// //  filter purchased/ not purchased, all, categories
+// console.log("BEFORE set filter");
+// //store.dispatch(filter("purchased"));
+//
+// console.log("After Dispatches", store.getState());
 unsubscribe();
 ReactDOM.render(
 	<Provider store={store}>

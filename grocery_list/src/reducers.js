@@ -38,7 +38,7 @@ function groceryListReducer(state = [], action) {
 	}
 }
 //set filter reducers
-function filter(state = { filter: "All" }, action) {
+function linkFilter(state = { filter: "All" }, action) {
 	switch (action.type) {
 		case FILTER:
 			return {
@@ -58,7 +58,7 @@ function filter(state = { filter: "All" }, action) {
 export const groceriesApp = combineReducers({
 	groceryListReducer,
 	sort,
-	filter
+	linkFilter
 });
 //shape of grocery list object
 

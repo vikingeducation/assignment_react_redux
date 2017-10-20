@@ -1,9 +1,8 @@
 /****************************
-Not a form
-contains the links for filtering items to display.
+contains the links for filtering list options.
 All, Purchased, Not Purchased, and By Category.
-State: active: boolean
-			onClick for links changes needs Action and Reducer
+
+to do: add selector filter
 			onChnage for selector dropdown needs Action and Reducer
 
 Category is a drop downselector.
@@ -15,17 +14,23 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import FilterLink from "../components/filter/FilterLink";
 import { filter } from "../actions";
+import { groceriesApp } from "../reducers";
 //import Filter from "./Filter";
 
 const mapPropsToState = (state, ownProps) => {
-	status: state.listFilter === ownProps.status;
-	categories: null;
+	return {
+		//true for selected filter
+		status: state.linkFilter.filter === ownProps.filter,
+		categories: null
+	};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	//sets state filter to ownProps.filter
-	onClick: () => {
-		dispatch(filter(ownProps.filter));
+	return {
+		onClick: () => {
+			dispatch(filter(ownProps.filter));
+		}
 	};
 };
 

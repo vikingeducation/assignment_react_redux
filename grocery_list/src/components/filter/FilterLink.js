@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const FilterLink = ({ status, onClick, children }) => {
 	if (status) {
-		return { children };
+		return <span>{children}</span>;
 	}
 	return (
 		<a href="#" onClick={e => onClick()}>
