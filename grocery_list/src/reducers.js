@@ -38,7 +38,7 @@ function groceryListReducer(state = [], action) {
 	}
 }
 //set filter reducers
-function filter(state = { filter: "all" }, action) {
+function filter(state = { filter: "All" }, action) {
 	switch (action.type) {
 		case FILTER:
 			return {

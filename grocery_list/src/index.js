@@ -4,6 +4,7 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import { createStore } from "redux";
+import { Provider } from "react-redux";
 import { groceriesApp } from "./reducers";
 import { addItem, purchased, filter, sort } from "./actions";
 
@@ -70,7 +71,13 @@ store.dispatch(filter("purchased"));
 
 console.log("After Dispatches", store.getState());
 unsubscribe();
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+
+	document.getElementById("root")
+);
 
 /****************************
 When you sort the list, you're modifying the existing state object, not returning a new one: https://github.com/rollsthomas/assignment_redux_basics/blob/master/grocery_list/src/reducers.js#L13 (edited)
