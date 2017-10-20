@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Input = (props) => {
-  const classNames = `form-control ${props.className}`
+const Input = props => {
+	const { className, value } = props;
+	const classNames = `${className}`;
 
-  return (
-    <input className={classNames} {...props} />
-  )
-}
+	return <input className={classNames} value={value} />;
+};
 
 Input.defaultProps = {
-  type: 'text'
-}
+	type: "text"
+};
 
-export default Input
+export default Input;

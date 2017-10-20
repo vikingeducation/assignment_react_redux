@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import FilterLink from "../components/filter/FilterLink";
 import { filter } from "../actions";
-import { groceriesApp } from "../reducers";
+
 //import Filter from "./Filter";
 
 const mapPropsToState = (state, ownProps) => {

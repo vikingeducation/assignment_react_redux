@@ -9,10 +9,22 @@ Forms should toggle editable when user clicks edit.
 *****************************/
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import ListItem from "../../components/List/ListItem";
+import { filter } from "../../actions";
 
-const ListItemsContainer = props => {
-	return <p>"ListItemsContainer"</p>;
+const mapPropsToState = (state, ownProps) => {
+	return {
+		groceryList: state.groceryList
+	};
 };
+
+const mapDispatchToProps = (state, ownProps) => {
+	return {};
+};
+const ListItemsContainer = connect(mapPropsToState, mapDispatchToProps)(
+	ListItem
+);
 
 ListItemsContainer.propTypes = {};
 export default ListItemsContainer;

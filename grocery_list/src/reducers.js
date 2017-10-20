@@ -15,7 +15,7 @@ function sort(state = null, action) {
 }
 //
 //switch statement
-function groceryListReducer(state = [], action) {
+function groceryList(state = [], action) {
 	switch (action.type) {
 		// adds item to list
 		case ADD_ITEM:
@@ -56,7 +56,7 @@ function linkFilter(state = { filter: "All" }, action) {
 
 //combine reducers
 export const groceriesApp = combineReducers({
-	groceryListReducer,
+	groceryList,
 	sort,
 	linkFilter
 });
