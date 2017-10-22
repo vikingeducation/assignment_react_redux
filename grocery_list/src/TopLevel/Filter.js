@@ -3,7 +3,7 @@ This component will return the FilterContainer to App.
 *****************************/
 import React from "react";
 import PropTypes from "prop-types";
-import FilterLinkContainer from "../../containers/FilterLinkContainer";
+import FilterLinkContainer from "../containers/FilterLinkContainer";
 
 const Filter = props => {
 	return (

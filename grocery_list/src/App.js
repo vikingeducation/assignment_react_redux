@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ListContainer from "./containers/List/ListContainer";
-import Filter from "./components/filter/Filter";
+import Filter from "./TopLevel/Filter";
 import AddItemContainer from "./containers/AddItemContainer";
 import logo from "./logo.svg";
 
