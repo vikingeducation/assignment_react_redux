@@ -6,7 +6,7 @@ import "./index.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { groceriesApp } from "./reducers";
-import { addItem, purchased, filter, sort } from "./actions";
+import { addItem, purchased, filter, sort, listTotal } from "./actions";
 
 /****************************
 See my grocery list items (remember you can always initialize your reducer or add a preloaded state to the store to see if this works).

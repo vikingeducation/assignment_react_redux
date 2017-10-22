@@ -1,8 +1,9 @@
-// create action constants to export
+// create action constants to export to reducer.js
 export const ADD_ITEM = "ADD_ITEM";
 export const PURCHASED = "PURCHASED";
 export const FILTER = "SET_FILTER";
 export const SORT = "SORT";
+export const LIST_TOTAL = "LIST_TOTAL";
 
 //to set id numbers for items on list
 let itemId = 1;
@@ -43,6 +44,8 @@ export function filter(filter) {
 		filter
 	};
 }
+
+// total of grocery item amounts
 
 //shape of grocery list object
 /*

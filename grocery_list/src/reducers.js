@@ -2,9 +2,11 @@ import { combineReducers } from "redux";
 
 //import action constants from action
 
-import { ADD_ITEM, PURCHASED, FILTER, SORT } from "./actions";
+import { ADD_ITEM, PURCHASED, FILTER, SORT, LIST_TOTAL } from "./actions";
 
+/*
 //sort
+*/
 function sort(state = null, action) {
 	switch (action.type) {
 		case SORT:
@@ -14,7 +16,9 @@ function sort(state = null, action) {
 	}
 }
 //
-//switch statement
+/*
+groceryList
+*/
 function groceryList(state = [], action) {
 	switch (action.type) {
 		// adds item to list
@@ -33,11 +37,15 @@ function groceryList(state = [], action) {
 				}
 			});
 			break;
+		//case LIST_TOTAL
 		default:
 			return state;
 	}
 }
-//set filter reducers
+
+/*
+set filter reducers
+*/
 function linkFilter(state = { filter: "All" }, action) {
 	switch (action.type) {
 		case FILTER:
@@ -53,6 +61,10 @@ function linkFilter(state = { filter: "All" }, action) {
 //not purchased
 //all
 //categories
+
+/*
+List total
+*/
 
 //combine reducers
 export const groceriesApp = combineReducers({

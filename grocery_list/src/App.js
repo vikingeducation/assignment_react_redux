@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import ListContainer from "./containers/List/ListContainer";
+
 import Filter from "./TopLevel/Filter";
+import List from "./TopLevel/List";
 import AddItemContainer from "./containers/AddItemContainer";
 import logo from "./logo.svg";
 
@@ -9,7 +10,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Filter />
-				<ListContainer />
+				<List />
 				<AddItemContainer />
 			</div>
 		);
