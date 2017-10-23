@@ -9,7 +9,7 @@ import ListTotal from "../../components/List/ListTotal";
 
 const mapPropsToState = (state, ownProps) => {
 	let groceryListTotal = state.groceryList.reduce((a, item) => {
-		return (a += item.amount);
+		return (a += parseInt(item.amount));
 	}, 0);
 
 	return {

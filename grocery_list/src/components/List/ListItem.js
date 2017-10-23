@@ -27,7 +27,7 @@ const ListItem = ({ groceryList }) => {
 		);
 	});
 
-	console.log(list);
+	console.log(groceryList);
 	return <div className="grocery_list">{list}</div>;
 };
 

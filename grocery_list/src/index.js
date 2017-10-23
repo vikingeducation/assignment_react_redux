@@ -34,9 +34,9 @@ console.log("initial state", store.getState());
 
 store.dispatch(
 	addItem({
+		category: "snacks",
 		name: "ice-cream",
 		description: "vanilla",
-		category: "snacks",
 		status: false,
 		amount: 3,
 		price: 1
@@ -45,9 +45,9 @@ store.dispatch(
 //  name, description, optionas(amount, category)
 store.dispatch(
 	addItem({
+		category: "zgrains",
 		name: "cereal",
 		description: "breakfast",
-		category: "zgrains",
 		status: false,
 		amount: 2,
 		price: 2
@@ -56,9 +56,9 @@ store.dispatch(
 
 store.dispatch(
 	addItem({
+		category: "fruit",
 		name: "apples",
 		description: "diet",
-		category: "fruit",
 		status: false,
 		amount: 5,
 		price: 3

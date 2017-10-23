@@ -11,7 +11,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListItem from "../../components/List/ListItem";
-import { filter } from "../../actions";
 
 const mapPropsToState = (state, ownProps) => {
 	return {

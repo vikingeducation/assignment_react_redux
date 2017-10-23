@@ -21,6 +21,7 @@ export function sort(condition) {
 //  name, description, optionas(amount, category)
 //
 export function addItem(data) {
+	console.log("Action Data", data);
 	return {
 		type: ADD_ITEM,
 		data: {

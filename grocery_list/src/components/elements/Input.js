@@ -1,10 +1,16 @@
 import React from "react";
 
 const Input = props => {
-	const { className, value } = props;
+	const { className, value, placeholder, type, able } = props;
 	const classNames = `${className}`;
-
-	return <input className={classNames} value={value} />;
+	return (
+		<input
+			type={type}
+			placeholder={placeholder}
+			className={classNames}
+			value={value}
+		/>
+	);
 };
 
 Input.defaultProps = {

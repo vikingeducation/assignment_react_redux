@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Filter from "./TopLevel/Filter";
 import List from "./TopLevel/List";
-import AddItemContainer from "./containers/AddItemContainer";
+import AddItem from "./TopLevel/AddItem";
 import logo from "./logo.svg";
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
 			<div className="App">
 				<Filter />
 				<List />
-				<AddItemContainer />
+				<AddItem />
 			</div>
 		);
 	}

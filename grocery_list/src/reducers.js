@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-
+import { reducer as formReducer } from "redux-form";
 //import action constants from action
 
 import { ADD_ITEM, PURCHASED, FILTER, SORT, LIST_TOTAL } from "./actions";
@@ -23,6 +23,7 @@ function groceryList(state = [], action) {
 	switch (action.type) {
 		// adds item to list
 		case ADD_ITEM:
+			console.log("DATAA", action.data);
 			return [...state, action.data];
 		//set purchased to true for matched item
 		case PURCHASED:
@@ -70,7 +71,8 @@ List total
 export const groceriesApp = combineReducers({
 	groceryList,
 	sort,
-	linkFilter
+	linkFilter,
+	form: formReducer
 });
 //shape of grocery list object
 
