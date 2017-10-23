@@ -1,9 +1,10 @@
 // create action constants to export to reducer.js
 export const ADD_ITEM = "ADD_ITEM";
-export const PURCHASED = "PURCHASED";
+export const PURCHASED_TOGGLE = "PURCHASED_TOGGLE";
 export const FILTER = "SET_FILTER";
 export const SORT = "SORT";
 export const LIST_TOTAL = "LIST_TOTAL";
+export const REMOVE = "REMOVE";
 
 //to set id numbers for items on list
 let itemId = 1;
@@ -31,13 +32,19 @@ export function addItem(data) {
 	};
 }
 //  indicate that a item has been purchased
-export function purchased(id) {
+export function purchaseToggle(id) {
 	return {
-		type: PURCHASED,
+		type: PURCHASED_TOGGLE,
 		data: id
 	};
 }
 
+export function remove(id) {
+	return {
+		type: REMOVE,
+		data: id
+	};
+}
 //  filter purchased/ not purchased, all, categories
 export function filter(filter) {
 	return {

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Input = props => {
-	const { className, value, placeholder, type, able } = props;
+	const { className, value, placeholder, type } = props;
 	const classNames = `${className}`;
 	return (
 		<input

@@ -12,22 +12,23 @@ On edit: allows editing of form
 import React from "react";
 import PropTypes from "prop-types";
 import Input from "../elements/Input";
+import ListItemBtnContainer from "../../containers/List/ListItemBtnContainer";
 
 const ListItem = ({ groceryList }) => {
 	let list = groceryList.map((item, i) => {
 		let { category, name, description, amount, price, status } = item;
 		return (
 			<form key={i}>
-				<Input value={category} className="list_item" />
-				<Input value={name} className="list_item" />
-				<Input value={description} className="list_item" />
-				<Input value={amount} className="list_item" />
-				<Input value={price} className="list_item" />
+				<Input value={category} status={status} className="list_item" />
+				<Input value={name} status={status} className="list_item" />
+				<Input value={description} status={status} className="list_item" />
+				<Input value={amount} status={status} className="list_item" />
+				<Input value={price} status={status} className="list_item" />
+				<ListItemBtnContainer />
 			</form>
 		);
 	});
 
-	console.log(groceryList);
 	return <div className="grocery_list">{list}</div>;
 };
 

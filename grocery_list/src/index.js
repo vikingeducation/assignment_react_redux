@@ -6,7 +6,7 @@ import "./index.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { groceriesApp } from "./reducers";
-import { addItem, purchased, filter, sort, listTotal } from "./actions";
+import { addItem, purchaseToggle, filter, sort, listTotal } from "./actions";
 
 /****************************
 See my grocery list items (remember you can always initialize your reducer or add a preloaded state to the store to see if this works).
@@ -68,7 +68,7 @@ store.dispatch(
 // //  indicate that a item has been purchased
 // console.log("BEFORE PURCHASE");
 // console.log("before Purchase:", store.getState());
-// store.dispatch(purchased(3));
+store.dispatch(purchaseToggle(1));
 // //  sort by name
 // console.log("BEFORE SOORTTT");
 // store.dispatch(sort("name"));

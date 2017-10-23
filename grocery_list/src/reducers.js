@@ -2,7 +2,14 @@ import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 //import action constants from action
 
-import { ADD_ITEM, PURCHASED, FILTER, SORT, LIST_TOTAL } from "./actions";
+import {
+	ADD_ITEM,
+	PURCHASED_TOGGLE,
+	REMOVE,
+	FILTER,
+	SORT,
+	LIST_TOTAL
+} from "./actions";
 
 /*
 //sort
@@ -26,18 +33,30 @@ function groceryList(state = [], action) {
 			console.log("DATAA", action.data);
 			return [...state, action.data];
 		//set purchased to true for matched item
-		case PURCHASED:
+		case PURCHASED_TOGGLE:
 			return state.map((item, i) => {
 				if (action.data === item.id) {
+					if (!item.status) {
+						return {
+							...item,
+							status: true
+						};
+					} else {
+						return {
+							...item,
+							status: false
+						};
+					}
 					return {
 						...item,
-						status: true
+						status: false ? true : false
 					};
 				} else {
 					return item;
 				}
 			});
-			break;
+		case REMOVE:
+			return;
 		//case LIST_TOTAL
 		default:
 			return state;
