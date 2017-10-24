@@ -22,7 +22,7 @@ export function sort(condition) {
 //  name, description, optionas(amount, category)
 //
 export function addItem(data) {
-	console.log("Action Data", data);
+	//console.log("add id", itemId);
 	return {
 		type: ADD_ITEM,
 		data: {
@@ -33,6 +33,7 @@ export function addItem(data) {
 }
 //  indicate that a item has been purchased
 export function purchaseToggle(id) {
+	console.log("Action Data", id);
 	return {
 		type: PURCHASED_TOGGLE,
 		data: id

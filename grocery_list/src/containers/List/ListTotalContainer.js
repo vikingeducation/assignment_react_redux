@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListTotal from "../../components/List/ListTotal";
 
-const mapPropsToState = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
 	let groceryListTotal = state.groceryList.reduce((a, item) => {
 		return (a += parseInt(item.amount));
 	}, 0);
@@ -19,7 +19,7 @@ const mapPropsToState = (state, ownProps) => {
 const mapDispatchToProps = (state, ownProps) => {
 	return {};
 };
-const ListTotalContainer = connect(mapPropsToState, mapDispatchToProps)(
+const ListTotalContainer = connect(mapStateToProps, mapDispatchToProps)(
 	ListTotal
 );
 

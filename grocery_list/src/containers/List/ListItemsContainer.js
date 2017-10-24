@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListItem from "../../components/List/ListItem";
 
-const mapPropsToState = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
 	return {
 		groceryList: state.groceryList
 	};
@@ -21,7 +21,7 @@ const mapPropsToState = (state, ownProps) => {
 const mapDispatchToProps = (state, ownProps) => {
 	return {};
 };
-const ListItemsContainer = connect(mapPropsToState, mapDispatchToProps)(
+const ListItemsContainer = connect(mapStateToProps, mapDispatchToProps)(
 	ListItem
 );
 

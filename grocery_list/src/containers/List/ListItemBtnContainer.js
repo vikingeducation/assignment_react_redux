@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import ListItemBtn from "../../components/List/ListItemBtn";
 import { purchaseToggle } from "../../actions";
 
-const mapPropsToState = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
 	return {
 		onPurchase: e => {
 			console.log(" e.value", e.value);
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	};
 };
 
-const ListItemBtnContainer = connect(mapPropsToState, mapDispatchToProps)(
+const ListItemBtnContainer = connect(mapStateToProps, mapDispatchToProps)(
 	ListItemBtn
 );
 

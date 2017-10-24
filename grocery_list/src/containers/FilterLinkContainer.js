@@ -17,7 +17,7 @@ import { filter } from "../actions";
 
 //import Filter from "./Filter";
 
-const mapPropsToState = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
 	return {
 		//true for selected filter
 		status: state.linkFilter.filter === ownProps.filter,
@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	};
 };
 
-const FilterLinkContainer = connect(mapPropsToState, mapDispatchToProps)(
+const FilterLinkContainer = connect(mapStateToProps, mapDispatchToProps)(
 	FilterLink
 );
 

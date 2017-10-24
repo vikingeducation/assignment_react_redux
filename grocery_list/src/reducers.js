@@ -2,14 +2,7 @@ import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 //import action constants from action
 
-import {
-	ADD_ITEM,
-	PURCHASED_TOGGLE,
-	REMOVE,
-	FILTER,
-	SORT,
-	LIST_TOTAL
-} from "./actions";
+import { ADD_ITEM, PURCHASED_TOGGLE, REMOVE, FILTER, SORT } from "./actions";
 
 /*
 //sort
@@ -30,30 +23,18 @@ function groceryList(state = [], action) {
 	switch (action.type) {
 		// adds item to list
 		case ADD_ITEM:
-			console.log("DATAA", action.data);
+			console.log("DATAA", action.data.id);
 			return [...state, action.data];
 		//set purchased to true for matched item
 		case PURCHASED_TOGGLE:
 			return state.map((item, i) => {
-				if (action.data === item.id) {
-					if (!item.status) {
-						return {
-							...item,
-							status: true
-						};
-					} else {
-						return {
-							...item,
-							status: false
-						};
-					}
+				if (item.id === action.data + 1) {
 					return {
 						...item,
-						status: false ? true : false
+						status: item.status === false ? true : false
 					};
-				} else {
-					return item;
 				}
+				return item;
 			});
 		case REMOVE:
 			return;
@@ -72,7 +53,6 @@ function linkFilter(state = { filter: "All" }, action) {
 			return {
 				filter: action.filter
 			};
-			break;
 		default:
 			return state;
 	}

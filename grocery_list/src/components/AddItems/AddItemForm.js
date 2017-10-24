@@ -4,7 +4,35 @@ A form that takes in inputs and adds an items object to the groceryList array.
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Field, reduxForm, SubmissionError } from "redux-form";
+
+const AddItemForm = props => {
+	const { onSubmit } = props;
+	return (
+		<form onSubmit={onSubmit}>
+			<h3>Add Item</h3>
+			<label for="category">Category</label>
+			<input name="category" type="text" />
+			<label for="name">Name</label>
+			<input name="name" type="text" />
+			<label for="description">Description</label>
+			<input name="description" type="text" />
+			<label for="amount">Amount</label>
+			<input name="amount" type="number" />
+			<label for="price">price</label>
+			<input name="price" type="number" />
+
+			<button type="submit">Add Item</button>
+		</form>
+	);
+};
+
+AddItemForm.propTypes = {
+	onSubmit: PropTypes.func.isRequired
+};
+
+export default AddItemForm;
+
+/****************************
 const renderField = ({
 	type,
 	label,
@@ -28,47 +56,25 @@ const renderField = ({
 		</div>
 	);
 };
-const AddItemFormFunc = props => {
-	const { handleSubmit, handleFormSubmit } = props;
-	return (
-		<form onSubmit={handleSubmit(handleFormSubmit)}>
-			<Field
-				name="category"
-				label="Category"
-				component={renderField}
-				type="text"
-			/>
-			<Field name="name" label="Name" component={renderField} type="text" />
-			<Field
-				name="description"
-				label="Description"
-				component={renderField}
-				type="text"
-			/>
-			<Field
-				name="amount"
-				label="Amount"
-				component={renderField}
-				type="number"
-				max="1000000"
-				min="1"
-			/>
-			<Field
-				name="price"
-				label="Price"
-				component={renderField}
-				type="number"
-				max="1000000"
-			/>
-			<button type="submit">Add Item</button>
-		</form>
-	);
-};
-
-const AddItemForm = reduxForm({
-	form: "addItem"
-})(AddItemFormFunc);
-
-AddItemForm.propTypes = {};
-
-export default AddItemForm;
+<Field name="name" label="Name" component={renderField} type="text" />
+<Field
+	name="description"
+	label="Description"
+	component={renderField}
+	type="text"
+/>
+<Field
+	name="amount"
+	label="Amount"
+	component={renderField}
+	type="number"
+	max="1000000"
+	min="1"
+/>
+<Field
+	name="price"
+	label="Price"
+	component={renderField}
+	type="number"
+	max="1000000"
+*****************************/

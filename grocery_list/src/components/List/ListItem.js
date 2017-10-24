@@ -12,7 +12,7 @@ On edit: allows editing of form
 import React from "react";
 import PropTypes from "prop-types";
 import Input from "../elements/Input";
-import ListItemBtnContainer from "../../containers/List/ListItemBtnContainer";
+import ListItemsStatusButtonsContainer from "../../containers/List/ListItemsStatusButtonsContainer";
 
 const ListItem = ({ groceryList }) => {
 	let list = groceryList.map((item, i) => {
@@ -24,7 +24,7 @@ const ListItem = ({ groceryList }) => {
 				<Input value={description} status={status} className="list_item" />
 				<Input value={amount} status={status} className="list_item" />
 				<Input value={price} status={status} className="list_item" />
-				<ListItemBtnContainer />
+				<ListItemsStatusButtonsContainer status={status} id={i} />
 			</form>
 		);
 	});
