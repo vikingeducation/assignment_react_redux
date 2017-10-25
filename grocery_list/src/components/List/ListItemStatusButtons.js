@@ -1,10 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ListItemsStatusButtons = ({ onPurchase, onRemove, id }) => {
+const ListItemsStatusButtons = ({
+	onPurchaseToggle,
+	onRemove,
+	id,
+	classNames
+}) => {
 	return (
 		<div className="status_btn_container">
-			<button type="submit" id={id} onClick={onPurchase}>
+			<button
+				className={classNames}
+				type="submit"
+				id={id}
+				onClick={onPurchaseToggle}>
 				Purchase
 			</button>
 			<button type="submit" id={id} onClick={onRemove}>

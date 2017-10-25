@@ -20,3 +20,15 @@ body {
 	width: 100%;
 	height: 4rem;
 }
+
+/**
+ List buttons
+ */
+
+.purchased_btn {
+	background-color: blue;
+}
+
+.not_purchased_btn {
+	background-color: yellow;
+}
