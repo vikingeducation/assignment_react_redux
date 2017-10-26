@@ -28,7 +28,7 @@ function groceryList(state = [], action) {
 		//set purchased to true for matched item
 		case PURCHASED_TOGGLE:
 			return state.map((item, i) => {
-				if (item.id === action.data + 1) {
+				if (item.id === action.data) {
 					return {
 						...item,
 						status: item.status === false ? true : false
@@ -37,7 +37,11 @@ function groceryList(state = [], action) {
 				return item;
 			});
 		case REMOVE:
-			return;
+			return state.filter((item, i) => {
+				if (item.id !== action.data) {
+					return item;
+				}
+			});
 		//case LIST_TOTAL
 		default:
 			return state;
@@ -47,7 +51,7 @@ function groceryList(state = [], action) {
 /*
 set filter reducers
 */
-function linkFilter(state = { filter: "All" }, action) {
+function linkFilter(state = { filter: "NotPurchased" }, action) {
 	switch (action.type) {
 		case FILTER:
 			return {

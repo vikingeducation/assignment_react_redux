@@ -68,7 +68,7 @@ store.dispatch(
 // //  indicate that a item has been purchased
 // console.log("BEFORE PURCHASE");
 // console.log("before Purchase:", store.getState());
-store.dispatch(purchaseToggle(1));
+//store.dispatch(purchaseToggle(1));
 // //  sort by name
 // console.log("BEFORE SOORTTT");
 // store.dispatch(sort("name"));

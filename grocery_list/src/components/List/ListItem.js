@@ -16,15 +16,15 @@ import ListItemsStatusButtonsContainer from "../../containers/List/ListItemsStat
 
 const ListItem = ({ groceryList }) => {
 	let list = groceryList.map((item, i) => {
-		let { category, name, description, amount, price, status } = item;
+		let { category, name, description, amount, price, status, id } = item;
 		return (
-			<form key={i}>
+			<form key={id}>
 				<Input value={category} status={status} className="list_item" />
 				<Input value={name} status={status} className="list_item" />
 				<Input value={description} status={status} className="list_item" />
 				<Input value={amount} status={status} className="list_item" />
 				<Input value={price} status={status} className="list_item" />
-				<ListItemsStatusButtonsContainer status={status} id={i} />
+				<ListItemsStatusButtonsContainer status={status} id={id} />
 			</form>
 		);
 	});

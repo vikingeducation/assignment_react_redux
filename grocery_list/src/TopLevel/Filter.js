@@ -4,6 +4,7 @@ This component will return the FilterContainer to App.
 import React from "react";
 import PropTypes from "prop-types";
 import FilterLinkContainer from "../containers/FilterLinkContainer";
+import CategorySelectorContainer from "../containers/CategorySelectorContainer";
 
 const Filter = props => {
 	return (
@@ -13,6 +14,7 @@ const Filter = props => {
 			<FilterLinkContainer filter="NotPurchased">
 				Not Purchased
 			</FilterLinkContainer>
+			<CategorySelectorContainer />
 		</div>
 	);
 };

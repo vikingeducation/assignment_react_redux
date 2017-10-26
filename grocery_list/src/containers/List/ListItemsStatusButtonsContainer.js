@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListItemsStatusButtons from "../../components/List/ListItemStatusButtons";
 import { purchaseToggle, remove } from "../../actions";
-let className = "not_purchased";
 
 const mapStateToProps = (state, ownProps) => {
 	return {
@@ -24,10 +23,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		//toggles status, text,of purchase button
 		onPurchaseToggle: e => {
 			e.preventDefault();
-			console.log("e.value purchase", e.target);
-			let text =
-				e.target.className !== "purchased_btn" ? "Got it!" : "Purchase";
-			e.target.innerHTML = text;
 			let id = parseInt(e.target.id);
 			dispatch(purchaseToggle(id));
 		},

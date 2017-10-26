@@ -5,17 +5,18 @@ const ListItemsStatusButtons = ({
 	onPurchaseToggle,
 	onRemove,
 	id,
-	classNames
+	classNames,
+	status
 }) => {
 	return (
 		<div className="status_btn_container">
-			<button
+			<input
 				className={classNames}
 				type="submit"
 				id={id}
-				onClick={onPurchaseToggle}>
-				Purchase
-			</button>
+				onClick={onPurchaseToggle}
+				value={status ? "Got it!" : "Purchase"}
+			/>
 			<button type="submit" id={id} onClick={onRemove}>
 				Remove
 			</button>
