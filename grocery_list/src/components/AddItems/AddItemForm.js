@@ -17,9 +17,9 @@ const AddItemForm = props => {
 			<label for="description">Description</label>
 			<input name="description" type="text" />
 			<label for="amount">Amount</label>
-			<input name="amount" type="number" />
+			<input name="amount" type="number" min="1" />
 			<label for="price">price</label>
-			<input name="price" type="number" />
+			<input name="price" type="number" min="1" />
 
 			<button type="submit">Add Item</button>
 		</form>
