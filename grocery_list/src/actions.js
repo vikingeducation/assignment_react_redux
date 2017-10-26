@@ -12,10 +12,10 @@ let itemId = 1;
 //create action creator functions
 
 //  sort by name
-export function sort(condition) {
+export function sort(section, classname) {
 	return {
 		type: SORT,
-		data: condition
+		data: { section, classname }
 	};
 }
 //add new item to list with

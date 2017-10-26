@@ -32,3 +32,24 @@ body {
 .not_purchased_btn {
 	background-color: yellow;
 }
+
+input.down {
+	background-image: url(./img/d_arrow.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 2rem;
+	cursor: pointer;
+	width: 8rem;
+	vertical-align: middle;
+}
+input.up {
+	background-image: url(./img/up_arrow.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 2rem;
+	cursor: pointer;
+	width: 8rem;
+	vertical-align: middle;
+}

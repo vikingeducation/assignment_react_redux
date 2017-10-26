@@ -46,7 +46,7 @@ store.dispatch(
 store.dispatch(
 	addItem({
 		category: "zgrains",
-		name: "cereal",
+		name: "zcereal",
 		description: "breakfast",
 		status: false,
 		amount: 2,

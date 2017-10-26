@@ -4,17 +4,6 @@ import { reducer as formReducer } from "redux-form";
 
 import { ADD_ITEM, PURCHASED_TOGGLE, REMOVE, FILTER, SORT } from "./actions";
 
-/*
-//sort
-*/
-function sort(state = null, action) {
-	switch (action.type) {
-		case SORT:
-			return action.data;
-		default:
-			return state;
-	}
-}
 //
 /*
 groceryList
@@ -42,6 +31,13 @@ function groceryList(state = [], action) {
 					return item;
 				}
 			});
+		case SORT: {
+			let section = action.data.section.toLowerCase();
+			let sorted = state.slice().sort((a, b) => {
+				return a[section] < b[section] ? -1 : a[section] > b[section] ? 1 : 0;
+			});
+			return action.data.classname === "up" ? sorted : sorted.reverse();
+		}
 		//case LIST_TOTAL
 		default:
 			return state;
@@ -73,7 +69,6 @@ List total
 //combine reducers
 export const groceriesApp = combineReducers({
 	groceryList,
-	sort,
 	linkFilter,
 	form: formReducer
 });

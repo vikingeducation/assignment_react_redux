@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ListHeader from "../components/List/ListHeader";
+import ListHeaderContainer from "../containers/List/ListHeaderContainer";
 import ListItemsContainer from "../containers/List/ListItemsContainer";
 import ListTotalContainer from "../containers/List/ListTotalContainer";
 const List = props => {
 	return (
 		<div className="ListContainer">
-			<ListHeader />
+			<ListHeaderContainer />
 			<ListItemsContainer />
 			<ListTotalContainer />
 		</div>
