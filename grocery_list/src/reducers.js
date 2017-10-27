@@ -2,7 +2,14 @@ import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 //import action constants from action
 
-import { ADD_ITEM, PURCHASED_TOGGLE, REMOVE, FILTER, SORT } from "./actions";
+import {
+	ADD_ITEM,
+	PURCHASED_TOGGLE,
+	REMOVE,
+	FILTER,
+	SORT,
+	CATEGORY_FILTER
+} from "./actions";
 
 //
 /*
@@ -38,12 +45,19 @@ function groceryList(state = [], action) {
 			});
 			return action.data.classname === "up" ? sorted : sorted.reverse();
 		}
-		//case LIST_TOTAL
 		default:
 			return state;
 	}
 }
 
+function categoryFilter(state = "All", action) {
+	switch (action.type) {
+		case CATEGORY_FILTER:
+			return action.category;
+		default:
+			return state;
+	}
+}
 /*
 set filter reducers
 */
@@ -70,7 +84,7 @@ List total
 export const groceriesApp = combineReducers({
 	groceryList,
 	linkFilter,
-	form: formReducer
+	categoryFilter
 });
 //shape of grocery list object
 

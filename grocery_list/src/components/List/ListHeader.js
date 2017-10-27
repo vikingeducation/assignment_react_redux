@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ListHeader = ({ onClickHandler, test }) => {
+const ListHeader = ({ onClickHandler }) => {
 	return (
 		<div className="list_header">
 			<input

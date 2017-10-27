@@ -12,8 +12,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListItem from "../../components/List/ListItem";
 
-//returns new list based on filters set by filter links
-const filterList = (list, filters) => {
+//returns new list based on status filters set by filter links
+const filterPurchased = (list, filters) => {
 	switch (filters.filter) {
 		case "All":
 			return list;
@@ -26,9 +26,35 @@ const filterList = (list, filters) => {
 	}
 };
 
+const filterCategory = (list, category) => {
+	console.log("infilter category list:", list);
+	console.log("infilter category category:", category);
+	const newList = list.filter(item => {
+		return item.category === category.toLowerCase();
+	});
+	if (category === "All") {
+		console.log("ALL", list);
+		return list;
+	} else {
+		return newList;
+	}
+};
+
+const filterList = (list, filter, category) => {
+	// console.log(
+	// 	"in filter list",
+	// 	filterCategory(filterPurchased(list, filter), category)
+	// );
+	return filterCategory(filterPurchased(list, filter), category);
+};
+
 const mapStateToProps = (state, ownProps) => {
 	return {
-		groceryList: filterList(state.groceryList, state.linkFilter)
+		groceryList: filterList(
+			state.groceryList,
+			state.linkFilter,
+			state.categoryFilter
+		)
 	};
 };
 

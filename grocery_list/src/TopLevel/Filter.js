@@ -8,7 +8,7 @@ import CategorySelectorContainer from "../containers/CategorySelectorContainer";
 
 const Filter = props => {
 	return (
-		<div>
+		<div className="filter_container">
 			<FilterLinkContainer filter="All">All</FilterLinkContainer>
 			<FilterLinkContainer filter="Purchased">Purchased</FilterLinkContainer>
 			<FilterLinkContainer filter="NotPurchased">

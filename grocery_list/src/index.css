@@ -10,7 +10,7 @@ body {
 
 .ListContainer {
 	width: 80%;
-	margin: 3rem auto;
+	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -52,4 +52,19 @@ input.up {
 	cursor: pointer;
 	width: 8rem;
 	vertical-align: middle;
+}
+
+.title {
+	font-family: serif;
+	font-size: 5rem;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+
+.filter_container {
+	text-align: center;
+}
+
+.filter_container > * {
+	margin: 0 1rem;
 }

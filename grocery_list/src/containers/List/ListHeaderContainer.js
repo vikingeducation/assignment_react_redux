@@ -8,9 +8,7 @@ const toggleArrow = item =>
 	item.className === "up" ? (item.className = "down") : (item.className = "up");
 
 const mapStateToProps = (state, ownProps) => {
-	return {
-		test: "have"
-	};
+	return {};
 };
 //onClickHander changes sort arrow direction and dispatches sort
 const mapDispatchToProps = dispatch => {

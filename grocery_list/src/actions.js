@@ -5,6 +5,7 @@ export const FILTER = "SET_FILTER";
 export const SORT = "SORT";
 export const LIST_TOTAL = "LIST_TOTAL";
 export const REMOVE = "REMOVE";
+export const CATEGORY_FILTER = "CATEGORY_FILTER";
 
 //to set id numbers for items on list
 let itemId = 1;
@@ -33,7 +34,6 @@ export function addItem(data) {
 }
 //  indicate that a item has been purchased
 export function purchaseToggle(id) {
-	console.log("Action Data", id);
 	return {
 		type: PURCHASED_TOGGLE,
 		data: id
@@ -54,6 +54,12 @@ export function filter(filter) {
 	};
 }
 
+export function categoryFilter(category) {
+	return {
+		type: CATEGORY_FILTER,
+		category
+	};
+}
 // total of grocery item amounts
 
 //shape of grocery list object

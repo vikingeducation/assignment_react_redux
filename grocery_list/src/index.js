@@ -45,8 +45,8 @@ store.dispatch(
 //  name, description, optionas(amount, category)
 store.dispatch(
 	addItem({
-		category: "zgrains",
-		name: "zcereal",
+		category: "grains",
+		name: "cereal",
 		description: "breakfast",
 		status: false,
 		amount: 2,
@@ -62,6 +62,28 @@ store.dispatch(
 		status: false,
 		amount: 5,
 		price: 3
+	})
+);
+
+store.dispatch(
+	addItem({
+		category: "fruit",
+		name: "bananas",
+		description: "diet",
+		status: false,
+		amount: 12,
+		price: 2
+	})
+);
+
+store.dispatch(
+	addItem({
+		category: "fruit",
+		name: "kiwis",
+		description: "diet",
+		status: false,
+		amount: 4,
+		price: 5
 	})
 );
 //
