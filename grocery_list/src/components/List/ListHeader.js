@@ -3,29 +3,29 @@ import PropTypes from "prop-types";
 
 const ListHeader = ({ onClickHandler }) => {
 	return (
-		<div className="list_header">
+		<div className="display_header mx-auto d-flex row">
 			<input
 				type="submit"
-				className="up"
+				className="up sort_input col-2"
 				value="Category"
 				onClick={e => onClickHandler(e)}
 			/>
 			<input
 				type="submit"
-				className="up"
+				className="up sort_input col-3"
 				value="Name"
 				onClick={e => onClickHandler(e)}
 			/>
-			<input type="submit" value="Description" disabled />
+			<input type="submit" className="col-3" value="Description" disabled />
 			<input
 				type="submit"
-				className="up"
+				className="up sort_input col-2"
 				value="Amount"
 				onClick={e => onClickHandler(e)}
 			/>
 			<input
 				type="submit"
-				className="up"
+				className="up sort_input col-2"
 				value="Price"
 				onClick={e => onClickHandler(e)}
 			/>

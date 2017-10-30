@@ -27,8 +27,6 @@ const filterPurchased = (list, filters) => {
 };
 
 const filterCategory = (list, category) => {
-	console.log("infilter category list:", list);
-	console.log("infilter category category:", category);
 	const newList = list.filter(item => {
 		return item.category === category.toLowerCase();
 	});

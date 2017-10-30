@@ -5,7 +5,9 @@ import ListHeader from "../../components/List/ListHeader";
 import { sort } from "../../actions";
 
 const toggleArrow = item =>
-	item.className === "up" ? (item.className = "down") : (item.className = "up");
+	item.className === "up sort_input col-2"
+		? (item.className = "down sort_input col-2")
+		: (item.className = "up sort_input col-2");
 
 const mapStateToProps = (state, ownProps) => {
 	return {};

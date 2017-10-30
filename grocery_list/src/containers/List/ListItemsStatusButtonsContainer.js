@@ -14,7 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 	return {
 		id: ownProps.id,
 		status: ownProps.status,
-		classNames: ownProps.status ? "purchased_btn" : "not_purchased_btn"
+		classNames: ownProps.status
+			? "purchased_btn col-6"
+			: "not_purchased_btn col-6"
 	};
 };
 

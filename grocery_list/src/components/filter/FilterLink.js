@@ -6,9 +6,11 @@ const FilterLink = ({ status, onClick, children }) => {
 		return <span>{children}</span>;
 	}
 	return (
-		<a href="#" onClick={e => onClick()}>
-			{children}
-		</a>
+		<div>
+			<a href="#" onClick={e => onClick()}>
+				{children}
+			</a>
+		</div>
 	);
 };
 

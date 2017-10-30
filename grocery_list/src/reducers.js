@@ -43,7 +43,7 @@ function groceryList(state = [], action) {
 			let sorted = state.slice().sort((a, b) => {
 				return a[section] < b[section] ? -1 : a[section] > b[section] ? 1 : 0;
 			});
-			return action.data.classname === "up" ? sorted : sorted.reverse();
+			return action.data.classname.includes("up") ? sorted : sorted.reverse();
 		}
 		default:
 			return state;

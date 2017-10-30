@@ -9,19 +9,16 @@ const ListItemsStatusButtons = ({
 	status
 }) => {
 	return (
-		<div className="status_btn_container">
+		<div className="status_btn_container container">
 			<input
 				className={classNames}
 				type="submit"
 				id={id}
 				onClick={onPurchaseToggle}
-				value={status ? "Got it!" : "Purchase"}
+				value={status ? "Got It!" : "Purchase"}
 			/>
-			<button type="submit" id={id} onClick={onRemove}>
+			<button className="col-6" type="submit" id={id} onClick={onRemove}>
 				Remove
-			</button>
-			<button type="submit" id={id} onClick={onRemove}>
-				Edit
 			</button>
 		</div>
 	);
@@ -29,3 +26,9 @@ const ListItemsStatusButtons = ({
 
 ListItemsStatusButtons.propTypes = {};
 export default ListItemsStatusButtons;
+
+/***********************
+<button type="submit" id={id} onClick={onRemove}>
+	Edit
+</button>
+************************/

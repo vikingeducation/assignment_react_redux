@@ -11,15 +11,15 @@ const AddItemForm = props => {
 		<form onSubmit={onSubmit}>
 			<h3>Add Item</h3>
 			<label for="category">Category</label>
-			<input name="category" type="text" />
+			<input name="category" type="text" maxlength="15" required />
 			<label for="name">Name</label>
-			<input name="name" type="text" />
+			<input name="name" type="text" maxlength="15" />
 			<label for="description">Description</label>
-			<input name="description" type="text" />
+			<input name="description" type="text" maxlength="30" />
 			<label for="amount">Amount</label>
-			<input name="amount" type="number" min="1" />
+			<input name="amount" type="number" min="1" maxlength="10" />
 			<label for="price">price</label>
-			<input name="price" type="number" min="1" />
+			<input name="price" type="number" min="1" maxlength="10" />
 
 			<button type="submit">Add Item</button>
 		</form>

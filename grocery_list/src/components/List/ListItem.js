@@ -19,17 +19,45 @@ const ListItem = ({ groceryList }) => {
 		let { category, name, description, amount, price, status, id } = item;
 		return (
 			<form key={id}>
-				<Input value={category} status={status} className="list_item" />
-				<Input value={name} status={status} className="list_item" />
-				<Input value={description} status={status} className="list_item" />
-				<Input value={amount} status={status} className="list_item" />
-				<Input value={price} status={status} className="list_item" />
-				<ListItemsStatusButtonsContainer status={status} id={id} />
+				<div className="form-group d-flex mx-auto row">
+					<Input
+						value={category}
+						status={status}
+						className="list_item form-control col-2"
+					/>
+					<Input
+						value={name}
+						status={status}
+						className="list_item form-control col-3"
+					/>
+					<textarea
+						value={description}
+						status={status}
+						className="list_item form-control col-3"
+					/>
+					<Input
+						value={amount}
+						status={status}
+						className="list_item form-control col-2"
+					/>
+
+					<Input
+						value={price}
+						status={status}
+						icon="$"
+						className="list_item form-control col-2"
+					/>
+					<ListItemsStatusButtonsContainer
+						status={status}
+						id={id}
+						className=""
+					/>
+				</div>
 			</form>
 		);
 	});
 
-	return <div className="grocery_list">{list}</div>;
+	return <div className="grocery_list mx-auto ">{list}</div>;
 };
 
 export default ListItem;

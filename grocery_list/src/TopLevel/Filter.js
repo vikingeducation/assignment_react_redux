@@ -8,13 +8,17 @@ import CategorySelectorContainer from "../containers/CategorySelectorContainer";
 
 const Filter = props => {
 	return (
-		<div className="filter_container">
-			<FilterLinkContainer filter="All">All</FilterLinkContainer>
-			<FilterLinkContainer filter="Purchased">Purchased</FilterLinkContainer>
-			<FilterLinkContainer filter="NotPurchased">
+		<div className="d-flex justify-content-around my-3 w-75 mx-auto">
+			<FilterLinkContainer className="" filter="All">
+				All
+			</FilterLinkContainer>
+			<FilterLinkContainer className="" filter="Purchased">
+				Purchased
+			</FilterLinkContainer>
+			<FilterLinkContainer className="" filter="NotPurchased">
 				Not Purchased
 			</FilterLinkContainer>
-			<CategorySelectorContainer />
+			<CategorySelectorContainer className="" />
 		</div>
 	);
 };

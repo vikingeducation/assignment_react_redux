@@ -5,7 +5,7 @@ import ListItemsContainer from "../containers/List/ListItemsContainer";
 import ListTotalContainer from "../containers/List/ListTotalContainer";
 const List = props => {
 	return (
-		<div className="ListContainer">
+		<div className=" list_container w-75 p-3">
 			<ListHeaderContainer />
 			<ListItemsContainer />
 			<ListTotalContainer />

@@ -9,7 +9,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1 className="title">Shopping list</h1>
+				<div className="jumbotron">
+					<h1 className="display-3 text-center">Shopping list</h1>
+				</div>
 				<Filter />
 				<List />
 				<AddItemContainer />
