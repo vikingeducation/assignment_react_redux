@@ -86,7 +86,23 @@ input.up {
 .not_purchased_btn {
 	background-color: yellow;
 }
+/*
+amount total
+*/
+.amount_total {
+	text-align: right;
+}
 
 /**
  Add Items
  */
+.add_item_display_flex {
+	display: flex;
+}
+
+#add_item_toggle {
+	background-image: url(./img/plus.svg);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 2rem;
+}

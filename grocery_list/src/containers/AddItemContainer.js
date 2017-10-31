@@ -11,6 +11,23 @@ import AddItemForm from "../components/AddItems/AddItemForm";
 import { addItem } from "../actions";
 import serialize from "form-serialize";
 
+const showFormHandler = e => {
+	e.preventDefault();
+	let form = document.getElementById("add_item_form");
+	let formClasses = form.className;
+	if (formClasses.includes("add_item_display_flex")) {
+		document.getElementById("add_item_toggle").style.backgroundImage =
+			"url(/static/media/minus.c720b464.svg)";
+		form.style.display = "none";
+		form.className = "form-group  mx-auto row";
+	} else {
+		document.getElementById("add_item_toggle").style.backgroundImage =
+			"url(/static/media/plus.99b344d7.svg)";
+		form.style.display = "flex";
+		form.className = "add_item_display_flex form-group  mx-auto row";
+	}
+};
+
 const mapStateToProps = (state, ownProps) => {
 	let categories = state.groceryList.map(item => {
 		return item.category;
@@ -29,7 +46,8 @@ const mapDispatchToProps = dispatch => {
 			console.log("Serialized Data", data);
 			dispatch(addItem(data));
 			form.reset();
-		}
+		},
+		showFormHandler: showFormHandler
 	};
 };
 const AddItem = connect(mapStateToProps, mapDispatchToProps)(AddItemForm);

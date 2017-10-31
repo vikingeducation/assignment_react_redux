@@ -6,11 +6,23 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const AddItemForm = props => {
-	const { onSubmit } = props;
+	const { onSubmit, showFormHandler } = props;
 	return (
 		<div className="add_item_container mx-auto w-75 mb-5">
-			<form className="form-group d-flex mx-auto row" onSubmit={onSubmit}>
-				<h3 className="col-12">Add Item</h3>
+			<div className="add_item_container col-12 row my-4">
+				<h3 className="col-11 ">Add Item</h3>
+				<button
+					type="button"
+					className=" col-1"
+					id="add_item_toggle"
+					aria-label="Add Item button"
+					onClick={e => showFormHandler(e)}
+				/>
+			</div>
+			<form
+				className="add_item_display_flex form-group  mx-auto row"
+				id="add_item_form"
+				onSubmit={onSubmit}>
 				<label className="sr-only" for="category">
 					Category
 				</label>
@@ -66,7 +78,7 @@ const AddItemForm = props => {
 					maxlength="10"
 				/>
 
-				<button className="col-10 mx-auto my-2" type="submit">
+				<button className="col-4 mx-auto my-4" type="submit">
 					Add Item
 				</button>
 			</form>
