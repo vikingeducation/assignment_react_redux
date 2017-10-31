@@ -12,9 +12,9 @@ class App extends Component {
 				<div className="jumbotron">
 					<h1 className="display-3 text-center">Shopping list</h1>
 				</div>
+				<AddItemContainer />
 				<Filter />
 				<List />
-				<AddItemContainer />
 			</div>
 		);
 	}

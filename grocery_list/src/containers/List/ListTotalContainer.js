@@ -8,7 +8,14 @@ import { connect } from "react-redux";
 import ListTotal from "../../components/List/ListTotal";
 
 const mapStateToProps = (state, ownProps) => {
-	let groceryListTotal = state.groceryList.reduce((a, item) => {
+	//gets list passed through filters
+	let newList = ownProps.filterList(
+		state.groceryList,
+		state.linkFilter,
+		state.categoryFilter
+	);
+
+	let groceryListTotal = newList.reduce((a, item) => {
 		return (a += parseInt(item.amount));
 	}, 0);
 

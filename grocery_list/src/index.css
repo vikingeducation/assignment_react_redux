@@ -1,5 +1,5 @@
 * {
-	outline: 1px solid gray;
+	ooutline: 1px solid gray;
 }
 html {
 	font-size: 14px;
@@ -33,6 +33,9 @@ body {
 	flex-wrap: nowrap;
 }
 
+.list_item {
+	line-height: 0.5rem;
+}
 /**
  List buttons
  */
@@ -83,3 +86,7 @@ input.up {
 .not_purchased_btn {
 	background-color: yellow;
 }
+
+/**
+ Add Items
+ */
