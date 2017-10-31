@@ -8,26 +8,27 @@ import PropTypes from "prop-types";
 const AddItemForm = props => {
 	const { onSubmit, showFormHandler } = props;
 	return (
-		<div className="add_item_container mx-auto w-75 mb-5">
-			<div className="add_item_container col-12 row my-4">
-				<h3 className="col-11 ">Add Item</h3>
+		<div className="add_item_container mx-auto mb-5">
+			<div className="add_item_btn_container rounded col-12 row my-4">
+				<h4 className="col-11 my-auto">Add Item</h4>
 				<button
 					type="button"
-					className=" col-1"
+					className="col-1 rounded my-auto btn"
 					id="add_item_toggle"
 					aria-label="Add Item button"
 					onClick={e => showFormHandler(e)}
 				/>
 			</div>
 			<form
-				className="add_item_display_flex form-group  mx-auto row"
+				className="add_item_display_none form-group  mx-auto row "
 				id="add_item_form"
 				onSubmit={onSubmit}>
 				<label className="sr-only" for="category">
 					Category
 				</label>
 				<input
-					className="col-3"
+					className="col-3 col-md-2 border-primary m-1"
+					id="category_input"
 					name="category"
 					type="text"
 					placeholder="Category"
@@ -38,7 +39,7 @@ const AddItemForm = props => {
 					Name
 				</label>
 				<input
-					className="col-2"
+					className="col-4 col-md-2 border-primary m-1"
 					name="name"
 					type="text"
 					maxlength="15"
@@ -49,7 +50,7 @@ const AddItemForm = props => {
 					Description
 				</label>
 				<input
-					className="col-3"
+					className="col-4 col-md-3 border-primary m-1"
 					name="description"
 					type="text"
 					placeholder="Description"
@@ -59,7 +60,7 @@ const AddItemForm = props => {
 					Amount
 				</label>
 				<input
-					className="col-2"
+					className="col-4 col-md-2 border-primary m-1"
 					name="amount"
 					type="number"
 					placeholder="Amount"
@@ -70,7 +71,7 @@ const AddItemForm = props => {
 					price
 				</label>
 				<input
-					className="col-2"
+					className="col-3 col-md-2 border-primary m-1"
 					name="price"
 					type="number"
 					placeholder="Price"
@@ -78,7 +79,9 @@ const AddItemForm = props => {
 					maxlength="10"
 				/>
 
-				<button className="col-4 mx-auto my-4" type="submit">
+				<button
+					className="btn btn-outline-success col-4 col-md-4 mx-md-auto my-md-4"
+					type="submit">
 					Add Item
 				</button>
 			</form>

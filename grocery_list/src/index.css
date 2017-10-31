@@ -96,13 +96,31 @@ amount total
 /**
  Add Items
  */
-.add_item_display_flex {
-	display: flex;
+.add_item_btn_container {
+	width: 30rem;
+	margin: 0 auto;
 }
 
+.add_item_btn_container {
+	height: 4rem;
+	background-color: #78c0ff;
+}
 #add_item_toggle {
 	background-image: url(./img/plus.svg);
 	background-color: transparent;
 	background-repeat: no-repeat;
+	height: 3rem;
 	width: 2rem;
+}
+
+.add_item_display_flex {
+	display: flex;
+}
+.add_item_display_none {
+	display: none;
+}
+@media (min-width: 720px) {
+	html {
+		font-size: 18px;
+	}
 }

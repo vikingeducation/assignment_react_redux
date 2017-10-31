@@ -17,14 +17,15 @@ const showFormHandler = e => {
 	let formClasses = form.className;
 	if (formClasses.includes("add_item_display_flex")) {
 		document.getElementById("add_item_toggle").style.backgroundImage =
-			"url(/static/media/minus.c720b464.svg)";
+			"url(/static/media/plus.99b344d7.svg)";
 		form.style.display = "none";
 		form.className = "form-group  mx-auto row";
 	} else {
 		document.getElementById("add_item_toggle").style.backgroundImage =
-			"url(/static/media/plus.99b344d7.svg)";
+			"url(/static/media/minus.c720b464.svg)";
 		form.style.display = "flex";
-		form.className = "add_item_display_flex form-group  mx-auto row";
+		form.className = "add_item_display_flex form-group  mx-auto row ";
+		document.getElementById("category_input").focus();
 	}
 };
 
