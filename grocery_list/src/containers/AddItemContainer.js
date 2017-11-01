@@ -10,21 +10,22 @@ import { connect } from "react-redux";
 import AddItemForm from "../components/AddItems/AddItemForm";
 import { addItem } from "../actions";
 import serialize from "form-serialize";
-
+// changes icon of add item btn,
+// toogles display of add item form(flex/none)
+// focuses on catefory input element when add item is shown
 const showFormHandler = e => {
 	e.preventDefault();
 	let form = document.getElementById("add_item_form");
 	let formClasses = form.className;
 	if (formClasses.includes("add_item_display_flex")) {
-		document.getElementById("add_item_toggle").style.backgroundImage =
-			"url(/static/media/plus.99b344d7.svg)";
-		form.style.display = "none";
-		form.className = "form-group  mx-auto row";
+		document.getElementById("add_item_toggle").className =
+			"add_item_plus col-1 rounded my-auto btn";
+
+		form.className = "add_item_display_none form-group  mx-auto row";
 	} else {
-		document.getElementById("add_item_toggle").style.backgroundImage =
-			"url(/static/media/minus.c720b464.svg)";
-		form.style.display = "flex";
 		form.className = "add_item_display_flex form-group  mx-auto row ";
+		document.getElementById("add_item_toggle").className =
+			"add_item_minus col-1 rounded my-auto btn";
 		document.getElementById("category_input").focus();
 	}
 };

@@ -114,7 +114,14 @@ amount total
 	height: 4rem;
 	background-color: #78c0ff;
 }
+/***
+add item button
+***/
 #add_item_toggle {
+	height: 3rem;
+	width: 2rem;
+}
+.add_item_plus {
 	background-image: url(./img/plus.svg);
 	background-color: transparent;
 	background-repeat: no-repeat;
@@ -122,6 +129,16 @@ amount total
 	width: 2rem;
 }
 
+.add_item_minus {
+	background-image: url(./img/minus.svg);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	height: 3rem;
+	width: 2rem;
+}
+/****
+add-item-form
+*****/
 .add_item_display_flex {
 	display: flex;
 }

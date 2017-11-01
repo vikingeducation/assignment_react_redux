@@ -13,7 +13,7 @@ const AddItemForm = props => {
 				<h4 className="col-11 my-auto">Add Item</h4>
 				<button
 					type="button"
-					className="col-1 rounded my-auto btn"
+					className="add_item_plus col-1 rounded my-auto btn"
 					id="add_item_toggle"
 					aria-label="Add Item button"
 					onClick={e => showFormHandler(e)}
@@ -80,7 +80,7 @@ const AddItemForm = props => {
 				/>
 
 				<button
-					className="btn btn-outline-success col-4 col-md-4 mx-md-auto my-md-4"
+					className="btn btn-outline-success col-4 col-md-4 ml-1 mx-md-auto my-md-4"
 					type="submit">
 					Add Item
 				</button>
