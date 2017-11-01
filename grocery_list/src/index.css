@@ -26,7 +26,16 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 }
-
+/********************************
+header
+/********************************/
+.header {
+	width: 80%;
+}
+.sm_header {
+	background-color: #e9ecef;
+	height: 6rem;
+}
 .list_container {
 	width: 80%;
 	margin: 0 auto;
