@@ -21,11 +21,7 @@ html {
 		font-size: 22px;
 	}
 }
-body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-}
+
 /********************************
 header
 /********************************/
@@ -44,62 +40,6 @@ header
 
 .list_item {
 	line-height: 0.5rem;
-}
-/**
- List buttons
- */
-
-.display_header > * {
-	width: 100%;
-}
-input.sort_input {
-	font-size: 0.8rem;
-	height: 2rem;
-	cursor: pointer;
-	vertical-align: middle;
-	padding-right: 15px;
-}
-
-input.down {
-	background-image: url(./img/d_arrow.png);
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: right;
-}
-input.up {
-	background-image: url(./img/up_arrow.png);
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: right;
-}
-
-.title {
-	font-family: serif;
-	font-size: 5rem;
-	letter-spacing: 0.2rem;
-	text-align: center;
-}
-
-.filter_container {
-	text-align: center;
-}
-
-.filter_container > * {
-	margin: 0 1rem;
-}
-/*purchase buttons*/
-.purchased_btn {
-	background-color: lightblue;
-}
-
-.not_purchased_btn {
-	background-color: yellow;
-}
-/*
-amount total
-*/
-.amount_total {
-	text-align: right;
 }
 
 /**
@@ -125,6 +65,7 @@ add item button
 	background-image: url(./img/plus.svg);
 	background-color: transparent;
 	background-repeat: no-repeat;
+	background-position: center;
 	height: 3rem;
 	width: 2rem;
 }
@@ -133,12 +74,13 @@ add item button
 	background-image: url(./img/minus.svg);
 	background-color: transparent;
 	background-repeat: no-repeat;
+	background-position: center;
 	height: 3rem;
 	width: 2rem;
 }
-/****
+/****************************
 add-item-form
-*****/
+****************************/
 .add_item_display_flex {
 	display: flex;
 }
@@ -149,4 +91,57 @@ add-item-form
 	html {
 		font-size: 18px;
 	}
+}
+
+/**********************
+Filter Links
+************************/
+.filter_container {
+	text-align: center;
+}
+
+.filter_container > * {
+	margin: 0 1rem;
+}
+
+/***********************
+ List buttons
+ ***********************/
+
+.display_header > * {
+	width: 100%;
+}
+input.sort_input {
+	font-size: 0.8rem;
+	height: 2rem;
+	cursor: pointer;
+	vertical-align: middle;
+	padding-right: 15px;
+}
+
+input.down {
+	background-image: url(./img/d_arrow.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+input.up {
+	background-image: url(./img/up_arrow.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+/*purchase buttons*/
+.purchased_btn {
+	background-color: lightblue;
+}
+
+.not_purchased_btn {
+	background-color: yellow;
+}
+/*
+amount total
+*/
+.amount_total {
+	text-align: right;
 }

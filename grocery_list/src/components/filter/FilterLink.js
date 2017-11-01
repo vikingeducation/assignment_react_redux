@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 const FilterLink = ({ status, onClick, children }) => {
 	if (status) {
-		return <span>{children}</span>;
+		return <span className="align-self-center">{children}</span>;
 	}
 	return (
-		<div>
+		<div className="align-self-center">
 			<a href="#" onClick={e => onClick()}>
 				{children}
 			</a>

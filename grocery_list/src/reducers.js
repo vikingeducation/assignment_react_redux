@@ -61,7 +61,7 @@ function categoryFilter(state = "All", action) {
 /*
 set filter reducers
 */
-function linkFilter(state = { filter: "NotPurchased" }, action) {
+function linkFilter(state = { filter: "All" }, action) {
 	switch (action.type) {
 		case FILTER:
 			return {

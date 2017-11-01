@@ -13,8 +13,14 @@ const CategorySelector = ({ categories, onSelect }) => {
 	const options = makeOptions(categories);
 	return (
 		<div className="filter_selector">
-			<select name="categories" onChange={e => onSelect(e)}>
-				<option value="All">All</option>
+			<label className="sr-only" for="categories selector">
+				Category
+			</label>
+			<select
+				className="form-control"
+				name="categories selector"
+				onChange={e => onSelect(e)}>
+				<option value="All">All Categories</option>
 				{options}
 			</select>
 		</div>

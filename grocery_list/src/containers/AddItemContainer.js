@@ -52,7 +52,9 @@ const mapDispatchToProps = dispatch => {
 		showFormHandler: showFormHandler
 	};
 };
-const AddItem = connect(mapStateToProps, mapDispatchToProps)(AddItemForm);
+const AddItemContainer = connect(mapStateToProps, mapDispatchToProps)(
+	AddItemForm
+);
 
-AddItem.propTypes = {};
-export default AddItem;
+AddItemContainer.propTypes = {};
+export default AddItemContainer;
