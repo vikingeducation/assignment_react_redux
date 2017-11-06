@@ -60,6 +60,15 @@ add item button
 #add_item_toggle {
 	height: 3rem;
 	width: 2rem;
+	bbackground-image: url("./img/minus.svg");
+}
+
+.form_toggle_btn {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 3rem;
+	width: 2rem;
 }
 .add_item_plus {
 	background-image: url(./img/plus.svg);

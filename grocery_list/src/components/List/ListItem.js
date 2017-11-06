@@ -16,7 +16,15 @@ import ListItemsStatusButtonsContainer from "../../containers/List/ListItemsStat
 
 const ListItem = ({ groceryList }) => {
 	let list = groceryList.map((item, i) => {
-		let { category, name, description, amount, price, status, id } = item;
+		let {
+			category,
+			name,
+			description,
+			amount = 0,
+			price = 0,
+			status,
+			id
+		} = item;
 		return (
 			<form key={id}>
 				<div className="form-group d-flex mx-auto row">

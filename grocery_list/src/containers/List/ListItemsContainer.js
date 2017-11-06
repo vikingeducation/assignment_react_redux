@@ -30,5 +30,4 @@ const ListItemsContainer = connect(mapStateToProps, mapDispatchToProps)(
 	ListItem
 );
 
-ListItemsContainer.propTypes = {};
 export default ListItemsContainer;

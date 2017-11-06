@@ -6,6 +6,7 @@ export const SORT = "SORT";
 export const LIST_TOTAL = "LIST_TOTAL";
 export const REMOVE = "REMOVE";
 export const CATEGORY_FILTER = "CATEGORY_FILTER";
+export const CHANGE_ICON = "CHANGE_ICON";
 
 //to set id numbers for items on list
 let itemId = 1;
@@ -23,7 +24,7 @@ export function sort(section, classname) {
 //  name, description, optionas(amount, category)
 //
 export function addItem(data) {
-	//console.log("add id", itemId);
+	console.log("add id", data);
 	return {
 		type: ADD_ITEM,
 		data: {
@@ -61,7 +62,13 @@ export function categoryFilter(category) {
 	};
 }
 // total of grocery item amounts
-
+//changes Icon for add item button
+export function changeIcon(status) {
+	return {
+		type: CHANGE_ICON,
+		status
+	};
+}
 //shape of grocery list object
 /*
 filters: {

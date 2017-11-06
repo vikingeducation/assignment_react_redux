@@ -4,8 +4,12 @@ import PropTypes from "prop-types";
 //removes duplicates and returns list of category options
 const makeOptions = categories => {
 	categories = Array.from(new Set(categories));
-	return categories.map(item => {
-		return <option value={item.toLowerCase()}>{item}</option>;
+	return categories.map((item, i) => {
+		return (
+			<option value={item.toLowerCase()} key={i}>
+				{item}
+			</option>
+		);
 	});
 };
 

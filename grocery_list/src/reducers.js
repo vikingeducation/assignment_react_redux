@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 //import action constants from action
 
 import {
@@ -8,7 +7,8 @@ import {
 	REMOVE,
 	FILTER,
 	SORT,
-	CATEGORY_FILTER
+	CATEGORY_FILTER,
+	CHANGE_ICON
 } from "./actions";
 
 //
@@ -16,11 +16,13 @@ import {
 groceryList
 */
 function groceryList(state = [], action) {
+	console.log("in reducer state", state);
+	console.log("in reducer action", action);
 	switch (action.type) {
 		// adds item to list
 		case ADD_ITEM:
-			console.log("DATAA", action.data.id);
 			return [...state, action.data];
+
 		//set purchased to true for matched item
 		case PURCHASED_TOGGLE:
 			return state.map((item, i) => {
@@ -65,42 +67,32 @@ function linkFilter(state = { filter: "All" }, action) {
 	switch (action.type) {
 		case FILTER:
 			return {
+				...state,
 				filter: action.filter
 			};
 		default:
 			return state;
 	}
 }
-//purchased
-//not purchased
-//all
-//categories
 
-/*
-List total
-*/
+/***********************
+UX reducers
+************************/
+//additem icon toggle button
+function iconStatus(state = false, action) {
+	switch (action.type) {
+		case CHANGE_ICON:
+			return action.status;
+
+		default:
+			return state;
+	}
+}
 
 //combine reducers
 export const groceriesApp = combineReducers({
 	groceryList,
 	linkFilter,
-	categoryFilter
+	categoryFilter,
+	iconStatus
 });
-//shape of grocery list object
-
-/*
-filters: {
-  all: 'All',
-  purchased: 'Purchased',
-  unpurchased: 'Unpurchased',
-}
-
-groceries_list: [
-  {
-    name: apples,
-    description: diet,
-    category: fruit,
-    amount: 5,
-  }
-]
-*/
