@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App-header {
+  margin-bottom: 30px;
+}
+
+.InfoSection {
+  margin-bottom: 20px;
+}
+
+.SortAndFilter {
+  padding-bottom: 20px;
+}
+
+.table thead th {
+  border-bottom: 2px solid #686f7a;
+}
+
+.table td, .table th {
+  border-top: 1px solid #686f7a;
+}
+
+
