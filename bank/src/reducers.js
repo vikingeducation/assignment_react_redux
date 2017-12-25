@@ -5,7 +5,7 @@ import {
   WITHDRAW,
   TRANSFER,
   SELECT_ACCOUNT,
-  FILTER_BY_DATE
+  SORT_BY_DATE
 } from './actions';
 
 function accounts(state = [], action) {
@@ -66,16 +66,13 @@ function selectedAccount(state = 'NONE', action) {
   }
 }
 
-function filterByDate(state = null, action) {
+function sortByDate(state = "NONE", action) {
   switch (action.type) {
-  case FILTER_BY_DATE:
-    return {
-      start: action.data.start,
-      end: action.data.end
-    };
+  case SORT_BY_DATE:
+    return action.data;
   default:
     return state;
   }
 }
 
-export const bankApp = combineReducers({ accounts, selectedAccount, filterByDate });
+export const bankApp = combineReducers({ accounts, selectedAccount, sortByDate });

@@ -3,3 +3,39 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.App-header {
+  margin-bottom: 30px;
+}
+
+.InfoSection {
+  margin-bottom: 20px;
+}
+
+.account-section {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.AddDeposit, .Withdrawal, .Transfer {
+  padding-top: 20px;
+}
+
+.SortByDate {
+  padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 576px)  {
+  .deposit-btn {
+    position: relative;
+    top: 8px;
+  }
+
+  .transfer-btn {
+    margin-left: 15px;
+  }
+}

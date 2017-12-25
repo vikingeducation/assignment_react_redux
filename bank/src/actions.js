@@ -5,9 +5,9 @@ export const DEPOSIT = 'DEPOSIT';
 export const WITHDRAW = 'WITHDRAW';
 export const TRANSFER = 'TRANSFER';
 export const SELECT_ACCOUNT = 'SELECT_ACCOUNT';
-export const FILTER_BY_DATE = 'FILTER_BY_DATE';
+export const SORT_BY_DATE = 'SORT_BY_DATE';
 
-let newAccountId = 1;
+let newAccountId = 111222334;
 export function createAccount(data) {
   return {
     type: CREATE_ACCOUNT,
@@ -18,6 +18,7 @@ export function createAccount(data) {
   };
 }
 
+// Takes id (account number) and amount (in cents)
 export function deposit(data) {
   return {
     type: DEPOSIT,
@@ -25,6 +26,7 @@ export function deposit(data) {
   };
 }
 
+// Takes id (account number) and amount (in cents)
 export function withdraw(data) {
   return {
     type: WITHDRAW,
@@ -32,6 +34,7 @@ export function withdraw(data) {
   };
 }
 
+// Takes from (account number), to (account number), and amount (in cents)
 export function transfer(data) {
   return {
     type: TRANSFER,
@@ -49,9 +52,9 @@ export function selectAccount(id) {
   };
 }
 
-export function filterByDate(data) {
+export function sortByDate(data) {
   return {
-    type: FILTER_BY_DATE,
+    type: SORT_BY_DATE,
     data
   };
 }

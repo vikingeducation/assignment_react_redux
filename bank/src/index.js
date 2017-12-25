@@ -1,70 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { bankApp } from './reducers';
-import {
-  createAccount,
-  deposit,
-  withdraw,
-  transfer,
-  selectAccount,
-  filterByDate
-} from './actions';
 
-export const store = createStore(bankApp);
+// Mocked server/API response
+const accountsFromServer = [
+  {
+    id: 111222331,
+    customer: 'Jane Doe',
+    balance: 346600,
+    start_date: new Date(1995, 11, 17)
+  }, {
+    id: 111222332,
+    customer: 'John Doe',
+    balance: 287600,
+    start_date: new Date()
+  }, {
+    id: 111222333,
+    customer: 'Sarah Johnson',
+    balance: 1463400,
+    start_date: new Date(2001, 11, 29)
+  }
+];
 
-const unsubscribe = store.subscribe(() => {
-  console.log('current state', store.getState());
+export const store = createStore(bankApp, {
+  accounts: accountsFromServer
 });
 
 console.log('initial state', store.getState());
 
-store.dispatch(createAccount({
-  customer: 'John Doe',
-  balance: 287600,
-  start_data: new Date()
-}));
+store.subscribe(() => {
+  console.log('current state', store.getState());
+});
 
-store.dispatch(createAccount({
-  customer: 'Jane Doe',
-  balance: 346600,
-  start_data: new Date(1995, 11, 17)
-}));
-
-store.dispatch(createAccount({
-  customer: 'Sarah Johnson',
-  balance: 1463400,
-  start_data: new Date(2001, 11, 29)
-}));
-
-store.dispatch(deposit({
-  id: 2,
-  amount: 10000
-}));
-
-store.dispatch(withdraw({
-  id: 2,
-  amount: 10000
-}));
-
-store.dispatch(transfer({
-  from: 2,
-  to: 1,
-  amount: 10000
-}));
-
-store.dispatch(selectAccount(2));
-
-store.dispatch(filterByDate({
-  start: new Date(2000, 11, 17),
-  end: new Date(2001, 11, 17)
-}));
-
-unsubscribe();
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
 registerServiceWorker();

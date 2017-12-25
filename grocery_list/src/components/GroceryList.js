@@ -32,6 +32,7 @@ const GroceryList = ({items, onPurchase}) => {
         </Button>
       );
     }
+
     return (
       <tr key={item.id}>
         <td>{item.name}</td>
