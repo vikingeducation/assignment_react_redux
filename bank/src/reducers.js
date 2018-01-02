@@ -3,8 +3,8 @@ import {
   DEPOSIT_MONEY,
   WITHDRAW_MONEY,
   TRANSFER_MONEY,
-  TRANSACTION_FILTER,
-} from './actions';
+  TRANSACTION_FILTER
+} from "./actions";
 
 /*const initialState = {
   accounts: [
@@ -24,7 +24,7 @@ function cash(state = [], action) {
           if (account.id === action.data.id) {
             return account;
           }
-        }),
+        })
       };
     case DEPOSIT_MONEY:
       return {
@@ -37,16 +37,16 @@ function cash(state = [], action) {
               transactions: [
                 ...account.transactions,
                 {
-                  type: 'Deposit',
+                  type: "Deposit",
                   amount: action.data.amount,
-                  date: new Date(),
-                },
-              ],
+                  date: new Date()
+                }
+              ]
             };
           } else {
             return account;
           }
-        }),
+        })
       };
     case WITHDRAW_MONEY:
       return {
@@ -59,16 +59,16 @@ function cash(state = [], action) {
               transactions: [
                 ...account.transactions,
                 {
-                  type: 'Withdrawal',
+                  type: "Withdrawal",
                   amount: action.data.amount,
-                  date: new Date(),
-                },
-              ],
+                  date: new Date()
+                }
+              ]
             };
           } else {
             return account;
           }
-        }),
+        })
       };
     case TRANSFER_MONEY:
       return {
@@ -80,11 +80,11 @@ function cash(state = [], action) {
               transactions: [
                 ...account.transactions,
                 {
-                  type: 'Withdrawal',
+                  type: "Withdrawal",
                   amount: action.data.amount,
-                  date: new Date(),
-                },
-              ],
+                  date: new Date()
+                }
+              ]
             };
           } else if (account.id === action.data.id1) {
             return {
@@ -93,16 +93,16 @@ function cash(state = [], action) {
               transactions: [
                 ...account.transactions,
                 {
-                  type: 'Deposit',
+                  type: "Deposit",
                   amount: action.data.amount,
-                  date: new Date(),
-                },
-              ],
+                  date: new Date()
+                }
+              ]
             };
           } else {
             return account;
           }
-        }),
+        })
       };
     case TRANSACTION_FILTER:
       return {
@@ -118,7 +118,7 @@ function cash(state = [], action) {
               }
             });
           }
-        })[0],
+        })[0]
       };
     default:
       return state;

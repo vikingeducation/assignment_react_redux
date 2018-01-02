@@ -3,6 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import BankContainer from "./bankContainer";
 import DepositMoneyContainer from "./DepositMoneyContainer";
+import WithdrawMoneyContainer from "./WithdrawMoneyContainer";
+import TransferMoneyContainer from "./TransferMoneyContainer";
+import FilterTransactionsContainer from "./FilterTransactionsContainer";
+
 class App extends Component {
   render() {
     return (
@@ -13,6 +17,9 @@ class App extends Component {
         </header>
         <BankContainer />
         <DepositMoneyContainer />
+        <WithdrawMoneyContainer />
+        <TransferMoneyContainer />
+        <FilterTransactionsContainer />
       </div>
     );
   }

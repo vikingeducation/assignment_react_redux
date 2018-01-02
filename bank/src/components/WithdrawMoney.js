@@ -3,10 +3,10 @@ import Button from "./elements/Button";
 import Input from "./elements/Input";
 import InputGroup from "./elements/InputGroup";
 
-const DepositMoney = ({ onSubmit }) => (
+const WithdrawMoney = ({ onSubmit }) => (
   <form className="container" onSubmit={onSubmit}>
     <h1>
-      Deposit Money
+      Withdraw Money
       <span className="glyphicon glyphicon-search" aria-hidden="true" />
     </h1>
     <InputGroup name="id" labelText="ID">
@@ -16,9 +16,9 @@ const DepositMoney = ({ onSubmit }) => (
       <Input name="amount" />
     </InputGroup>
     <Button type="submit" color="primary">
-      Deposit
+      Withdraw
     </Button>
   </form>
 );
 
-export default DepositMoney;
+export default WithdrawMoney;
