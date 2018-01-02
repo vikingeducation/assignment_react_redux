@@ -38,7 +38,7 @@ let store = createStore(cash, {
 
 let unsubscribe = store.subscribe(() => {});
 
-store.dispatch(depositMoney(1, 9999999999999));
+store.dispatch(depositMoney(1, 50));
 store.dispatch(withdrawMoney(3, 920022));
 store.dispatch(transferMoney(1, 2, 420));
 store.dispatch(transactionFilter(new Date(0), new Date("2017-12-22"), 1));
