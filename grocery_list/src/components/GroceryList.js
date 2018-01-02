@@ -1,33 +1,29 @@
-import React, {PropTypes} from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+import GroceryItem from "./GroceryItem";
 
-
-const GroceryList = ({puppies, adoptPuppy}) => {
+const GroceryList = ({ groceryItems, onPurchased }) => {
   // Generate the groceryItem card for each groceryItem
-  const groceryItemList = puppies.map((groceryItem) => (
-    <GroceryItem
-      groceryItem={groceryItem}
-      onPurchased={() => adoptPuppy(groceryItem.id)}
-    />
-  ))
-  const noPuppies = (
-    <p className="text-muted">Oops no puppies...</p>
-  )
+  const groceryItemList = groceryItems.map(groceryItem => {
+    return <GroceryItem groceryItem={groceryItem} onPurchased={onPurchased} />;
+  });
+
+  const noGroceryItems = <p className="text-muted">Oops no groceries...</p>;
 
   // Using Bootstrap 4 card layout
   return (
     <div className="GroceryList container">
-      <h1>Our Puppies</h1>
-      <Filters />
+      <h1>Grocery List</h1>
       <div className="card-deck">
-        {puppies.length > 0 ? groceryItemList : noPuppies}
+        {groceryItems.length > 0 ? groceryItemList : noGroceryItems}
       </div>
     </div>
-  )
-}
+  );
+};
 
 GroceryList.propTypes = {
-  puppies: PropTypes.array.isRequired,
-  adoptPuppy: PropTypes.func.isRequired,
-}
+  groceryItems: PropTypes.array.isRequired,
+  onPurchased: PropTypes.func.isRequired
+};
 
-export default GroceryList
+export default GroceryList;

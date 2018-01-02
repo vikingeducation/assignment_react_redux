@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.png";
-import "./App.css";
+import logo from "../logo.png";
+// import "./App.css";
+import GroceryListContainer from "../containers/GroceryListContainer";
 
 class App extends Component {
   render() {
@@ -10,9 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Grocery List in the Console!</h1>
         </header>
-        <p className="App-intro">
-          Right click, inspect, then look over there! -------->
-        </p>
+        <GroceryListContainer />
       </div>
     );
   }
