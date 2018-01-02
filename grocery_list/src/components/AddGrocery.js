@@ -1,21 +1,12 @@
-import React from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 import Input from "./elements/Input";
 import InputGroup from "./elements/InputGroup";
 import Button from "./elements/Button";
 
-class AddGrocery extends Component {
-  constructor() {
-    super(props);
-    const { onSubmit } = props;
-
-    this.state.view = "visible";
-  }
-
-  handleClick = ()
-
-  render({ onSubmit }) {
-    <form className="container" onSubmit={onSubmit}>
+const Form = ({onSubmit}) => {
+   return (
+     <form className="container" onSubmit={onSubmit}>
       <h1>
         Add A Grocery{" "}
         <span className="glyphicon glyphicon-search" aria-hidden="true" />
@@ -35,7 +26,42 @@ class AddGrocery extends Component {
       <Button type="submit" color="primary">
         Save Grocery
       </Button>
-    </form>;
+    </form>
+   );
+  };
+
+class AddGrocery extends Component {
+  constructor(props) {
+    super(props);
+    const { onSubmit } = props;
+
+    this.state = {
+      view: "invisible"
+    };
+  }
+
+  toggleForm = () => {
+    if (this.state.view === 'visible') {
+      this.setState({
+        view: 'invisible',
+      })
+    } else {
+      this.setState({
+        view: 'visible',
+      })
+    }
+  }
+
+  render() {
+    let view = this.state.view;
+    let onSubmit = this.props.onSubmit;
+
+    return (
+      <div>
+        <button className="btn btn-primary" onClick={this.toggleForm}> Add Grocery </button> 
+        {view === "visible" ? <Form onSubmit={onSubmit}/> : null}
+      </div>
+    );
   }
 }
 
