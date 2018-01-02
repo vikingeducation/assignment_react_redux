@@ -11,12 +11,13 @@ const groceryList = (state = [], action) => {
     case CREATE_ITEM:
       return [...state, action.data];
     case PURCHASE_ITEM:
+      console.log("action: ", action);
+      
       return state.map(item => {
-        if (item.id === action.data) {
+        if (item.name === action.data) {
           return {
             ...item,
-            desiredAmount: item.desiredAmount--,
-            currentAmount: item.currentAmount++
+            currentAmount: item.currentAmount + 1
           };
         }
         return item;

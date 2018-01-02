@@ -4,8 +4,8 @@ import GroceryItem from "./GroceryItem";
 
 const GroceryList = ({ groceryItems, onPurchased }) => {
   // Generate the groceryItem card for each groceryItem
-  const groceryItemList = groceryItems.map(groceryItem => {
-    return <GroceryItem groceryItem={groceryItem} onPurchased={onPurchased} />;
+  const groceryItemList = groceryItems.map((groceryItem, idx) => {
+    return <GroceryItem groceryItem={groceryItem} key={idx} onPurchased={onPurchased} />;
   });
 
   const noGroceryItems = <p className="text-muted">Oops no groceries...</p>;

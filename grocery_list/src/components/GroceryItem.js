@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const GroceryItem = ({ groceryItem, onPurchased }) => {
   const {
@@ -11,18 +12,19 @@ const GroceryItem = ({ groceryItem, onPurchased }) => {
   } = groceryItem;
 
   const purchasedStatus = desiredAmount === currentAmount;
-  let color = purchasedStatus ? "red" : "blue";
+  let color = purchasedStatus ? "card-outline-success" : "card-outline-warning";
+  console.log(onPurchased);
 
   return (
-    <div className="GroceryItem card" style={{ maxWidth: "320px" }}>
-      <div className="card-block" style={`background-color: ${color}`}>
+    <div className={`GroceryItem card mb-3 ${color}`} style={{ maxWidth: "320px" }}>
+      <div className="card-block" style={{ "backgroundColor": color }}>
         <h4>{name}</h4>
         <p>Description: {description}</p>
         <p>
-          Status: ({desiredAmount}/{currentAmount})
+          Status: ({currentAmount}/{desiredAmount})
         </p>
         <p>Category: {category}</p>
-        <button onClick={onPurchased}>Purchase</button>
+        <button className="btn btn-primary" onClick={() => onPurchased(name)}>Purchase</button>
       </div>
     </div>
   );
@@ -30,7 +32,6 @@ const GroceryItem = ({ groceryItem, onPurchased }) => {
 
 GroceryItem.propTypes = {
   onPurchased: PropTypes.func.isRequired,
-  groceryItem: PropTypes.isRequired
 };
 
 export default GroceryItem;

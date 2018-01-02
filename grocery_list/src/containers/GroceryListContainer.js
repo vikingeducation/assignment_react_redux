@@ -22,8 +22,10 @@ const mapStateToProps = state => {
 // Add the adopt puppy dispatch action to props
 const mapDispatchToProps = dispatch => {
   return {
-    onPurchased: () => {
-      return "";
+    onPurchased: (name) => {
+      console.log("name: ", name);
+      
+      dispatch(purchaseItem(name));
     }
   };
 };

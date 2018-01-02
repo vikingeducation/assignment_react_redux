@@ -16,10 +16,10 @@ export const createItem = data => {
   };
 };
 
-export const purchaseItem = id => {
+export const purchaseItem = name => {
   return {
     type: PURCHASE_ITEM,
-    data: id
+    data: name
   };
 };
 
