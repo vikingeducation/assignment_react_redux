@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import BankContainer from "./bankContainer";
-
+import DepositMoneyContainer from "./DepositMoneyContainer";
 class App extends Component {
   render() {
     return (
@@ -12,6 +12,7 @@ class App extends Component {
           <h1 className="App-title">WELCOME EMPLOYEE. THIS IS HAL 3000</h1>
         </header>
         <BankContainer />
+        <DepositMoneyContainer />
       </div>
     );
   }
