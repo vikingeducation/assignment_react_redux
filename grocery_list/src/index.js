@@ -22,22 +22,22 @@ let unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch(
-createItem({
-name: "soggy flakes",
-description: "a decidedly inferior option to nutty nuggets",
-desiredAmount: 1,
-currentAmount: 0,
-category: "cereal"
-})
+  createItem({
+    name: "soggy flakes",
+    description: "a decidedly inferior option to nutty nuggets",
+    desiredAmount: 1,
+    currentAmount: 0,
+    category: "cereal"
+  })
 );
 store.dispatch(
-createItem({
-name: "nutty nuggets",
-description: "an amazing brand of the best cereal",
-desiredAmount: 10,
-currentAmount: 0,
-category: "cereal"
-})
+  createItem({
+    name: "nutty nuggets",
+    description: "an amazing brand of the best cereal",
+    desiredAmount: 10,
+    currentAmount: 0,
+    category: "cereal"
+  })
 );
 
 //store.dispatch(setPurchaseFilter("PURCHASED"));
