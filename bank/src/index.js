@@ -21,7 +21,20 @@ import {
 //Containers
 import { Provider } from "react-redux";
 
-let store = createStore(cash);
+const bankAccounts = [
+
+{id: 1, balance: 10, transactions: []},
+    {id: 2, balance: 1000, transactions: []},
+    {id: 3, balance: 920022, transactions: []},
+
+]
+
+
+
+
+let store = createStore(cash, {
+	accounts: bankAccounts
+});
 
 let unsubscribe = store.subscribe(() => {});
 

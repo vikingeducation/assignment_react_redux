@@ -6,16 +6,16 @@ import {
   TRANSACTION_FILTER,
 } from './actions';
 
-const initialState = {
+/*const initialState = {
   accounts: [
     {id: 1, balance: 10, transactions: []},
     {id: 2, balance: 1000, transactions: []},
     {id: 3, balance: 920022, transactions: []},
   ],
   display: [],
-};
+};*/
 
-function cash(state = initialState, action) {
+function cash(state = [], action) {
   switch (action.type) {
     case VIEW_ACCOUNT:
       return {
