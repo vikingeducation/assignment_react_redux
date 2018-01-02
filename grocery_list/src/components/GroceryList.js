@@ -5,7 +5,13 @@ import GroceryItem from "./GroceryItem";
 const GroceryList = ({ groceryItems, onPurchased }) => {
   // Generate the groceryItem card for each groceryItem
   const groceryItemList = groceryItems.map((groceryItem, idx) => {
-    return <GroceryItem groceryItem={groceryItem} key={idx} onPurchased={onPurchased} />;
+    return (
+      <GroceryItem
+        groceryItem={groceryItem}
+        key={idx}
+        onPurchased={onPurchased}
+      />
+    );
   });
 
   const noGroceryItems = <p className="text-muted">Oops no groceries...</p>;
@@ -13,7 +19,6 @@ const GroceryList = ({ groceryItems, onPurchased }) => {
   // Using Bootstrap 4 card layout
   return (
     <div className="GroceryList container">
-      <h1>Grocery List</h1>
       <div className="card-deck">
         {groceryItems.length > 0 ? groceryItemList : noGroceryItems}
       </div>

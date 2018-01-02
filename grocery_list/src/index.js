@@ -41,7 +41,7 @@ store.dispatch(
 );
 
 //store.dispatch(setPurchaseFilter("PURCHASED"));
-//store.dispatch(setCategoryFilter("cereal"));
+// store.dispatch(setCategoryFilter("cereal"));
 //store.dispatch(setNameSort("something"));
 //store.dispatch(setDescriptionSort("crackers"));
 

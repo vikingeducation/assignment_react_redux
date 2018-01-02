@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 const GroceryItem = ({ groceryItem, onPurchased }) => {
   const {
@@ -16,22 +16,27 @@ const GroceryItem = ({ groceryItem, onPurchased }) => {
   console.log(onPurchased);
 
   return (
-    <div className={`GroceryItem card mb-3 ${color}`} style={{ maxWidth: "320px" }}>
-      <div className="card-block" style={{ "backgroundColor": color }}>
+    <div
+      className={`GroceryItem card mb-3 ${color}`}
+      style={{ maxWidth: "320px" }}
+    >
+      <div className="card-block">
         <h4>{name}</h4>
         <p>Description: {description}</p>
         <p>
           Status: ({currentAmount}/{desiredAmount})
         </p>
         <p>Category: {category}</p>
-        <button className="btn btn-primary" onClick={() => onPurchased(name)}>Purchase</button>
+        <button className="btn btn-primary" onClick={() => onPurchased(name)}>
+          Purchase
+        </button>
       </div>
     </div>
   );
 };
 
 GroceryItem.propTypes = {
-  onPurchased: PropTypes.func.isRequired,
+  onPurchased: PropTypes.func.isRequired
 };
 
 export default GroceryItem;

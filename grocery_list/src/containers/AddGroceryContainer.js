@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => {
       e.preventDefault();
       const form = e.target;
       const data = serialize(form, { hash: true });
+      data.desiredAmount = Number(data.desiredAmount);
       data.currentAmount = 0;
       dispatch(createItem(data));
       form.reset();
