@@ -13,7 +13,7 @@ import {
     {id: 3, balance: 920022, transactions: []},
   ],
   display: [],
-};*/
+}*/;
 
 function cash(state = [], action) {
   switch (action.type) {

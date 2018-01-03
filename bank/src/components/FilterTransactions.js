@@ -15,7 +15,7 @@ const FilterTransactions = ({ onSubmit }) => (
     <InputGroup name="endDate" labelText="End Date">
       <Input name="endDate" />
     </InputGroup>
-    <InputGroup name="name" labelText="ID">
+    <InputGroup name="id" labelText="ID">
       <Input name="id" />
     </InputGroup>
     <Button type="submit" color="primary">

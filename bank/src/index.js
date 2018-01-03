@@ -23,9 +23,9 @@ import { Provider } from "react-redux";
 
 const bankAccounts = [
 
-{id: 1, balance: 10, transactions: []},
-    {id: 2, balance: 1000, transactions: []},
-    {id: 3, balance: 920022, transactions: []},
+{id: 1, balance: 10, transactions: [], display: []},
+    {id: 2, balance: 1000, transactions: [], display: []},
+    {id: 3, balance: 920022, transactions: [], display: []},
 
 ]
 
@@ -37,11 +37,10 @@ let store = createStore(cash, {
 });
 
 let unsubscribe = store.subscribe(() => {});
-
-store.dispatch(depositMoney(1, 50));
-store.dispatch(withdrawMoney(3, 920022));
+/*store.dispatch(transferMoney(1, 2, 420))
+store.dispatch(transferMoney(1, 2, 420))
 store.dispatch(transferMoney(1, 2, 420));
-store.dispatch(transactionFilter(new Date(0), new Date("2017-12-22"), 1));
+store.dispatch(transactionFilter(new Date(0), new Date("2018-12-22"), 3))*/;
 console.log(store.getState());
 console.table(store.getState());
 
