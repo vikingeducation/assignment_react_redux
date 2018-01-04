@@ -7,18 +7,23 @@ import { transactionFilter } from "./actions";
 import FilterTransactions from "./components/FilterTransactions";
 
 const mapDispatchToProps = dispatch => {
-
   return {
     onSubmit: e => {
       e.preventDefault();
       const form = e.target;
-      const data = serialize(form, { hash: true });
-        /*data.startDate = new Date(data.startDate)*/;
-        /*data.endDate = new Date(data.endDate);*/
-        console.log(data.endDate)
-        console.log(data.startDate)
+      const data = serialize(form, {
+        hash: true
+      });
+      console.log(data.endDate);
+      console.log(data.startDate);
       console.log(data);
-      dispatch(transactionFilter(data.startDate, data.endDate, Number.parseInt(data.id)))
+      dispatch(
+        transactionFilter(
+          new Date(data.startDate),
+          new Date(data.endDate),
+          Number.parseInt(data.id)
+        )
+      );
       form.reset();
     }
   };

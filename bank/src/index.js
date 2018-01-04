@@ -21,30 +21,13 @@ import {
 //Containers
 import { Provider } from "react-redux";
 
-const bankAccounts = [
+let store = createStore(cash);
 
-{id: 1, balance: 10, transactions: [], display: []},
-    {id: 2, balance: 1000, transactions: [], display: []},
-    {id: 3, balance: 920022, transactions: [], display: []},
-
-]
-
-
-
-
-let store = createStore(cash, {
-	accounts: bankAccounts
+let unsubscribe = store.subscribe(() => {
+  console.log(store.getState());
 });
+store.dispatch(transactionFilter(new Date(0), new Date("2018-01-31"), 1));
 
-let unsubscribe = store.subscribe(() => {});
-/*store.dispatch(transferMoney(1, 2, 420))
-store.dispatch(transferMoney(1, 2, 420))
-store.dispatch(transferMoney(1, 2, 420));
-store.dispatch(transactionFilter(new Date(0), new Date("2018-12-22"), 3))*/;
-console.log(store.getState());
-console.table(store.getState());
-
-unsubscribe();
 ReactDOM.render(
   <Provider store={store}>
     <App />

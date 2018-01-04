@@ -6,16 +6,22 @@ import {
   TRANSACTION_FILTER
 } from "./actions";
 
-/*const initialState = {
+const initialState = {
   accounts: [
-    {id: 1, balance: 10, transactions: []},
-    {id: 2, balance: 1000, transactions: []},
-    {id: 3, balance: 920022, transactions: []},
+    {
+      id: 1,
+      balance: 10,
+      transactions: [
+        { type: "Deposit", amount: 324243, date: "2018-01-04T14:38:12.476Z" }
+      ]
+    },
+    { id: 2, balance: 1000, transactions: [] },
+    { id: 3, balance: 920022, transactions: [] }
   ],
-  display: [],
-}*/;
+  display: []
+};
 
-function cash(state = [], action) {
+function cash(state = initialState, action) {
   switch (action.type) {
     case VIEW_ACCOUNT:
       return {
@@ -105,20 +111,21 @@ function cash(state = [], action) {
         })
       };
     case TRANSACTION_FILTER:
+      let y = state.accounts.filter(account => {
+        if (account.id == action.data.id) {
+          return account.transactions.filter(transaction => {
+            return (
+              new Date(transaction.date).getTime() >=
+                new Date(action.data.startDate).getTime() &&
+              new Date(transaction.date).getTime() <=
+                new Date(action.data.endDate).getTime()
+            );
+          });
+        }
+      });
       return {
         ...state,
-        display: state.accounts.map(account => {
-          if (account.id === action.data.id) {
-            return account.transactions.filter(transaction => {
-              if (
-                transaction.date >= action.data.startDate &&
-                transaction.date <= action.data.endDate
-              ) {
-                return transaction;
-              }
-            });
-          }
-        })[0]
+        display: y
       };
     default:
       return state;

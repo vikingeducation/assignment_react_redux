@@ -2,8 +2,10 @@ import React, { PropTypes } from "react";
 import BankAccount from "./BankAccount";
 
 const BankList = ({ accounts }) => {
-  console.log(accounts);
-  let accountList = accounts.map(account => <BankAccount account={account} />);
+  //console.log(accounts);
+  let accountList = accounts.map(account => (
+    <BankAccount account={account} key={account.id} />
+  ));
 
   return (
     <div className="BankList container">
