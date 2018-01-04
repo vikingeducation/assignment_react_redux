@@ -122,7 +122,7 @@ function cash(state = initialState, action) {
             );
           });
         }
-      });
+      })[0].transactions;
       return {
         ...state,
         display: y
