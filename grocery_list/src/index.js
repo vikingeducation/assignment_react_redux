@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css'
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import App from './components/App';
 
+import PropTypes from 'prop-types';
+import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {groceryApp} from './reducers'
 import {addGroceryItem,
@@ -12,12 +14,39 @@ import {addGroceryItem,
         setCategoriesFilter,
         setSorting} from './actions'
 
+// const groceriesFromServer = [
+//   {
+//     name: 'beef',
+//     description: 'shoulder cut for beef',
+//     amount: '1kg',
+//     category: 'meat',
+//     purchased: false,
+//     id: 1
+//   }, {
+//       name: 'eggs',
+//       description: 'fresh free range eggs',
+//       amount: '10',
+//       category: 'poultry',
+//       purchased: false,
+//       id: 2
+//   }, {
+//     name: 'tomatoes',
+//     description: 'fresh from local fields',
+//     amount: '1kg',
+//     category: 'vegetables',
+//     purchased: false,
+//     id: 3
+//   }
+// ]
+
+
 let store = createStore(groceryApp)
 
-let unsubscribe = store.subscribe(() => {
-  console.log(store.getState())
-})
-console.log('initial state', store.getState())
+
+// let unsubscribe = store.subscribe(() => {
+//   console.log(store.getState())
+// })
+// console.log('initial state', store.getState())
 
 store.dispatch(addGroceryItem({
   name: 'beef',
@@ -55,9 +84,13 @@ store.dispatch(setSorting('BY_DESCRIPTION'))
 
 
 
-unsubscribe()
+// unsubscribe()
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
