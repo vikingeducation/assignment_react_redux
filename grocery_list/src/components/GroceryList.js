@@ -2,11 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GroceryCard from './GroceryCard'
 
-const GroceryList = ({grocery}) => {
+const GroceryList = ({grocery, markPurchase}) => {
 
   console.log(grocery[4])
   const groceryList = grocery.map((item) => (
-    <GroceryCard groceryItem={item} key={item.id} />
+    <GroceryCard
+      groceryItem={item}
+      key={item.id}
+      markPurchase={() => markPurchase(item.id)}
+    />
   ))
 
   return (

@@ -15,16 +15,16 @@ const GroceryCard = ({groceryItem, markPurchase}) => {
       </div>
       <div className="col-6">
         <li className={purchasingStatusClass}>
-          <div className='col-sm-6'>
+          <div className='col-sm-7'>
             <h4>{name} <em>{amount}</em></h4>
             <em>{description}</em>
           </div>
-          <div className='col-sm-4'>
+          <div className='col-sm-5'>
             <h6 className="text-right">{category}</h6>
-            <PurchaseButton purchased={purchased} onClick={markPurchase} />
-
-          </div>
-          <div className='col-sm-2'>
+            <PurchaseButton
+              purchased={purchased}
+              markPurchase={markPurchase}
+              />
 
           </div>
         </li>

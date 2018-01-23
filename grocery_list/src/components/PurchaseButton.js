@@ -5,11 +5,7 @@ import Button from './elements/Button'
 
 const PurchaseButton = ({purchased, markPurchase}) => {
   if (purchased) {
-    return (
-      <Button color='danger' size='sm' onClick={markPurchase}>
-        Cancel purchase
-      </Button>
-    )
+    return <p style={{color: '#999'}} >Purchased</p>
   } else {
     return (
       <Button color='success' size='sm' onClick={markPurchase}>
