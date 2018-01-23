@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JumbotronFluid from './elements/JumbotronFluid'
 import GroceryListContainer from '../containers/GroceryListContainer'
+import AddNewItemContainer from '../containers/AddNewItemContainer'
 
 class App extends Component {
   render() {
@@ -13,6 +14,8 @@ class App extends Component {
         />
 
         <GroceryListContainer />
+
+        <AddNewItemContainer />
 
       </div>
     );
