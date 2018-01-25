@@ -1,4 +1,3 @@
-import React from 'react'
 import {connect} from 'react-redux'
 import serialize from 'form-serialize'
 import AddNewItem from '../components/AddNewItem'

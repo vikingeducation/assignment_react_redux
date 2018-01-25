@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GroceryCard from './GroceryCard'
 import Filters from './Filters'
+import Sorters from './Sorters'
+
 
 const GroceryList = ({groceryList, markPurchase}) => {
   const pupulatedCards = groceryList.map((item) => (
@@ -16,6 +18,7 @@ const GroceryList = ({groceryList, markPurchase}) => {
 
     <div className='container'>
       <Filters />
+      <Sorters />
       <ul className="list-group">
         {pupulatedCards}
       </ul>

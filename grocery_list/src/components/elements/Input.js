@@ -1,4 +1,5 @@
-import React, {PropTypes}  from 'react'
+import React from 'react'
+// import PropTypes from 'react-redux'
 
 const Input = (props) => {
   const classNames = `form-control ${props.className}`

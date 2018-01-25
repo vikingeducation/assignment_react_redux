@@ -8,6 +8,7 @@ import {ADD_GROCERY_ITEM,
 function groceryList(state=[], action) {
   switch (action.type) {
     case ADD_GROCERY_ITEM:
+      action.data.purchased = false
       return [
         ...state,
         action.data

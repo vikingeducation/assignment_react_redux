@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ListGroup from './elements/ListGroup'
-import Button from './elements/Button'
 import PurchaseButton from './PurchaseButton'
 
 const GroceryCard = ({groceryItem, markPurchase}) => {
