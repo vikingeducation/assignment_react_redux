@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import GroceryCard from './GroceryCard'
+import Filters from './Filters'
 
-const GroceryList = ({grocery, markPurchase}) => {
-
-  console.log(grocery[4])
-  const groceryList = grocery.map((item) => (
+const GroceryList = ({groceryList, markPurchase}) => {
+  const pupulatedCards = groceryList.map((item) => (
     <GroceryCard
       groceryItem={item}
       key={item.id}
@@ -16,8 +15,9 @@ const GroceryList = ({grocery, markPurchase}) => {
   return (
 
     <div className='container'>
+      <Filters />
       <ul className="list-group">
-        {groceryList}
+        {pupulatedCards}
       </ul>
     </div>
 
@@ -25,7 +25,7 @@ const GroceryList = ({grocery, markPurchase}) => {
 }
 
 GroceryList.propTypes = {
-  grocery: PropTypes.array.isRequired
+  groceryList: PropTypes.array.isRequired
 }
 
 export default GroceryList

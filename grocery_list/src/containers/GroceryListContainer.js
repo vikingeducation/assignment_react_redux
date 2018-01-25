@@ -4,9 +4,32 @@ import {purchaseItem} from '../actions'
 
 
 
+const getFilteredPurchases = (groceryList, filter) => {
+  switch (filter) {
+    case 'SHOW_PURCHASED':
+      return groceryList.filter( (item) => item.purchased)
+    case 'SHOW_NOT_PURCHASED':
+      return groceryList.filter( (item) => !item.purchased)
+    case 'SHOW_ALL_CATEGORIES':
+    return groceryList
+      // return getCategories(groceryList)
+    default:
+      return groceryList
+  }
+}
+
+// const getCategories = (groceryList) => {
+//   const allCategories = groceryList.map( (item) => item.category)
+//   return allCategories.filter( (item, pos) => {
+//       return allCategories.indexOf(item) == pos;
+//   })
+// }
+
+
+
 const mapStateToProps = (state) => {
   return {
-    grocery: state.groceryList
+    groceryList: getFilteredPurchases(state.groceryList, state.groceryFilters)
   }
 }
 
