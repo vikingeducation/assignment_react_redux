@@ -10,27 +10,28 @@ const AccountCard = ({accountRecord, markPurchase}) => {
   //   />
 
   const {name, accountNo, balance, createAt} = accountRecord
-  // const purchasingStatusClass = purchased ? 'list-group-item list-group-item-action list-group-item-success' : 'list-group-item list-group-item-action list-group-item-danger'
-  const purchasingStatusClass = ''
+  // const AccountClass = purchased ? 'list-group-item list-group-item-action list-group-item-success' : 'list-group-item list-group-item-action list-group-item-danger'
+  const AccountClass = 'list-group-item list-group-item-action'
 
   return (
     <div className='row'>
-      <div className="col-3">
+      <div className="col-2">
       </div>
-      <div className="col-6">
-        <li className={purchasingStatusClass}>
-          <div className='col-sm-7'>
-            <h4>{name} <em>{balance}</em></h4>
-            <em>{accountNo}</em>
+      <div className="col-8">
+        <li className={AccountClass}>
+          <div className='col-sm-9'>
+          <b>Name:</b>{name}<br/>
+          <b>Account Number:</b>{ accountNo}<br/>
+          <b>Created at:</b>{createAt.toLocaleString()}<br/>
           </div>
-          <div className='col-sm-5'>
-            <h6 className="text-right">{createAt}</h6>
-
+          <div className='col-sm-3'>
+          <h5>${balance}</h5>
           </div>
         </li>
       </div>
-      <div className="col-3">
+      <div className="col-2">
       </div>
+      <br />
     </div>
 
 

@@ -14,19 +14,13 @@ function accountOps(state=[], action) {
         ...state,
         action.data
       ]
-    // case CHECK_ACCOUNT:
-    //   for (let i=0; i < state.length; i++) {
-    //     if (state[i].accountNo === action.data) {
-    //       return state[i]
-    //     }
-    //   }
     case DEPOSIT_MONEY:
       console.log(state)
       return state.map((account) => {
         if (account.accountNo === action.data.accountNo) {
           return {
             ...account,
-            balance: account.balance + action.data.value
+            balance: parseInt(account.balance) + parseInt(action.data.value)
           }
         }
         return account

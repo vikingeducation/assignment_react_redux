@@ -5,21 +5,13 @@ import { default as _ } from 'lodash'
 
 const mapStateToProps = (state) => {
   return {
-    accounts: state
+    accountList: state.accountOps
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // markPurchase: (groceryItem) => {
-    //   dispatch(purchaseItem(groceryItem))
-    // }
-  }
-}
 
 const AccountsListContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(AccountsList)
 
 export default AccountsListContainer

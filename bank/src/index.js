@@ -71,7 +71,7 @@ store.dispatch(setFilterTransactions({
 
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
