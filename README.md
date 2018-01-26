@@ -1,3 +1,5 @@
+Here are two quick made apps in React with Redux
+
 # The Grocery List React REDUX App - including VIEW
 Redux operation UX oriented;
 "As a user, I want to...
@@ -7,6 +9,9 @@ Indicate an item has been purchased.
 Set filters for purchased/not purchased/all, categories/all.
 Set sort by name/description."
 
+<p align="center">
+  <img src="grocery_list_preview.png" width="550"/>
+</p>
 
 
 # The Bank React REDUX App - including VIEW
@@ -23,8 +28,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 <p align="center">
-  <img src="/public/preview.png" width="650"/>
+  <img src="bank_preview.png" width="550"/>
 </p>
+
+
 
 ## Getting Started
 
