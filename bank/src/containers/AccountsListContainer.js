@@ -1,6 +1,5 @@
 import {connect} from 'react-redux'
 import AccountsList from '../components/AccountsList'
-import { default as _ } from 'lodash'
 
 
 const mapStateToProps = (state) => {

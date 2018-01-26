@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.transactions {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.account-row {
+  margin-top: 5px;
+}

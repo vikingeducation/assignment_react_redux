@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import JumbotronFluid from './elements/JumbotronFluid'
 import AccountsListContainer from '../containers/AccountsListContainer'
-import DepositMoneyContainer from '../containers/DepositMoneyContainer'
+import TransactionsContainer from '../containers/TransactionsContainer'
 
 // Select an account to view.
-// Deposit money into an account.
-// Withdraw money from an account.
-// Transfer money between accounts.
 // Filter transactions by date (using a start and end date).
 
 class App extends Component {
@@ -19,7 +16,7 @@ class App extends Component {
         />
         <AccountsListContainer />
 
-        <DepositMoneyContainer />
+        <TransactionsContainer />
       </div>
     );
   }

@@ -1,17 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import PurchaseButton from './PurchaseButton'
 
 const AccountCard = ({accountRecord, markPurchase}) => {
 
-  // <PurchaseButton
-  //   purchased={purchased}
-  //   markPurchase={markPurchase}
-  //   />
-
   const {name, accountNo, balance, createAt} = accountRecord
-  // const AccountClass = purchased ? 'list-group-item list-group-item-action list-group-item-success' : 'list-group-item list-group-item-action list-group-item-danger'
-  const AccountClass = 'list-group-item list-group-item-action'
+  const AccountClass = 'list-group-item list-group-item-action account-row'
 
   return (
     <div className='row'>
@@ -33,8 +26,6 @@ const AccountCard = ({accountRecord, markPurchase}) => {
       </div>
       <br />
     </div>
-
-
   )
 }
 

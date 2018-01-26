@@ -7,7 +7,6 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {accountOperationsApp} from './reducers'
 import {createAccount,
-        checkAccount,
         depositMoney,
         withdrawMoney,
         transferMoney,
@@ -41,21 +40,20 @@ store.dispatch(createAccount({
   createAt: new Date()
 }))
 
-// store.dispatch(checkAccount('6000'))
 
 store.dispatch(depositMoney({
-  accountNo: '1234',
+  accountNoTo: '1234',
   value: 1000
 }))
 
 store.dispatch(withdrawMoney({
-  accountNo: '1234',
+  accountNoFrom: '1234',
   value: 111
 }))
 
 store.dispatch(transferMoney({
-  acc1: '6000',
-  acc2: '1234',
+  accountNoFrom: '6000',
+  accountNoTo: '1234',
   value: 450
 }))
 

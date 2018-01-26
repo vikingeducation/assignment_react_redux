@@ -1,7 +1,6 @@
 import {combineReducers} from 'redux'
 
 import {CREATE_ACCOUNT,
-        CHECK_ACCOUNT,
         DEPOSIT_MONEY,
         WITHDRAW_MONEY,
         TRANSFER_MONEY,
@@ -17,35 +16,35 @@ function accountOps(state=[], action) {
     case DEPOSIT_MONEY:
       console.log(state)
       return state.map((account) => {
-        if (account.accountNo === action.data.accountNo) {
+        if (account.accountNo === action.data.accountNoTo) {
           return {
             ...account,
-            balance: parseInt(account.balance) + parseInt(action.data.value)
+            balance: parseInt(account.balance, 10) + parseInt(action.data.value, 10)
           }
         }
         return account
       })
       case WITHDRAW_MONEY:
         return state.map((account) => {
-          if (account.accountNo === action.data.accountNo) {
+          if (account.accountNo === action.data.accountNoFrom) {
             return {
               ...account,
-              balance: account.balance - action.data.value
+              balance: parseInt(account.balance, 10) - parseInt(action.data.value, 10)
             }
           }
           return account
         })
         case TRANSFER_MONEY:
           return state.map((account) => {
-            if (account.accountNo === action.data.acc1) {
+            if (account.accountNo === action.data.accountNoFrom) {
               return {
                 ...account,
-                balance: account.balance - action.data.value
+                balance: parseInt(account.balance, 10) - parseInt(action.data.value, 10)
               }
-            } else if (account.accountNo === action.data.acc2) {
+            } else if (account.accountNo === action.data.accountNoTo) {
                 return {
                   ...account,
-                  balance: account.balance + action.data.value
+                  balance: parseInt(account.balance, 10) + parseInt(action.data.value, 10)
                 }
             }
             return account
