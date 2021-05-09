@@ -1,0 +1,156 @@
+* {
+	ooutline: 1px solid gray;
+}
+html {
+	font-size: 14px;
+}
+
+@media (min-width: 540px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 720px) {
+	html {
+		font-size: 18px;
+	}
+}
+@media (min-width: 960px) {
+	html {
+		font-size: 22px;
+	}
+}
+
+/********************************
+header
+/********************************/
+.header {
+	width: 80%;
+}
+.sm_header {
+	background-color: #e9ecef;
+	height: 6rem;
+}
+.list_container {
+	width: 80%;
+	margin: 0 auto;
+	flex-wrap: nowrap;
+}
+
+.list_item {
+	line-height: 0.5rem;
+}
+
+/**
+ Add Items
+ */
+.add_item_btn_container {
+	width: 30rem;
+	margin: 0 auto;
+}
+
+.add_item_btn_container {
+	height: 4rem;
+	background-color: #78c0ff;
+}
+/***
+add item button
+***/
+#add_item_toggle {
+	height: 3rem;
+	width: 2rem;
+	bbackground-image: url("./img/minus.svg");
+}
+
+.form_toggle_btn {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 3rem;
+	width: 2rem;
+}
+.add_item_plus {
+	background-image: url(./img/plus.svg);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 3rem;
+	width: 2rem;
+}
+
+.add_item_minus {
+	background-image: url(./img/minus.svg);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 3rem;
+	width: 2rem;
+}
+/****************************
+add-item-form
+****************************/
+.add_item_display_flex {
+	display: flex;
+}
+.add_item_display_none {
+	display: none;
+}
+@media (min-width: 720px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+/**********************
+Filter Links
+************************/
+.filter_container {
+	text-align: center;
+}
+
+.filter_container > * {
+	margin: 0 1rem;
+}
+
+/***********************
+ List buttons
+ ***********************/
+
+.display_header > * {
+	width: 100%;
+}
+input.sort_input {
+	font-size: 0.8rem;
+	height: 2rem;
+	cursor: pointer;
+	vertical-align: middle;
+	padding-right: 15px;
+}
+
+input.down {
+	background-image: url(./img/d_arrow.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+input.up {
+	background-image: url(./img/up_arrow.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+/*purchase buttons*/
+.purchased_btn {
+	background-color: lightblue;
+}
+
+.not_purchased_btn {
+	background-color: yellow;
+}
+/*
+amount total
+*/
+.amount_total {
+	text-align: right;
+}
